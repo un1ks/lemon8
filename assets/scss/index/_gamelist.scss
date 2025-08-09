@@ -1,0 +1,748 @@
+.le__gamelist {
+
+    position: relative;
+    z-index: 5;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), transparent);
+
+
+    .gamelist {
+        width: min(85rem, 90%);
+        margin: 0 auto;
+        padding: 4rem 0;
+        position: relative;
+        z-index: 1;
+
+        .list {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+
+            .heading {
+                margin: 0 0 1.5rem 0;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+                margin: 0;
+
+                font-weight: 700;
+                color: rgb(92, 92, 92);
+            }
+
+            &.development {
+                position: relative;
+
+                .heading {
+                    margin: 0 0 1.5rem 0;
+                }
+
+                .control {
+                    position: absolute;
+                    bottom: 0;
+                    height: 26rem;
+                    display: flex;
+                    width: fit-content;
+                    align-items: center;
+                    background-color: rgba(38, 38, 38, 0.6);
+                    padding: 0 1rem;
+                    left: 0;
+                    overflow: hidden;
+                    border: 1px solid transparent;
+                    z-index: 2;
+                    border-radius: 0.5rem 0 0 0.5rem;
+
+                    ul {
+                        height: fit-content;
+
+                        li {
+                            padding: 0.2rem;
+                            color: rgba(255, 255, 255, 0.5);
+                            border-radius: 0.5rem;
+                            display: flex;
+                            width: fit-content;
+                            align-items: center;
+                            justify-content: center;
+                            border: 2px solid transparent;
+                            height: fit-content !important;
+                            transition: .2s;
+                            cursor: pointer;
+
+
+                            &.swiper-slide-thumb-active {
+                                border-color: rgb(224, 198, 29);
+
+                                &:hover {
+                                    border-color: rgb(224, 198, 29);
+                                }
+
+                            }
+
+                            &:hover {
+                                border-color: gray;
+                            }
+
+
+                            span {
+                                font-size: 0.825rem;
+                                display: none;
+                            }
+
+                            .icon {
+                                width: 3rem;
+                                height: 3rem;
+                                overflow: hidden;
+                                display: flex;
+                                border-radius: 0.25rem;
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+
+                            p {
+                                display: none;
+                                color: white;
+                                font-weight: 500;
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+
+                .games {
+                    width: 100%;
+                    overflow: hidden;
+                    background-color: black;
+                    border-radius: 0.5rem;
+
+                    ul {
+                        width: 100%;
+
+                        li {
+                            width: 100%;
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            color: black;
+                            background: linear-gradient(10deg, rgb(227, 227, 227), rgba(203, 203, 203, 0));
+                            border-radius: 0.5rem;
+
+                            overflow: hidden;
+                            box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+
+                            &.swiper-slide-active {
+                                .gallery {
+                                    .gal {
+                                        pointer-events: all !important;
+
+                                        .swiper-wrapper {
+                                            pointer-events:  all !important;
+                                            .swiper-slide {
+                                                pointer-events: all !important;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .background {
+                                position: absolute;
+                                top: 0;
+                                width: 100%;
+                                left: 0;
+                                height: 100%;
+                                overflow: hidden;
+                                background-color: black;
+
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    left: 0;
+                                    bottom: 0;
+
+                                    width: 100%;
+                                    z-index: 1;
+                                    height: 150%;
+                                    background: linear-gradient(transparent, rgba(38, 38, 38, 0.8));
+
+                                }
+
+
+                                video, img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    opacity: 0.7;
+                                }
+
+                            }
+
+                            .info {
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                align-items: center;
+                                position: relative;
+                                z-index: 2;
+                                padding: 0 0 0 12rem;
+                                height: 26rem;
+                                margin: 0 auto;
+                                justify-content: space-between;
+
+                                .gallery {
+                                    padding: 2rem 5rem 2rem 0.2rem;
+
+                                    width: 46rem;
+                                   
+                                    overflow: hidden;
+                          
+                                    .gal {
+                                        width: 100%;
+                                        height: 100%;
+                                  
+                                        .swiper-wrapper {
+                                            width: 100%;
+                                            height: 100%;
+
+                                            div {
+                                                
+                                                width: 100%;
+                                                aspect-ratio: 1.8;
+                                                background-color: black;
+                                                border-radius: 0.5rem;
+                                                overflow: hidden;
+                                                box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0);
+                                                position: relative;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+
+                                                button {
+                                                    width: fit-content;
+                                                    height: 2.75rem;
+                                                    border: none;
+                                                
+                                                    border-radius: 10rem;
+                                                    cursor: pointer;
+                                                    text-decoration: none;
+                                                    color: rgb(15, 15, 15);
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    gap: 0.6rem;
+                                                    font-weight: 600;
+                                                    transition: .1s;
+                                                    font-size: 1.15rem;
+                                                    position: absolute;
+                                                    width: 2.75rem;
+                                                    border-radius: 100%;
+                                                    background-color: rgba(0, 0, 0, 0.457);
+
+                                                    &:hover {
+                                                        background-color: rgb(225, 225, 225);
+
+                                                        &::before {
+                                                            opacity: 1;
+                                                        }
+
+                                                        svg {
+                                                            opacity: 1;
+
+                                                            path {
+                                                                fill: black;
+                                                            }
+                                                        }
+                                                    }
+
+                                                    svg {
+                                                        width: 1.25rem;
+                                                        height: 1.25rem;
+                                                        transition: .1s;
+                                                        opacity: 0.8;
+
+                                                        path {
+                                                            transition: .1s;
+                                                            fill: rgb(255, 255, 255);
+                                                        }
+                                                    }
+
+                                                    &::before {
+                                                        content: '';
+                                                        position: absolute;
+                                                        width: calc(100% + 0.2rem);
+                                                        height: calc(100% + 0.2rem);
+                                                        border: 2px solid rgba(255, 255, 255, 0.7);
+                                                        border-radius: 10rem;
+                                                        opacity: 0;
+                                                        transition: .1s;
+                                                    }
+
+                                                }
+
+                                                &::before {
+                                                    content: '';
+                                                    position: absolute;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    left: 0;
+                                                    right: 0;
+                                                    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+                                                }
+
+                                                img {
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    opacity: 1;
+                                                    object-fit: cover;
+                                                }
+
+                                                video {
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+                                        }
+
+
+                                    }
+                                }
+
+
+                                .btn {
+                                    display: flex;
+                                    gap: 1rem;
+                                    align-items: center;
+
+                                    a {
+                                        width: fit-content;
+                                        height: 3.5rem;
+                                        margin: 2rem 0 0 0;
+                                        border-radius: 10rem;
+                                        cursor: pointer;
+                                        text-decoration: none;
+                                        color: rgb(15, 15, 15);
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        gap: 0.6rem;
+                                        font-weight: 600;
+                                        transition: .1s;
+                                        font-size: 1.15rem;
+                                        position: relative;
+
+                                        &::before {
+                                            content: '';
+                                            position: absolute;
+                                            width: calc(100% + 0.2rem);
+                                            height: calc(100% + 0.2rem);
+                                            border: 2px solid rgba(255, 255, 255, 0.7);
+                                            border-radius: 10rem;
+                                            opacity: 0;
+                                            transition: .1s;
+                                        }
+
+                                        &.dark {
+                                            padding: 0 3.5rem;
+                                            background-color: rgba(255, 255, 255, 0.8);
+                                            backdrop-filter: blur(1rem);
+                                            box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.15);
+
+                                            &:hover {
+                                                background-color: rgb(224, 198, 29);
+
+                                                &::before {
+                                                    opacity: 1;
+                                                }
+                                            }
+
+                                            svg {
+                                                path {
+                                                    fill: rgb(0, 0, 0);
+                                                }
+                                            }
+                                        }
+
+                                        &.play {
+
+                                            width: 3.5rem;
+                                            border-radius: 100%;
+                                            background-color: rgba(0, 0, 0, 0.457);
+
+                                            &:hover {
+                                                background-color: rgb(225, 225, 225);
+
+                                                &::before {
+                                                    opacity: 1;
+                                                }
+
+                                                svg {
+                                                    opacity: 1;
+
+                                                    path {
+                                                        fill: black;
+                                                    }
+                                                }
+                                            }
+
+                                            svg {
+                                                width: 1.5rem;
+                                                height: 1.5rem;
+                                                transition: .1s;
+
+                                                path {
+                                                    transition: .1s;
+                                                    fill: rgb(255, 255, 255);
+                                                }
+                                            }
+                                        }
+
+
+
+                                        svg {
+                                            width: 1.15rem;
+                                            height: 1.15rem;
+                                            opacity: 0.6;
+
+
+                                        }
+                                    }
+
+                                }
+
+                                .wrapper {
+                                    display: flex;
+
+
+                                    border-radius: 0.5rem 0.5rem 0 0;
+                                    position: relative;
+                                    z-index: 1;
+                                    border-bottom: none;
+                                    flex-direction: column;
+
+                                    .game {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 1.5rem;
+                                    }
+
+                                }
+
+                                .name {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 0.25rem;
+                                    justify-content: center;
+
+                                    .tags {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 0.5rem;
+
+                                        div {
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 0.5rem;
+                                            opacity: 0.8;
+
+                                            img {
+                                                width: 1rem;
+                                                height: 1rem;
+                                                object-fit: contain;
+                                            }
+                                        }
+
+                                        span {
+                                            color: rgb(237, 237, 237);
+                                            background-color: rgba(26, 26, 26, 0.2);
+                                            border-radius: 10rem;
+                                            border: 1px solid rgba(255, 255, 255, 0.3);
+                                            padding: 0.25rem 0.6rem;
+                                            font-size: 0.8rem;
+                                            font-weight: 500;
+
+                                        }
+                                    }
+
+                                    span {
+                                        font-weight: bold;
+                                        color: white;
+                                        font-size: 2.25rem;
+                                        text-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.5);
+                                    }
+                                }
+
+
+
+                                .app-icon {
+                                    width: 5rem;
+                                    height: 5rem;
+                                    border-radius: 0.5rem;
+                                    overflow: hidden;
+                                    display: flex;
+                                    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
+
+                                    img {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            &.featured {
+                margin: 0 0 2.5rem 0;
+
+                ul {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(calc(100% / 4), 1fr));
+                    gap: 1rem;
+                    width: 100%;
+
+                    li {
+
+                        position: relative;
+                        display: flex;
+                        transition: .4s;
+
+                        &:hover {
+                            .thumb {
+                                transform: scale(1.015);
+
+                                img {
+                                    opacity: 0;
+                                }
+
+                                video {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+
+
+                        a {
+                            text-decoration: none;
+                            display: flex;
+                            width: 100%;
+                        }
+
+                        .info {
+                            position: absolute;
+                            bottom: 0;
+                            display: flex;
+                            align-items: flex-end;
+                            justify-content: space-between;
+                            width: 100%;
+                            padding: 2rem 2rem 1.8rem 2rem;
+
+                            z-index: 1;
+
+                            .wrapper {
+                                width: 100%;
+
+
+                                .app-icon {
+                                    width: 4rem;
+                                    height: 4rem;
+                                    border-radius: 0.5rem;
+                                    overflow: hidden;
+                                    margin: 0 0 1rem 0;
+
+                                    img {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
+                                }
+
+                                .name {
+                                    color: white;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+
+                                    p {
+                                        margin: 0;
+                                        font-size: 1.5rem;
+                                        font-weight: bold;
+                                    }
+                                }
+                            }
+
+                            .type {
+                                display: flex;
+                                align-items: center;
+                                gap: 1rem;
+
+                                div {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 0.8rem;
+                                    opacity: 0.5;
+
+                                    img {
+                                        width: 1rem;
+
+                                        height: 1rem;
+                                        object-fit: contain;
+                                    }
+                                }
+
+                                span {
+                                    padding: 0.3rem 0.8rem;
+                                    font-size: 0.9rem;
+                                    font-weight: 600;
+                                    color: rgb(187, 187, 187);
+                                    background-color: rgb(26, 26, 26);
+                                    border-radius: 10rem;
+                                    border: 1px solid rgba(162, 162, 162, 0.5);
+                                }
+                            }
+                        }
+
+                        .thumb {
+                            background-color: black;
+                            position: relative;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
+                            aspect-ratio: 1.6;
+                            border: 1px solid rgb(175, 175, 175);
+                            overflow: hidden;
+                            box-shadow: 0 0.3rem 0.2rem rgba(0, 0, 0, 0.2);
+                            border-radius: 0.5rem;
+                            transition: .1s;
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                background: linear-gradient(rgba(40, 40, 40, 0), transparent, rgb(32, 32, 32));
+                                top: 0;
+                                left: 0;
+                                z-index: 1;
+                                width: 100%;
+                                height: 100%;
+                            }
+
+                            img {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                transition: .2s;
+                            }
+
+                            video {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                opacity: 0;
+                                transition: .2s;
+                            }
+                        }
+
+
+                    }
+                }
+            }
+        }
+
+        .heading {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin: 0 0 2rem 0;
+
+
+            h1 {
+                margin: 0 0 0 0;
+                font-size: 2rem;
+                color: black;
+                font-weight: 700;
+
+            }
+
+            .filters {
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+                border-radius: 10rem;
+
+
+                button {
+                    border: none;
+                    border-radius: 10rem;
+                    background-color: rgba(210, 206, 191, 0);
+                    border: 1px solid rgba(0, 0, 0, 0.2);
+
+                    color: rgb(48, 48, 48);
+                    font-weight: 600;
+                    padding: 0 1rem;
+                    font-size: 1rem;
+                    height: 2.25rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+                    position: relative;
+
+                    &:hover {
+
+                        color: black;
+                        border-color: rgba(0, 0, 0, 0.2);
+
+                        &::before {
+                            opacity: 1;
+                        }
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: calc(100% + 0.2rem);
+                        height: calc(100% + 0.2rem);
+                        border: 2px solid rgb(94, 84, 53);
+                        border-radius: 10rem;
+                        opacity: 0;
+                    }
+
+                    &.active {
+                        background-color: rgb(224, 198, 29);
+                        color: black;
+                        border-color: rgba(0, 0, 0, 0.2);
+                    }
+
+                    svg {
+                        width: 1.2rem;
+                        height: 1.2rem;
+
+                        path {
+                            fill: black;
+                        }
+                    }
+
+                    img {
+
+                        width: 0.9rem;
+                        filter: invert(100%);
+                        height: 1rem;
+                        opacity: 0.6;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+}

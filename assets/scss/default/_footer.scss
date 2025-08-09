@@ -1,0 +1,48 @@
+.le__footer {
+    background-color: rgb(224, 224, 224);
+
+    .footer {
+        width: min(85rem, 90%);
+        padding: 4rem 0;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 0.85rem;
+
+        .logos {
+            margin: 0 0 1.5rem 0;
+            img {
+                max-width: 6rem;
+            }
+        }
+
+        .links {
+            margin: 0 0 0.5rem 0;
+            ul {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+
+                li {
+                    a {
+                        font-weight: 600;
+                        text-decoration: none;
+                        color: black;
+                        transition: .2s;
+
+                        &:hover {
+                            color: gray;
+                        }
+                    }
+                }
+            }
+        }
+
+        .copyright {
+            p {
+                margin: 0;
+                color: gray;
+            }
+
+        }
+    }
+}

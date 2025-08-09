@@ -1,0 +1,573 @@
+.news-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .hidden {
+        display: none !important;
+    }
+
+
+    .loading-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+
+    .loading-overlay .spinner {
+        width: 2rem;
+        height: 2rem;
+        border: 3px solid transparent;
+        border-top-color: rgb(224, 198, 29);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .modal-content {
+        background: rgb(252, 252, 252);
+        max-height: 90vh;
+        width: 45rem;
+        position: relative;
+        border-radius: 0.5rem;
+
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        .modal-filters {
+            width: 100%;
+            display: flex;
+            gap: 0.5rem;
+            padding: 0 2rem;
+            margin: 0 0 1rem 0;
+
+            select {
+                border: none;
+                appearance: none;
+                background-color: rgb(231, 231, 231);
+                border: none;
+                padding: 0 3rem 0 1rem;
+                border-radius: 0.25rem;
+                outline: none;
+            }
+
+            .search {
+                position: relative;
+                display: flex;
+                width: 100%;
+                align-items: center;
+
+                svg {
+                    right: 1rem;
+                    position: absolute;
+                    width: 1rem;
+                    height: 1rem;
+
+                    path {
+                        fill: black;
+                    }
+                }
+
+                div {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    border-radius: 0.25rem;
+                    border: 1px solid rgb(224, 198, 29);
+                    pointer-events: none;
+                    opacity: 0;
+                    transition: .1s;
+                }
+            }
+
+            input {
+                width: 100%;
+                height: 2.5rem;
+                background-color: rgb(231, 231, 231);
+                border: none;
+                padding: 0 1rem;
+                outline: none;
+                border-radius: 0.25rem;
+                transition: .1s;
+
+                &:focus {
+                    background-color: rgb(252, 252, 252);
+
+                    ~ {
+                        div {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        .modal-header {
+            height: 5rem;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+
+            div {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+
+            }
+
+
+
+            a {
+                width: 2rem;
+                height: 2rem;
+                border-radius: 100%;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.25rem;
+
+                border: none;
+                background-color: rgb(232, 232, 232);
+                position: relative;
+
+                &:hover {
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: calc(100% + 0.2rem);
+                    height: calc(100% + 0.2rem);
+                    opacity: 0;
+                    transition: .1s;
+                    border-radius: 100%;
+                    border: 2px solid rgb(113, 113, 113);
+                }
+
+                svg {
+                    width: 1.1rem;
+                    height: 1.1rem;
+
+                    path {
+                        fill: rgb(97, 97, 97);
+                    }
+                }
+            }
+
+            &.back {
+                a {
+                    display: flex;
+                }
+            }
+
+            button {
+                width: 2rem;
+                height: 2rem;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.25rem;
+
+                border: none;
+                background-color: rgb(255, 230, 230);
+                position: relative;
+
+                &:hover {
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: calc(100% + 0.2rem);
+                    height: calc(100% + 0.2rem);
+                    opacity: 0;
+                    transition: .1s;
+                    border-radius: 100%;
+                    border: 2px solid rgb(195, 89, 89);
+                }
+
+                svg {
+                    width: 1.1rem;
+                    height: 1.1rem;
+
+                    path {
+                        fill: rgb(163, 17, 17);
+                    }
+                }
+            }
+
+            h2 {
+                margin: 0;
+                font-weight: 500;
+                font-size: 1.5rem;
+                color: rgb(49, 49, 49);
+            }
+        }
+
+        .modal-list {
+            padding-bottom: 2rem;
+
+            .modal-wrapper {
+                display: flex;
+                flex-direction: column;
+                max-height: calc(90vh - 11rem);
+                overflow-y: auto;
+                padding: 0 2rem 0 2rem;
+                margin-right: 1px;
+
+                &::-webkit-scrollbar {
+                    width: 0.3rem;
+                    border-radius: 1rem;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: rgb(183, 183, 183);
+                    border-radius: 1rem;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background-color: transparent;
+                }
+
+                button {
+                    width: 100%;
+                    margin: 2rem auto 0 auto;
+                    padding: 0.75rem 2.5rem;
+                    background-color: rgb(224, 198, 29);
+                    border-radius: 10rem;
+                    border: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    position: relative;
+                    transition: .1s;
+
+                    &:hover {
+                        filter: brightness(110%);
+                    }
+                }
+
+                .news-list-wrapper {
+                    .news-item {
+                        width: 100%;
+                        display: flex;
+                        text-decoration: none;
+                        align-items: center;
+                        gap: 1.2rem;
+                        padding: 1rem 0;
+                        cursor: pointer;
+                        overflow: hidden;
+                        transition: .1s;
+
+                        &:hover {
+                            background: linear-gradient(120deg, white, transparent);
+                            padding: 1rem 0 1rem 0.5rem;
+                        }
+
+                        &:not(:last-child) {
+                            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                        }
+
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
+
+                        .thumb {
+                            aspect-ratio: 1.6;
+                            width: 6rem;
+                            display: none;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 0.25rem;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .info {
+                            display: flex;
+                            gap: 1rem;
+                            width: 100%;
+                            position: relative;
+
+                            p {
+                                margin: 0;
+                                font-size: 1rem;
+
+                                font-weight: 500;
+                                display: flex;
+                                flex-direction: column;
+                                color: rgb(52, 52, 52);
+
+                                span {
+                                    text-transform: capitalize;
+                                    margin: 0 0.25rem 0 0;
+                                    font-size: 0.9rem;
+                                    font-weight: 400;
+                                    color: rgb(152, 135, 20);
+                                }
+                            }
+
+                            .title {
+                                color: black;
+                                font-weight: 500;
+                            }
+
+                            .game {
+                                display: flex;
+                                align-items: center;
+                                gap: 0.5rem;
+                                color: rgb(162, 162, 162);
+                                font-weight: 500;
+                                font-size: 0.9rem;
+                                justify-content: space-between;
+                                font-weight: 400;
+
+                                div:nth-child(1) {
+
+
+                                    span {
+                                        display: none;
+                                    }
+                                }
+
+                                div:nth-child(2) {
+                                    position: absolute;
+                                    right: 0;
+                                    font-weight: 300 !important;
+                                }
+
+                                div {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 0.4rem;
+                                }
+
+                                img {
+                                    width: 2rem;
+                                    height: 2rem;
+                                    object-fit: cover;
+
+                                    border-radius: 0.2rem;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+
+        .modal-single {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            max-height: calc(90vh - 5rem);
+            overflow-y: auto;
+            margin-right: 1px;
+
+            &::-webkit-scrollbar {
+                width: 0.3rem;
+                border-radius: 1rem;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: rgb(183, 183, 183);
+                border-radius: 1rem;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: transparent;
+            }
+
+            .heading {
+                padding: 2rem;
+
+                h2 {
+                    margin: 0.6rem 0 0 0;
+
+                }
+            }
+
+            .modal-body {
+                padding: 0 2rem 2rem 2rem;
+
+                p {
+                    &:last-child {
+                        margin: 0;
+                    }
+                }
+            }
+
+            .modal-game-date {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                color: gray;
+
+                div {
+                    display: flex;
+                }
+
+                img {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    object-fit: cover;
+                    border-radius: 0.2rem;
+                }
+            }
+
+            .related {
+                background-color: rgb(245, 245, 245);
+
+                padding: 2rem 2rem 2rem 2rem;
+
+                h3 {
+                    font-weight: 500;
+                    color: rgb(106, 106, 106);
+                    margin: 0 0 0.5rem 0;
+                }
+            }
+
+            .related-news {
+                .news-item {
+                    width: 100%;
+                    display: flex;
+                    text-decoration: none;
+                    align-items: center;
+                    gap: 1.2rem;
+                    padding: 1rem 0;
+                    cursor: pointer;
+                    overflow: hidden;
+                    transition: .1s;
+
+                    &:hover {
+
+                        padding: 1rem 0 1rem 0.5rem;
+                    }
+
+                    &:not(:last-child) {
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                    }
+
+                    &:last-child {
+                        padding-bottom: 0;
+                    }
+
+                    .thumb {
+                        aspect-ratio: 1.6;
+                        width: 6rem;
+                        display: none;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 0.25rem;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .info {
+                        display: flex;
+                        gap: 1rem;
+                        width: 100%;
+                        position: relative;
+
+                        p {
+                            margin: 0;
+                            font-size: 1rem;
+
+                            font-weight: 500;
+                            display: flex;
+                            flex-direction: column;
+                            color: rgb(52, 52, 52);
+
+                            span {
+                                text-transform: capitalize;
+                                margin: 0 0.25rem 0 0;
+                                font-size: 0.9rem;
+                                font-weight: 400;
+                                color: rgb(152, 135, 20);
+                            }
+                        }
+
+                        .title {
+                            color: black;
+                            font-weight: 500;
+                        }
+
+                        .game {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                            color: rgb(162, 162, 162);
+                            font-weight: 500;
+                            font-size: 0.9rem;
+                            justify-content: space-between;
+                            font-weight: 400;
+
+                            div:nth-child(1) {
+
+
+                                span {
+                                    display: none;
+                                }
+                            }
+
+                            div:nth-child(2) {
+                                position: absolute;
+                                right: 0;
+                                font-weight: 300 !important;
+                            }
+
+                            div {
+                                display: flex;
+                                align-items: center;
+                                gap: 0.4rem;
+                            }
+
+                            img {
+                                width: 2rem;
+                                height: 2rem;
+                                object-fit: cover;
+
+                                border-radius: 0.2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

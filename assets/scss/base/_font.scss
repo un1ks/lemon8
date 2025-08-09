@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+//
+
+
+@font-face {
+    font-family: 'GT Maru';
+    src: url('../../assets/font/GTMaru-Bold.woff2') format('woff2'),
+        url('../../assets/font/GTMaru-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Maru';
+    src: url('../../assets/font/GTMaru-Regular.woff2') format('woff2'),
+        url('../../assets/font/GTMaru-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Maru';
+    src: url('../../assets/font/GTMaru-Black.woff2') format('woff2'),
+        url('../../assets/font/GTMaru-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Maru';
+    src: url('../../assets/font/GTMaru-Medium.woff2') format('woff2'),
+        url('../../assets/font/GTMaru-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+@font-face {
+    font-family: 'Saira';
+    src: url('../../assets/font/SairaExtraCondensed-SemiBold.woff2') format('woff2'),
+        url('../../assets/font/SairaExtraCondensed-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Saira';
+    src: url('../../assets/font/SairaExtraCondensed-Black.woff2') format('woff2'),
+        url('../../assets/font/SairaExtraCondensed-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+

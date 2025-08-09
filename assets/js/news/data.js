@@ -1,0 +1,9 @@
+const newsArray = [
+    { id: 1, thumb: "assets/images/v4-thumb.png", type: "event", gameIcon: "assets/images/app_v4.webp", gameName: "V4", date: "2025-08-01", title: "Metin2 Summer Festival", content: "<p>Join the summer event with amazing rewards and events in Metin2!</p>" },
+    { id: 2, thumb: "assets/images/v2-thumb.png", type: "update", gameIcon: "assets/images/app-icon2.png", gameName: "Pixel Saga", date: "2025-08-03", title: "Pixel Saga Patch Notes", content: "<ul><li>Class rebalance</li><li>New Boss added</li></ul>" },
+    { id: 3, thumb: "assets/images/v4-thumb.png", type: "notice", gameIcon: "assets/images/app_v4.webp", gameName: "V4", date: "2025-08-05", title: "Flame Dungeon Update", content: "<p>New dungeon added with rare loot and timed events!</p>" },
+    { id: 4, thumb: "assets/images/v4-thumb.png", type: "event", gameIcon: "assets/images/app_v4.webp", gameName: "V4", date: "2025-08-06", title: "Archery Event Incoming", content: "<p>Try your luck in the new archery event for exclusive rewards.</p>" },
+    { id: 5, thumb: "assets/images/v2-thumb.png", type: "event", gameIcon: "assets/images/app-icon2.png", gameName: "Pixel Saga", date: "2025-08-07", title: "Dragon Slayer Event", content: "<p>Defeat dragons and earn rare equipment in this new timed event!</p>" },
+    { id: 6, thumb: "assets/images/v4-thumb.png", type: "event", gameIcon: "assets/images/app_v4.webp", gameName: "V4", date: "2025-08-08", title: "Guild War Update", content: "<p>Guild wars now support up to 100 players with new maps and rules.</p>" },
+    { id: 7, thumb: "assets/images/v4-thumb.png", type: "event", gameIcon: "assets/images/app_v4.webp", gameName: "V4", date: "2025-08-08", title: "Guild War Update", content: "<p>Guild wars now support up to 100 players with new maps and rules.</p>" },
+];

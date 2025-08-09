@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
+::before,
+::after {
+    pointer-events: none;
+}
+
+body {
+    margin: 0;
+    font-family: $font;
+
+    background-color: $body;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+.le__scrollbar {
+    position: fixed;
+    top: 0.5rem;
+    right: 0;
+    width: 15px;
+    height: calc(100% - 1rem);
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+
+    .le__sthumb {
+        position: absolute;
+        width: 4px;
+        background: rgb(103, 103, 103);
+        border-radius: 3px;
+
+    }
+}
+
+
+input,
+button,
+select,
+textarea {
+    font-size: 1rem;
+    font-family: $font;
+}
+
+button {
+    cursor: pointer;
+
+    &:active {
+        opacity: 0.8;
+        transform: scale(0.99);
+    }
+}
+
+html {
+    font-size: var(--base-font-size);
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.fancybox-bg {
+    background: black !important;
+}
+
+.compensate-for-scrollbar {
+    margin-right: 0 !important;
+}
+
+.fancybox-iosfix {
+    position: absolute !important;
+}

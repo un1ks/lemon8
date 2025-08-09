@@ -1,0 +1,100 @@
+.custom__select {
+    width: 100%;
+
+    .default {
+        display: none;
+    }
+
+    &.light {
+        position: relative;
+
+        height: fit-content;
+        width: fit-content;
+
+        .custom {
+            position: relative;
+            cursor: pointer;
+
+            .icon {
+                width: 2.5rem;
+                height: 2.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                right: 0;
+                top: 0;
+                pointer-events: none;
+                transition: .4s;
+           
+
+                svg {
+                    width: 0.75rem;
+                    height: 0.75rem;
+                    transition: .4s;
+
+                    path {
+                        fill: rgb(94, 94, 94);
+                    }
+                }
+            }
+        }
+
+        .trigger {
+            background-color: rgb(231, 231, 231);
+            border: none;
+            padding: 0 3rem 0 1rem;
+            border-radius: 0.25rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            min-width: 10rem;
+        }
+
+        .options {
+            position: absolute;
+            width: 100%;
+            z-index: 6;
+            overflow-y: auto;
+            background-color: rgb(39, 39, 39);
+            top: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            overflow: hidden;
+            border-radius: 0.4rem;
+            padding: 1rem;
+   
+
+            &.open {
+                top: 2.75rem;
+                opacity: 1;
+                pointer-events: all;
+                 transition: .2s;
+
+                ~ {
+                    .icon {
+                        svg {
+                            transform: rotateX(180deg);
+                        }
+                    }
+                }
+            }
+        }
+
+        .option {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: .2s;
+            color: rgb(158, 158, 158);
+
+            &:not(:last-child) {
+                margin-bottom: 0.75rem;
+            }
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}
