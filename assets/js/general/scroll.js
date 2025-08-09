@@ -26,7 +26,6 @@ function updateThumbPosition() {
     thumb.style.top = `${scrollRatio * maxThumbTop}px`;
 }
 
-// 👇 THIS is the core fix
 let isDragging = false;
 let initialMouseY = 0;
 let initialScrollY = 0;
@@ -72,7 +71,6 @@ thumb.addEventListener('mousedown', (e) => {
     document.addEventListener('mouseup', onMouseUp);
 });
 
-// Click track to jump
 scrollbar.addEventListener('click', (e) => {
     if (e.target === thumb) return;
 
@@ -91,13 +89,11 @@ scrollbar.addEventListener('click', (e) => {
     });
 });
 
-// Sync on scroll/resize
 window.addEventListener('scroll', updateThumbPosition);
 window.addEventListener('resize', () => {
     updateThumbSize();
     updateThumbPosition();
 });
 
-// Init
 updateThumbSize();
 updateThumbPosition();
