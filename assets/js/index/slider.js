@@ -12,6 +12,7 @@ const mainSlider = new Swiper('.le__slider .slider', {
   slidesPerView: 1,
   spaceBetween: 0,
   loop: true,
+  watchSlidesProgress: true,
   loopedSlides: totalSlides,
   autoplay: {
     delay: 5000,

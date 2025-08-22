@@ -1,0 +1,586 @@
+.shop {
+    margin: 0 auto;
+    padding: 0 0 4rem 0;
+    position: relative;
+
+    .heading {
+        background-color: var(--menu-bg);
+        display: flex;
+        align-items: center;
+
+        a {
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--container);
+            border-radius: 100%;
+            transition: .2s;
+
+            &:hover {
+                background-color: var(--btn-color);
+
+                svg {
+                    opacity: 1;
+
+                    path {
+                        fill: var(--btn-font-color);
+                    }
+                }
+            }
+
+            svg {
+                width: 1.125rem;
+                opacity: 0.6;
+                height: 1.125rem;
+                transition: .2s;
+
+                border-radius: 100%;
+
+                path {
+                    transition: .2s;
+                    fill: var(--text-primary);
+                }
+
+            }
+        }
+
+        .title {
+            width: min(85rem, 90%);
+            margin: 0 auto;
+            align-items: center;
+            gap: 0.825rem;
+            display: flex;
+            padding: 1.25rem 0;
+
+            h2 {
+                color: var(--text-primary);
+                margin: 0;
+            }
+        }
+    }
+
+    .shop-menu {
+        background-color: var(--menu-bg);
+        border-top: 1px solid var(--body-color);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        margin: 0 0 2rem 0;
+
+        .-wrapper {
+            width: min(85rem, 90%);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid var(--body-color);
+
+            .list {
+                ul {
+                    display: flex;
+                    gap: 3rem;
+
+                    li {
+                        a {
+                            border: none;
+                            background-color: transparent;
+                            color: var(--text-secondary);
+                            border-radius: 10rem;
+                            font-weight: 600;
+                            position: relative;
+                            text-decoration: none;
+                            padding: 1.25rem 0;
+                            display: flex;
+                            transition: .2s;
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                bottom: 1px;
+                                height: 2px;
+                                left: 0;
+                                width: 100%;
+                                background-color: var(--btn-color);
+                                opacity: 0;
+
+                            }
+
+                            &.active {
+                                color: var(--text-primary);
+
+                                &::before {
+                                    opacity: 1;
+                                }
+                            }
+
+                            &:hover {
+                                color: var(--text-primary);
+                            }
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+
+    .user {
+        display: flex;
+        align-items: center;
+
+        gap: 0.5rem;
+
+        .balance {
+            width: 100%;
+
+            a {
+                display: flex;
+                align-items: center;
+                color: var(--text-primary);
+
+                padding: 0.55rem 0.75rem;
+
+                justify-content: space-between;
+                gap: 0.5rem;
+                width: 100%;
+                text-decoration: none;
+                transition: .2s;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background-color: rgb(70, 142, 205);
+                    border-radius: 0.5rem;
+                    opacity: 0.25;
+                }
+
+                span {
+                    display: flex;
+                    align-items: center;
+                    color: var(--btn-font-color);
+                    text-decoration: none;
+                    border-radius: 100%;
+                    justify-content: center;
+                    font-size: 1.5rem;
+
+                    position: relative;
+
+                    svg {
+                        width: 1rem;
+                        height: 1rem;
+
+                        path {
+                            fill: rgb(102, 137, 226);
+                        }
+                    }
+                }
+
+                img {
+                    width: 1rem;
+                }
+
+                div {
+                    display: flex;
+                    position: relative;
+                    align-items: center;
+                    gap: 0.5rem;
+
+                }
+            }
+
+        }
+
+        .select {
+            display: flex;
+            align-items: center;
+            background-color: var(--container);
+            white-space: nowrap;
+            border-radius: 0.5rem;
+            gap: 1rem;
+            width: 100%;
+            cursor: pointer;
+            justify-content: space-between;
+            border: 1px solid transparent;
+            transition: .2s;
+            padding: 0.55rem 0.75rem;
+
+
+            p {
+                margin: 0;
+                color: var(--text-secondary);
+                font-weight: 500;
+                transition: .2s;
+            }
+
+            strong {
+                color: var(--text-primary);
+            }
+
+            svg {
+                width: 1rem;
+                height: 1rem;
+                opacity: 0.5;
+
+                path {
+                    fill: var(--text-secondary);
+                }
+            }
+
+            span {
+                display: flex;
+                align-items: center;
+                color: var(--text-secondary);
+                font-weight: 600;
+                transition: .2s;
+                gap: 0.25rem;
+
+
+                svg {
+                    width: 1rem;
+                    height: 1rem;
+                    opacity: 0.5;
+
+                    path {
+                        fill: var(--text-secondary);
+                    }
+                }
+            }
+
+            button {
+                font-size: 0.825rem;
+                display: none;
+                border-radius: 10rem;
+                background-color: var(--secondary-btn);
+                color: var(--secondary-btn-text);
+                padding: 0.3rem 0.5rem;
+            }
+        }
+
+
+    }
+
+    .wrapper {
+        display: flex;
+
+        flex-direction: column;
+
+        .container {
+            width: min(85rem, 90%);
+            margin: 0 auto;
+
+            .topup {
+                border-radius: 0.5rem;
+
+                .list {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 1.5rem;
+                    position: relative;
+
+                    .filters {
+                        display: flex;
+                        gap: 0.5rem;
+                        flex-direction: column;
+                        margin: 0 0 1.25rem 0;
+                        width: 13rem;
+                        position: sticky;
+                        top: 5.25rem;
+                        height: fit-content;
+
+                        .select {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            position: relative;
+
+                            svg {
+                                position: absolute;
+                                right: 1rem;
+
+                                width: 1rem;
+                                height: 1rem;
+
+                                path {
+                                    fill: var(--text-secondary);
+                                }
+                            }
+
+                            select {
+                                width: 100%;
+                                outline: none;
+                                cursor: pointer;
+                                pointer-events: none;
+
+                                appearance: none;
+
+                                background-color: var(--container);
+                                border-radius: 0.5rem;
+                                border: none;
+                                padding: 0.75rem 1rem;
+                                color: var(--text-secondary);
+                            }
+
+                        }
+
+                        .input {
+                            width: 100%;
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+
+                            svg {
+                                position: absolute;
+                                right: 1rem;
+
+                                width: 1rem;
+                                height: 1rem;
+
+                                path {
+                                    fill: var(--text-secondary);
+                                }
+                            }
+
+                            input {
+                                width: 100%;
+
+                                outline: none;
+
+                                background-color: var(--container);
+                                border-radius: 0.5rem;
+                                border: none;
+                                color: var(--text-primary);
+                                padding: 0.75rem 2rem 0.75rem 1rem;
+
+                                &::placeholder {
+                                    color: var(--text-secondary);
+                                }
+                            }
+                        }
+
+                        button {
+                            border-radius: 0.5rem;
+                            padding: 0.75rem 1rem;
+                            color: var(--text-secondary);
+                            border: none;
+                            border: 1px solid var(--shop-filter-btn);
+                            font-weight: 600;
+                            background-color: transparent;
+                            transition: .2s;
+
+                            &.active {
+                                background-color: var(--btn-color);
+                                color: var(--btn-font-color);
+                                border-color: transparent;
+
+                                &:hover {
+                                    color: var(--btn-font-color);
+                                }
+                            }
+
+                            &:hover {
+                                border-color: var(--btn-color);
+                                color: var(--text-primary);
+                            }
+                        }
+                    }
+
+                    .items {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+                        width: calc(100% - 13.5rem);
+
+                        .-heading {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            display: none;
+
+                            .total {
+                                color: var(--text-secondary);
+                                font-size: 1.25rem;
+                                display: none;
+
+                                strong {
+                                    color: var(--text-primary);
+                                }
+                            }
+                        }
+                    }
+
+                    ul {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 1.5rem 1rem;
+                        width: 100%;
+
+                        li {
+                            width: calc(25% - 0.8rem);
+                            display: flex;
+                            flex-direction: column;
+                            overflow: hidden;
+                            text-decoration: none;
+                            text-align: center;
+                            background-color: var(--shop-container);
+                            border-radius: 0.5rem;
+
+                            transition: .2s;
+                            position: relative;
+                            cursor: pointer;
+
+
+                            .tags {
+
+                                z-index: 1;
+                                position: absolute;
+                                top: 1rem;
+                                left: 1rem;
+
+                                display: flex;
+                                align-items: center;
+                                gap: 0.5rem;
+
+                                .timer {
+                                    font-size: 0.825rem;
+                                    padding: 0.325rem 0.65rem 0.325rem 0.55rem;
+                                    background-color: var(--container);
+                                    border-radius: 10rem;
+                                    color: var(--text-primary);
+                                    display: flex;
+                                    gap: 0.25rem;
+                                    align-items: center;
+
+                                    svg {
+                                        width: 0.825rem;
+                                        height: 0.825rem;
+                                        opacity: 0.5;
+
+                                        path {
+                                            fill: var(--text-primary);
+                                        }
+                                    }
+                                }
+
+                                .new {
+                                    border-radius: 10rem;
+                                    padding: 0.325rem 0.55rem;
+                                    color: rgba(255, 255, 255, 1);
+                                    font-size: 0.825rem;
+                                    background: linear-gradient(120deg, rgb(121, 19, 19), rgb(159, 22, 22));
+                                }
+                            }
+
+                            &:hover {
+
+                                .btn {
+                                    button {
+                                        background-color: var(--secondary-btn);
+                                      
+                                        border-color: transparent;
+                                    }
+                                }
+
+
+                            }
+
+                            .title {
+                                color: var(--text-primary);
+                                font-weight: 600;
+
+                                opacity: 0.8;
+                                font-size: 1rem;
+                                text-align: left;
+
+                            }
+
+                            .desc {
+                                color: var(--text-secondary);
+                                margin: 0 0 1.25rem 0;
+                                font-size: 0.925rem;
+                                display: none;
+
+                            }
+
+                            .img {
+                                position: relative;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                aspect-ratio: 1;
+
+                                padding: 1.5rem 0 0 0;
+                                background: var(--shop-thumb-bg);
+
+                                img {
+                                    width: 8rem;
+                                }
+
+                            }
+
+                            .main-info {
+                                display: flex;
+                                padding: 1rem;
+                                justify-content: space-between;
+                                align-items: center;
+                                gap: 1.5rem;
+                            }
+
+
+                            .btn {
+
+
+                                button {
+                                    display: flex;
+                                    align-items: center;
+                                    transition: .2s;
+                                    gap: 0.5rem;
+
+                                    padding: 0 1rem;
+                                    border-radius: 0.5rem;
+                                    background-color: transparent;
+                                    justify-content: center;
+                                    height: 2.55rem;
+                                    margin: 0 auto;
+                                    background-color: transparent;
+                                    color: var(--text-primary);
+                                    font-weight: 600;
+                                    font-size: 1.125rem;
+
+
+                                    border: 1px solid rgba(128, 128, 128, 0.2);
+
+                                    cursor: pointer;
+                                }
+
+                                img {
+
+                                    width: 1rem;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                h2 {
+                    margin: 0 0 1rem 0;
+                    color: var(--text-primary);
+                }
+            }
+
+            .banners {
+                width: 100%;
+                height: 15rem;
+                background-color: black;
+                border-radius: 0.5rem;
+            }
+        }
+    }
+}

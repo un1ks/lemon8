@@ -1,9 +1,9 @@
 .le__footer {
-    background-color: rgb(224, 224, 224);
+    background-color: var(--footer-bg);
 
     .footer {
         width: min(85rem, 90%);
-        padding: 4rem 0;
+        padding: 3rem 0;
         margin: 0 auto;
         text-align: center;
         font-size: 0.85rem;
@@ -12,6 +12,7 @@
             margin: 0 0 1.5rem 0;
             img {
                 max-width: 6rem;
+                filter: var(--footer-logo);
             }
         }
 
@@ -26,11 +27,11 @@
                     a {
                         font-weight: 600;
                         text-decoration: none;
-                        color: black;
+                        color: var(--footer-primary-text);
                         transition: .2s;
 
                         &:hover {
-                            color: gray;
+                            color: var(--footer-secondary-text);
                         }
                     }
                 }
@@ -40,7 +41,7 @@
         .copyright {
             p {
                 margin: 0;
-                color: gray;
+                color: var(--footer-secondary-text);
             }
 
         }

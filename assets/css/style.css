@@ -7,7 +7,7 @@
   top: 0;
   height: 4rem;
   padding: 0 2rem;
-  background-color: rgb(10, 10, 10);
+  background-color: rgb(14, 14, 14);
   z-index: 10;
 }
 .le__navigation .logo {
@@ -96,9 +96,9 @@
   fill: white;
 }
 .le__navigation .user .account .holder button {
-  background-color: rgb(224, 198, 29);
+  background-color: var(--btn-color);
+  color: var(--btn-font-color);
   border-radius: 5rem;
-  color: black;
   padding: 0 1.125rem;
   height: 2.25rem;
   display: flex;
@@ -204,11 +204,11 @@
 }
 
 .le__footer {
-  background-color: rgb(224, 224, 224);
+  background-color: var(--footer-bg);
 }
 .le__footer .footer {
   width: min(85rem, 90%);
-  padding: 4rem 0;
+  padding: 3rem 0;
   margin: 0 auto;
   text-align: center;
   font-size: 0.85rem;
@@ -218,6 +218,7 @@
 }
 .le__footer .footer .logos img {
   max-width: 6rem;
+  filter: var(--footer-logo);
 }
 .le__footer .footer .links {
   margin: 0 0 0.5rem 0;
@@ -230,15 +231,15 @@
 .le__footer .footer .links ul li a {
   font-weight: 600;
   text-decoration: none;
-  color: black;
+  color: var(--footer-primary-text);
   transition: 0.2s;
 }
 .le__footer .footer .links ul li a:hover {
-  color: gray;
+  color: var(--footer-secondary-text);
 }
 .le__footer .footer .copyright p {
   margin: 0;
-  color: gray;
+  color: var(--footer-secondary-text);
 }
 
 .le__index {
@@ -251,11 +252,6 @@
 }
 .le__slider .main {
   height: 100%;
-  mask: url(../../assets/images/mask.png);
-  mask-size: auto 513px;
-  mask-position: 50% 0;
-  mask-repeat: no-repeat;
-  padding: 1.5rem 0;
 }
 .le__slider .background {
   position: absolute;
@@ -288,10 +284,22 @@
   opacity: 1;
 }
 .le__slider .slider {
-  width: min(85rem, 90%);
+  width: 100%;
   margin: 0 auto;
   height: 100%;
   position: relative;
+}
+.le__slider .slider::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5rem;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
 }
 .le__slider .slider:hover .arrow {
   opacity: 1;
@@ -299,13 +307,10 @@
 .le__slider .slider:hover .arrow div {
   transform: scale(1);
 }
-.le__slider .slider:hover ul li.swiper-slide-active .container {
-  transform: translateY(-2rem) translateX(2.5rem);
-}
 .le__slider .arrow {
   position: absolute;
   height: 100%;
-  width: 7rem;
+  width: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -352,18 +357,20 @@
 }
 .le__slider .control {
   position: absolute;
-  bottom: 1.5rem;
-  border-radius: 0 0 1rem 1rem;
-  backdrop-filter: blur(2rem);
+  bottom: 2rem;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(10rem);
   margin: 0 auto;
   left: 0;
   right: 0;
   display: flex;
   z-index: 2;
   width: min(85rem, 90%);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(24, 24, 24, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   align-items: center;
   overflow: hidden;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
 }
 .le__slider .control.paused .swiper-slide.swiper-slide-active::after {
   animation-play-state: paused;
@@ -380,14 +387,17 @@
 .le__slider .control .opt:hover p {
   color: white;
 }
+.le__slider .control .opt.swiper-slide-active {
+  background-color: rgb(17, 17, 17);
+}
 .le__slider .control .opt.swiper-slide-active p {
   color: white;
 }
 .le__slider .control .opt.swiper-slide-active::before {
-  opacity: 1;
+  opacity: 0;
 }
 .le__slider .control .opt.swiper-slide-active::after {
-  opacity: 0.15;
+  opacity: 0.8;
   animation: width 5s;
 }
 @keyframes width {
@@ -411,11 +421,12 @@
 .le__slider .control .opt::after {
   content: "";
   background-color: rgb(255, 255, 255);
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   width: 100%;
-  height: 100%;
+  height: 1px;
   opacity: 0;
+  border-radius: 10rem;
   position: absolute;
 }
 .le__slider .control .opt:not(:last-child) {
@@ -502,26 +513,27 @@
   position: relative;
   z-index: 2;
   height: 100%;
-  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.15);
   overflow: hidden;
   margin: 0 auto;
 }
 .le__slider .wrapper .container {
   position: relative;
-  padding: 0 0 0 5rem;
   margin: 0 auto;
   height: 100%;
   z-index: 1;
   transition: 0.2s;
+  width: min(85rem, 90%);
 }
 .le__slider .wrapper .container h1 {
   color: white;
   font-size: 2.5rem;
   text-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.5);
+  line-height: 2.5rem;
 }
 .le__slider .wrapper .container .content {
   width: 50%;
-  height: 100%;
+  padding: 1.5rem 0 0 0;
+  height: calc(100% - 4rem);
   position: relative;
   z-index: 1;
   display: flex;
@@ -534,17 +546,16 @@
   border-radius: 0.5rem;
 }
 .le__slider .wrapper .container a {
-  height: 3rem;
+  height: 2.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 1.5rem;
   width: fit-content;
-  color: rgb(224, 198, 29);
+  color: black;
   border-radius: 5rem;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgb(232, 232, 232);
   text-decoration: none;
-  border: 1px solid rgb(224, 198, 29);
   border-radius: 2rem;
   font-weight: 600;
   font-size: 1.125rem;
@@ -580,7 +591,7 @@
 .le__gamelist {
   position: relative;
   z-index: 5;
-  background: linear-gradient(rgba(255, 255, 255, 0.5), transparent);
+  background: linear-gradient(rgba(255, 255, 255, 0), transparent);
 }
 .le__gamelist .gamelist {
   width: min(85rem, 90%);
@@ -752,7 +763,7 @@
 }
 .le__gamelist .gamelist .list.development .games ul li .info .gallery .gal .swiper-wrapper div {
   width: 100%;
-  aspect-ratio: 1.8;
+  aspect-ratio: 1.6;
   background-color: black;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -1074,14 +1085,24 @@
   aspect-ratio: 1.6;
   border: 1px solid rgb(175, 175, 175);
   overflow: hidden;
-  box-shadow: 0 0.3rem 0.2rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.3rem 0.2rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   transition: 0.1s;
 }
 .le__gamelist .gamelist .list.featured ul li .thumb::before {
   content: "";
   position: absolute;
-  background: linear-gradient(rgba(40, 40, 40, 0), transparent, rgb(32, 32, 32));
+  background: linear-gradient(-150deg, rgba(40, 40, 40, 0), transparent, rgb(40, 40, 40));
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+.le__gamelist .gamelist .list.featured ul li .thumb::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(rgba(40, 40, 40, 0), transparent, rgb(40, 40, 40));
   top: 0;
   left: 0;
   z-index: 1;
@@ -1128,8 +1149,8 @@
 .le__gamelist .gamelist .heading .filters button {
   border: none;
   border-radius: 10rem;
-  background-color: rgba(210, 206, 191, 0);
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgb(199, 199, 199);
+  border: 1px solid rgba(0, 0, 0, 0);
   color: rgb(48, 48, 48);
   font-weight: 600;
   padding: 0 1rem;
@@ -1180,6 +1201,7 @@
 .le__news {
   overflow: hidden;
   position: relative;
+  display: none;
 }
 .le__news .background {
   width: 100%;
@@ -1217,7 +1239,7 @@
   cursor: pointer;
   border-radius: 0.5rem;
   position: relative;
-  box-shadow: 0 0.3rem 0.2rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.3rem 0.2rem rgba(0, 0, 0, 0.1);
 }
 .le__news .news .list .news-list .news-item:hover .thumb img {
   transform: scale(1.05);
@@ -1225,7 +1247,7 @@
 .le__news .news .list .news-list .news-item .thumb {
   aspect-ratio: 1.2;
   width: 100%;
-  border-radius: 0.5rem;
+  border-radius: 0.5rem 0.5rem 1rem 1rem;
   overflow: hidden;
 }
 .le__news .news .list .news-list .news-item .thumb div {
@@ -1244,9 +1266,10 @@
   flex-direction: column;
   gap: 0.5rem;
   position: absolute;
+  border-radius: 0 0 0.5rem 0.5rem;
   bottom: 0;
-  backdrop-filter: blur(10rem);
   width: 100%;
+  background: linear-gradient(rgba(40, 40, 40, 0.95), rgb(40, 40, 40));
 }
 .le__news .news .list .news-list .news-item .info p {
   margin: 0;
@@ -1312,8 +1335,8 @@
 .le__news .news .heading .filters button {
   border: none;
   border-radius: 10rem;
-  background-color: rgba(210, 206, 191, 0);
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgb(196, 196, 196);
+  border: 1px solid rgba(0, 0, 0, 0);
   color: rgb(48, 48, 48);
   font-weight: 600;
   padding: 0 1rem;
@@ -1359,6 +1382,1216 @@
   height: 1rem;
   opacity: 0.6;
   object-fit: contain;
+}
+
+body.light {
+  --body-color: rgb(241, 241, 241);
+  --menu-bg: rgb(255, 255, 255);
+  --menu-secondary: rgb(255, 255, 255);
+  --menu-border: rgb(240, 240, 240);
+  --menu-text: rgb(101, 101, 101);
+  --menu-text-hover: black;
+  --container: rgb(250, 250, 250);
+  --container-special: linear-gradient(rgb(42, 42, 42), rgb(38, 38, 38));
+  --container-special-text: white;
+  --container-border: rgb(205, 205, 205);
+  --text-primary: black;
+  --text-secondary: rgb(101, 101, 101);
+  --secondary-btn: rgb(225, 225, 225);
+  --secondary-btn-hover: rgb(72, 72, 72);
+  --secondary-btn-text: rgb(72, 72, 72);
+  --slide-btn: white;
+  --slide-icon: black;
+  --shop-filter-btn: rgb(216, 216, 216);
+  --shop-menu: rgb(250, 250, 250);
+  --shop-container: rgb(252, 252, 252);
+  --news-container: rgba(255, 255, 255, 0);
+  --footer-bg: rgb(31, 31, 31);
+  --footer-primary-text: rgb(183, 183, 183);
+  --footer-secondary-text: gray;
+  --footer-logo: invert(80%) ;
+}
+body.dark {
+  --body-color: rgb(21, 21, 21);
+  --menu-bg: rgb(14, 14, 14);
+  --menu-border: rgba(255, 255, 255, 0.117);
+  --menu-text: rgb(160, 160, 160);
+  --menu-text-hover: rgb(241, 241, 241);
+  --container: rgb(34, 34, 34);
+  --container-special: linear-gradient(rgb(44, 44, 44), rgb(36, 36, 36));
+  --container-special-text: white;
+  --container-border: rgb(38, 38, 38);
+  --text-primary: rgb(229, 229, 229);
+  --text-secondary: rgb(147, 147, 147);
+  --secondary-btn: rgb(50, 50, 50);
+  --secondary-btn-hover: rgb(59, 59, 59);
+  --secondary-btn-text: rgb(217, 217, 217);
+  --slide-btn: rgb(19, 19, 19);
+  --slide-icon: white;
+  --shop-filter-btn: rgb(23, 23, 23);
+  --shop-filter-btn: rgb(40, 40, 40);
+  --shop-menu: rgb(32, 32, 32);
+  --shop-container: rgb(33, 33, 33);
+  --news-container: rgb(30, 30, 30);
+  --footer-bg: rgb(31, 31, 31);
+  --footer-primary-text: rgb(129, 129, 129);
+  --footer-secondary-text: rgb(73, 73, 73);
+  --footer-logo: invert(80%) ;
+}
+
+.le__gamepage {
+  background-color: var(--body-color);
+}
+.le__gamepage .gamepage .header {
+  position: relative;
+}
+.le__gamepage .gamepage .header .wrapper {
+  height: 22rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.le__gamepage .gamepage .header .container {
+  width: min(85rem, 90%);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.le__gamepage .gamepage .header .container .game .icon {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin: 0 0 2rem 0;
+}
+.le__gamepage .gamepage .header .container .game .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.le__gamepage .gamepage .header .container .game .devices {
+  display: flex;
+  color: rgba(255, 255, 255, 0.5);
+  gap: 0.5rem;
+  display: none;
+}
+.le__gamepage .gamepage .header .container .game .devices ul {
+  display: flex;
+  gap: 1rem;
+}
+.le__gamepage .gamepage .header .container .game .btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.le__gamepage .gamepage .header .container .game .btn .primary {
+  width: fit-content;
+  min-width: 15rem;
+  border: none;
+  border-radius: 10rem;
+  background-color: var(--btn-color);
+  color: var(--btn-font-color);
+  height: 4rem;
+  font-weight: bold;
+  padding: 0 4rem;
+  font-size: 1.35rem;
+  gap: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.le__gamepage .gamepage .header .container .game .btn .primary:hover::before {
+  opacity: 1;
+}
+.le__gamepage .gamepage .header .container .game .btn .primary::before {
+  content: "";
+  position: absolute;
+  width: calc(100% + 0.2rem);
+  height: calc(100% + 0.2rem);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 10rem;
+  opacity: 0;
+  transition: 0.1s;
+}
+.le__gamepage .gamepage .header .container .game .btn .primary svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.le__gamepage .gamepage .header .container .game .btn .primary svg path {
+  fill: var(--btn-font-color);
+}
+.le__gamepage .gamepage .header .container .game .btn .play {
+  width: 4rem;
+  height: 4rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0);
+  transition: 0.1s;
+}
+.le__gamepage .gamepage .header .container .game .btn .play:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.le__gamepage .gamepage .header .container .game .btn .play:hover svg {
+  opacity: 1;
+}
+.le__gamepage .gamepage .header .container .game .btn .play:hover::before {
+  opacity: 1;
+}
+.le__gamepage .gamepage .header .container .game .btn .play::before {
+  content: "";
+  position: absolute;
+  width: calc(100% + 0.2rem);
+  height: calc(100% + 0.2rem);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 100%;
+  opacity: 0;
+  transition: 0.1s;
+}
+.le__gamepage .gamepage .header .container .game .btn .play svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  opacity: 0.6;
+  transition: 0.1s;
+}
+.le__gamepage .gamepage .header .container .game .btn .play svg path {
+  fill: white;
+}
+.le__gamepage .gamepage .header .container .game .name {
+  color: white;
+  margin: 0 0 0.5rem 0;
+}
+.le__gamepage .gamepage .header .container .game .name h1 {
+  margin: 0;
+  font-size: 3rem;
+  text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.le__gamepage .gamepage .header .container .game .name h1 .tags {
+  position: relative;
+  bottom: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.le__gamepage .gamepage .header .container .game .name h1 .tags .devices {
+  gap: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.25rem;
+}
+.le__gamepage .gamepage .header .container .game .name h1 .tags .devices img {
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+  opacity: 0.6;
+}
+.le__gamepage .gamepage .header .container .game .name h1 .tags .tag {
+  left: 0.25rem;
+  position: relative;
+  font-size: 0.825rem;
+  color: rgba(255, 255, 255, 0.683);
+  border-radius: 10rem;
+  background-color: rgba(22, 22, 22, 0.604);
+  padding: 0.4rem 0.8rem;
+}
+.le__gamepage .gamepage .header .container .game .desc {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 0 0;
+}
+.le__gamepage .gamepage .header .container .game .desc p {
+  margin: 0;
+}
+.le__gamepage .gamepage .header .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.le__gamepage .gamepage .header .background::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(transparent, transparent, rgba(31, 31, 31, 0.8));
+}
+.le__gamepage .gamepage .header .background .img {
+  width: 100%;
+  height: 100%;
+}
+.le__gamepage .gamepage .header .background .video {
+  width: 100%;
+  height: 100%;
+}
+.le__gamepage .gamepage .header .background::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, var(--bg-shadow), var(--bg-shadow-90), transparent, transparent);
+}
+.le__gamepage .gamepage .header .background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.le__gamepage .gamepage .header .background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.le__gamepage .gamepage .menu {
+  width: 100%;
+  background-color: var(--menu-bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.le__gamepage .gamepage .menu ul {
+  display: flex;
+  width: min(85rem, 90%);
+  margin: 0 auto;
+  gap: 3rem;
+}
+.le__gamepage .gamepage .menu ul li.active a {
+  color: var(--menu-text-hover);
+}
+.le__gamepage .gamepage .menu ul li.active a::before {
+  opacity: 1;
+}
+.le__gamepage .gamepage .menu ul li:hover a {
+  color: var(--menu-text-hover);
+}
+.le__gamepage .gamepage .menu ul li a {
+  padding: 1.25rem 0;
+  display: flex;
+  text-decoration: none;
+  color: var(--menu-text);
+  font-weight: bold;
+  position: relative;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.le__gamepage .gamepage .menu ul li a::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  bottom: 2px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  background-color: var(--btn-color);
+}
+.le__gamepage .gamepage .home {
+  padding: 2rem 0 5rem 0;
+}
+.le__gamepage .gamepage .home .media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.le__gamepage .gamepage .home .media .arrow {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.227);
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--slide-btn);
+  border-radius: 100%;
+  z-index: 1;
+  box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.le__gamepage .gamepage .home .media .arrow:hover svg {
+  opacity: 1;
+}
+.le__gamepage .gamepage .home .media .arrow.swiper-button-disabled {
+  display: none;
+}
+.le__gamepage .gamepage .home .media .arrow.prev {
+  left: 1.25rem;
+}
+.le__gamepage .gamepage .home .media .arrow.next {
+  right: 1.25rem;
+}
+.le__gamepage .gamepage .home .media .arrow svg {
+  transition: 0.2s;
+  width: 1.5rem;
+  height: 1.5rem;
+  opacity: 0.8;
+}
+.le__gamepage .gamepage .home .media .arrow svg path {
+  fill: var(--slide-icon);
+}
+.le__gamepage .gamepage .home .media .slider {
+  width: 100%;
+  overflow: hidden;
+}
+.le__gamepage .gamepage .home .media .slider ul {
+  width: 100%;
+}
+.le__gamepage .gamepage .home .media .slider ul li {
+  width: 100%;
+  aspect-ratio: 1.8;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+}
+.le__gamepage .gamepage .home .media .slider ul li.swiper-slide {
+  opacity: 1;
+  filter: grayscale(100%);
+}
+.le__gamepage .gamepage .home .media .slider ul li.swiper-slide.swiper-slide-visible {
+  opacity: 1;
+  filter: grayscale(0);
+}
+.le__gamepage .gamepage .home .media .slider ul li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.le__gamepage .gamepage .home .content {
+  width: min(85rem, 90%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.le__gamepage .gamepage .home .content .right {
+  width: calc(100% - 346px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.le__gamepage .gamepage .home .content .right .container {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: var(--container);
+}
+.le__gamepage .gamepage .home .content .right .container .heading {
+  margin: 0 0 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.le__gamepage .gamepage .home .content .right .container .heading button {
+  background-color: transparent;
+  display: flex;
+  border: none;
+  font-weight: 600;
+  color: var(--text-primary);
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 1;
+}
+.le__gamepage .gamepage .home .content .right .container .heading button svg {
+  opacity: 0.5;
+  width: 1rem;
+  height: 1rem;
+}
+.le__gamepage .gamepage .home .content .right .container .heading button svg path {
+  fill: var(--text-primary);
+}
+.le__gamepage .gamepage .home .content .right .container .heading h2 {
+  margin: 0;
+  color: var(--text-primary);
+}
+.le__gamepage .gamepage .home .content .right .container.system .switch {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 0 1.5rem 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+}
+.le__gamepage .gamepage .home .content .right .container.system .switch button {
+  padding: 1rem 1rem;
+  background-color: transparent;
+  border: none;
+  color: var(--text-secondary);
+  border-bottom: 2px solid transparent;
+  transition: 0.2s;
+}
+.le__gamepage .gamepage .home .content .right .container.system .switch button.active {
+  border-color: var(--btn-color);
+  color: var(--text-primary);
+  font-weight: 700;
+}
+.le__gamepage .gamepage .home .content .right .container.system .switch button:hover {
+  border-color: var(--btn-color);
+  color: var(--text-primary);
+}
+.le__gamepage .gamepage .home .content .right .container.system .table h2, .le__gamepage .gamepage .home .content .right .container.system .table h3 {
+  color: var(--text-primary);
+  display: none;
+}
+.le__gamepage .gamepage .home .content .right .container.system .table .wrapper {
+  display: flex;
+  gap: 1rem;
+}
+.le__gamepage .gamepage .home .content .right .container.system .table .wrapper div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.le__gamepage .gamepage .home .content .right .container.system .table .wrapper div strong {
+  color: var(--text-primary);
+  padding: 1rem 1rem;
+  border-radius: 0.25rem;
+  background-color: var(--news-container);
+}
+.le__gamepage .gamepage .home .content .right .container.system .table .wrapper div ul {
+  display: flex;
+  flex-direction: column;
+}
+.le__gamepage .gamepage .home .content .right .container.system .table .wrapper div ul li {
+  padding: 1rem;
+}
+.le__gamepage .gamepage .home .content .right .container.system .table .wrapper div ul li:not(:last-child) {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.138);
+}
+.le__gamepage .gamepage .home .content .right .container.system .table .wrapper div ul p {
+  opacity: 0.9;
+  margin: 0.25rem 0 0 0;
+  color: var(--text-primary);
+}
+.le__gamepage .gamepage .home .content .right .container.system .table .wrapper div ul span {
+  color: var(--text-secondary);
+}
+.le__gamepage .gamepage .home .content .right .container.news .list .news-list {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.le__gamepage .gamepage .home .content .right .container.news .list .news-list .news-item {
+  width: calc(33.33% - 1rem);
+  display: flex;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  gap: 1.25rem;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 0.3rem 0.2rem rgba(0, 0, 0, 0);
+}
+.le__gamepage .gamepage .home .content .right .container.news .list .news-list .news-item:hover .thumb img {
+  transform: scale(1.05);
+}
+.le__gamepage .gamepage .home .content .right .container.news .list .news-list .news-item .thumb {
+  aspect-ratio: 1.6;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.425rem;
+}
+.le__gamepage .gamepage .home .content .right .container.news .list .news-list .news-item .thumb div {
+  width: 100%;
+  height: 100%;
+}
+.le__gamepage .gamepage .home .content .right .container.news .list .news-list .news-item .thumb img {
+  width: 100%;
+  transition: 0.2s;
+  height: 100%;
+  object-fit: cover;
+}
+.le__gamepage .gamepage .home .content .right .container.news .list .news-list .news-item .info {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  bottom: 0;
+  width: 100%;
+}
+.le__gamepage .gamepage .home .content .right .container.news .list .news-list .news-item .info p {
+  margin: 0;
+  font-size: 1.125rem;
+  color: var(--text-primary);
+}
+.le__gamepage .gamepage .home .content .right .container.news .list .news-list .news-item .info p span {
+  text-transform: capitalize;
+  margin: 0 0.25rem 0 0;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+.le__gamepage .gamepage .home .content .right .container.news .list .news-list .news-item .info .title {
+  color: black;
+  font-weight: 600;
+}
+.le__gamepage .gamepage .home .content .right .container.news .list .news-list .news-item .info .game {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+.le__gamepage .gamepage .home .content .right .container.news .list .news-list .news-item .info .game div {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.le__gamepage .gamepage .home .content .right .container.news .list .news-list .news-item .info .game div span {
+  display: none;
+}
+.le__gamepage .gamepage .home .content .right .container.news .list .news-list .news-item .info .game img {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: cover;
+  border-radius: 0.2rem;
+}
+.le__gamepage .gamepage .home .content .right .container.about .desc {
+  position: relative;
+}
+.le__gamepage .gamepage .home .content .right .container.about .load {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 7rem;
+  display: flex;
+  transition: 0.1s;
+  align-items: flex-end;
+  background: linear-gradient(transparent, var(--container), var(--container));
+}
+.le__gamepage .gamepage .home .content .right .container.about .load button {
+  height: fit-content;
+  border-radius: 10rem;
+  color: var(--secondary-btn-text);
+  background-color: var(--secondary-btn);
+  padding: 0.5rem 1rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  position: relative;
+  justify-content: center;
+}
+.le__gamepage .gamepage .home .content .right .container.about .load button:hover {
+  background-color: var(--secondary-btn-hover);
+}
+.le__gamepage .gamepage .home .content .right .container.about .load button:hover::before {
+  opacity: 1;
+}
+.le__gamepage .gamepage .home .content .right .container.about .load button::before {
+  content: "";
+  position: absolute;
+  width: calc(100% + 0.2rem);
+  height: calc(100% + 0.2rem);
+  border: 2px solid gray;
+  border-radius: 10rem;
+  opacity: 0;
+  transition: 0.1s;
+}
+.le__gamepage .gamepage .home .content .right .container.about .load button svg {
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.7;
+}
+.le__gamepage .gamepage .home .content .right .container.about .load button svg path {
+  fill: var(--secondary-btn-text);
+}
+.le__gamepage .gamepage .home .content .right .container.about .topic p,
+.le__gamepage .gamepage .home .content .right .container.about .topic h1,
+.le__gamepage .gamepage .home .content .right .container.about .topic h2,
+.le__gamepage .gamepage .home .content .right .container.about .topic h3,
+.le__gamepage .gamepage .home .content .right .container.about .topic h4,
+.le__gamepage .gamepage .home .content .right .container.about .topic h5,
+.le__gamepage .gamepage .home .content .right .container.about .topic h6 {
+  margin: 0;
+}
+.le__gamepage .gamepage .home .content .right .container.about .topic h1,
+.le__gamepage .gamepage .home .content .right .container.about .topic h2,
+.le__gamepage .gamepage .home .content .right .container.about .topic h3,
+.le__gamepage .gamepage .home .content .right .container.about .topic h4,
+.le__gamepage .gamepage .home .content .right .container.about .topic h5,
+.le__gamepage .gamepage .home .content .right .container.about .topic h6 {
+  color: var(--text-primary);
+}
+.le__gamepage .gamepage .home .content .right .container.about .topic p {
+  min-height: 1rem;
+}
+.le__gamepage .gamepage .home .content .right .container.about .topic p {
+  color: var(--text-secondary);
+}
+.le__gamepage .gamepage .home .content .right .container.about .topic img {
+  max-width: 100%;
+}
+.le__gamepage .gamepage .home .content .left {
+  border-radius: 0.5rem;
+  width: 322px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 5.5rem;
+  gap: 1.5rem;
+  height: fit-content;
+}
+.le__gamepage .gamepage .home .content .left .install button {
+  width: 100%;
+  height: 3.75rem;
+  border-radius: 0.5rem;
+  background-color: var(--btn-color);
+  border: none;
+  font-size: 1.425rem;
+  font-weight: 600;
+  color: var(--btn-font-color);
+}
+.le__gamepage .gamepage .home .content .left .links {
+  width: 100%;
+  padding: 1.5rem;
+  background: var(--container);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.le__gamepage .gamepage .home .content .left .links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.le__gamepage .gamepage .home .content .left .links ul li {
+  width: 100%;
+}
+.le__gamepage .gamepage .home .content .left .links ul li:not(:last-child) {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.122);
+}
+.le__gamepage .gamepage .home .content .left .links ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-decoration: none;
+  font-weight: 600;
+}
+.le__gamepage .gamepage .home .content .left .links ul li a div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-primary);
+}
+.le__gamepage .gamepage .home .content .left .links ul li a div, .le__gamepage .gamepage .home .content .left .links ul li a span {
+  display: flex;
+  align-items: center;
+}
+.le__gamepage .gamepage .home .content .left .links ul li a svg {
+  opacity: 0.5;
+}
+.le__gamepage .gamepage .home .content .left .links ul li a span {
+  justify-content: center;
+}
+.le__gamepage .gamepage .home .content .left .links ul li a svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.le__gamepage .gamepage .home .content .left .links ul li a svg path {
+  fill: var(--text-primary);
+}
+.le__gamepage .gamepage .home .content .left .info {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--container);
+}
+.le__gamepage .gamepage .home .content .left .info h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+.le__gamepage .gamepage .home .content .left .info .desc {
+  color: var(--text-secondary);
+  margin: 0 0 1.5rem 0;
+}
+.le__gamepage .gamepage .home .content .left .info ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.le__gamepage .gamepage .home .content .left .info ul li {
+  display: flex;
+  gap: 2rem;
+}
+.le__gamepage .gamepage .home .content .left .info ul li span {
+  min-width: 6rem;
+  display: flex;
+}
+.le__gamepage .gamepage .home .content .left .info ul li span:nth-child(1) {
+  color: var(--text-secondary);
+}
+.le__gamepage .gamepage .home .content .left .info ul li span:nth-child(2) {
+  color: var(--text-primary);
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.shop {
+  margin: 0 auto;
+  padding: 0 0 4rem 0;
+  position: relative;
+}
+.shop .heading {
+  background-color: var(--menu-bg);
+  display: flex;
+  align-items: center;
+}
+.shop .heading a {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--container);
+  border-radius: 100%;
+  transition: 0.2s;
+}
+.shop .heading a:hover {
+  background-color: var(--btn-color);
+}
+.shop .heading a:hover svg {
+  opacity: 1;
+}
+.shop .heading a:hover svg path {
+  fill: var(--btn-font-color);
+}
+.shop .heading a svg {
+  width: 1.125rem;
+  opacity: 0.6;
+  height: 1.125rem;
+  transition: 0.2s;
+  border-radius: 100%;
+}
+.shop .heading a svg path {
+  transition: 0.2s;
+  fill: var(--text-primary);
+}
+.shop .heading .title {
+  width: min(85rem, 90%);
+  margin: 0 auto;
+  align-items: center;
+  gap: 0.825rem;
+  display: flex;
+  padding: 1.25rem 0;
+}
+.shop .heading .title h2 {
+  color: var(--text-primary);
+  margin: 0;
+}
+.shop .shop-menu {
+  background-color: var(--menu-bg);
+  border-top: 1px solid var(--body-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin: 0 0 2rem 0;
+}
+.shop .shop-menu .-wrapper {
+  width: min(85rem, 90%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--body-color);
+}
+.shop .shop-menu .-wrapper .list ul {
+  display: flex;
+  gap: 3rem;
+}
+.shop .shop-menu .-wrapper .list ul li a {
+  border: none;
+  background-color: transparent;
+  color: var(--text-secondary);
+  border-radius: 10rem;
+  font-weight: 600;
+  position: relative;
+  text-decoration: none;
+  padding: 1.25rem 0;
+  display: flex;
+  transition: 0.2s;
+}
+.shop .shop-menu .-wrapper .list ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  height: 2px;
+  left: 0;
+  width: 100%;
+  background-color: var(--btn-color);
+  opacity: 0;
+}
+.shop .shop-menu .-wrapper .list ul li a.active {
+  color: var(--text-primary);
+}
+.shop .shop-menu .-wrapper .list ul li a.active::before {
+  opacity: 1;
+}
+.shop .shop-menu .-wrapper .list ul li a:hover {
+  color: var(--text-primary);
+}
+.shop .user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.shop .user .balance {
+  width: 100%;
+}
+.shop .user .balance a {
+  display: flex;
+  align-items: center;
+  color: var(--text-primary);
+  padding: 0.55rem 0.75rem;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  text-decoration: none;
+  transition: 0.2s;
+  position: relative;
+}
+.shop .user .balance a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(70, 142, 205);
+  border-radius: 0.5rem;
+  opacity: 0.25;
+}
+.shop .user .balance a span {
+  display: flex;
+  align-items: center;
+  color: var(--btn-font-color);
+  text-decoration: none;
+  border-radius: 100%;
+  justify-content: center;
+  font-size: 1.5rem;
+  position: relative;
+}
+.shop .user .balance a span svg {
+  width: 1rem;
+  height: 1rem;
+}
+.shop .user .balance a span svg path {
+  fill: rgb(102, 137, 226);
+}
+.shop .user .balance a img {
+  width: 1rem;
+}
+.shop .user .balance a div {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 0.5rem;
+}
+.shop .user .select {
+  display: flex;
+  align-items: center;
+  background-color: var(--container);
+  white-space: nowrap;
+  border-radius: 0.5rem;
+  gap: 1rem;
+  width: 100%;
+  cursor: pointer;
+  justify-content: space-between;
+  border: 1px solid transparent;
+  transition: 0.2s;
+  padding: 0.55rem 0.75rem;
+}
+.shop .user .select p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: 0.2s;
+}
+.shop .user .select strong {
+  color: var(--text-primary);
+}
+.shop .user .select svg {
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.5;
+}
+.shop .user .select svg path {
+  fill: var(--text-secondary);
+}
+.shop .user .select span {
+  display: flex;
+  align-items: center;
+  color: var(--text-secondary);
+  font-weight: 600;
+  transition: 0.2s;
+  gap: 0.25rem;
+}
+.shop .user .select span svg {
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.5;
+}
+.shop .user .select span svg path {
+  fill: var(--text-secondary);
+}
+.shop .user .select button {
+  font-size: 0.825rem;
+  display: none;
+  border-radius: 10rem;
+  background-color: var(--secondary-btn);
+  color: var(--secondary-btn-text);
+  padding: 0.3rem 0.5rem;
+}
+.shop .wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.shop .wrapper .container {
+  width: min(85rem, 90%);
+  margin: 0 auto;
+}
+.shop .wrapper .container .topup {
+  border-radius: 0.5rem;
+}
+.shop .wrapper .container .topup .list {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  position: relative;
+}
+.shop .wrapper .container .topup .list .filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  margin: 0 0 1.25rem 0;
+  width: 13rem;
+  position: sticky;
+  top: 5.25rem;
+  height: fit-content;
+}
+.shop .wrapper .container .topup .list .filters .select {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.shop .wrapper .container .topup .list .filters .select svg {
+  position: absolute;
+  right: 1rem;
+  width: 1rem;
+  height: 1rem;
+}
+.shop .wrapper .container .topup .list .filters .select svg path {
+  fill: var(--text-secondary);
+}
+.shop .wrapper .container .topup .list .filters .select select {
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  pointer-events: none;
+  appearance: none;
+  background-color: var(--container);
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.75rem 1rem;
+  color: var(--text-secondary);
+}
+.shop .wrapper .container .topup .list .filters .input {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.shop .wrapper .container .topup .list .filters .input svg {
+  position: absolute;
+  right: 1rem;
+  width: 1rem;
+  height: 1rem;
+}
+.shop .wrapper .container .topup .list .filters .input svg path {
+  fill: var(--text-secondary);
+}
+.shop .wrapper .container .topup .list .filters .input input {
+  width: 100%;
+  outline: none;
+  background-color: var(--container);
+  border-radius: 0.5rem;
+  border: none;
+  color: var(--text-primary);
+  padding: 0.75rem 2rem 0.75rem 1rem;
+}
+.shop .wrapper .container .topup .list .filters .input input::placeholder {
+  color: var(--text-secondary);
+}
+.shop .wrapper .container .topup .list .filters button {
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: var(--text-secondary);
+  border: none;
+  border: 1px solid var(--shop-filter-btn);
+  font-weight: 600;
+  background-color: transparent;
+  transition: 0.2s;
+}
+.shop .wrapper .container .topup .list .filters button.active {
+  background-color: var(--btn-color);
+  color: var(--btn-font-color);
+  border-color: transparent;
+}
+.shop .wrapper .container .topup .list .filters button.active:hover {
+  color: var(--btn-font-color);
+}
+.shop .wrapper .container .topup .list .filters button:hover {
+  border-color: var(--btn-color);
+  color: var(--text-primary);
+}
+.shop .wrapper .container .topup .list .items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: calc(100% - 13.5rem);
+}
+.shop .wrapper .container .topup .list .items .-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+.shop .wrapper .container .topup .list .items .-heading .total {
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  display: none;
+}
+.shop .wrapper .container .topup .list .items .-heading .total strong {
+  color: var(--text-primary);
+}
+.shop .wrapper .container .topup .list ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 1rem;
+  width: 100%;
+}
+.shop .wrapper .container .topup .list ul li {
+  width: calc(25% - 0.8rem);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-decoration: none;
+  text-align: center;
+  background-color: var(--shop-container);
+  border-radius: 0.5rem;
+  transition: 0.2s;
+  position: relative;
+  cursor: pointer;
+}
+.shop .wrapper .container .topup .list ul li .tags {
+  z-index: 1;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.shop .wrapper .container .topup .list ul li .tags .timer {
+  font-size: 0.825rem;
+  padding: 0.325rem 0.65rem 0.325rem 0.55rem;
+  background-color: var(--container);
+  border-radius: 10rem;
+  color: var(--text-primary);
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+.shop .wrapper .container .topup .list ul li .tags .timer svg {
+  width: 0.825rem;
+  height: 0.825rem;
+  opacity: 0.5;
+}
+.shop .wrapper .container .topup .list ul li .tags .timer svg path {
+  fill: var(--text-primary);
+}
+.shop .wrapper .container .topup .list ul li .tags .new {
+  border-radius: 10rem;
+  padding: 0.325rem 0.55rem;
+  color: rgb(255, 255, 255);
+  font-size: 0.825rem;
+  background: linear-gradient(120deg, rgb(121, 19, 19), rgb(159, 22, 22));
+}
+.shop .wrapper .container .topup .list ul li:hover .btn button {
+  background-color: var(--secondary-btn);
+  border-color: transparent;
+}
+.shop .wrapper .container .topup .list ul li .title {
+  color: var(--text-primary);
+  font-weight: 600;
+  opacity: 0.8;
+  font-size: 1rem;
+  text-align: left;
+}
+.shop .wrapper .container .topup .list ul li .desc {
+  color: var(--text-secondary);
+  margin: 0 0 1.25rem 0;
+  font-size: 0.925rem;
+  display: none;
+}
+.shop .wrapper .container .topup .list ul li .img {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  padding: 1.5rem 0 0 0;
+  background: var(--shop-thumb-bg);
+}
+.shop .wrapper .container .topup .list ul li .img img {
+  width: 8rem;
+}
+.shop .wrapper .container .topup .list ul li .main-info {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+.shop .wrapper .container .topup .list ul li .btn button {
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  justify-content: center;
+  height: 2.55rem;
+  margin: 0 auto;
+  background-color: transparent;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1.125rem;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  cursor: pointer;
+}
+.shop .wrapper .container .topup .list ul li .btn img {
+  width: 1rem;
+}
+.shop .wrapper .container .topup h2 {
+  margin: 0 0 1rem 0;
+  color: var(--text-primary);
+}
+.shop .wrapper .container .banners {
+  width: 100%;
+  height: 15rem;
+  background-color: black;
+  border-radius: 0.5rem;
 }
 
 .news-modal {
@@ -1912,8 +3145,7 @@ button {
   cursor: pointer;
 }
 button:active {
-  opacity: 0.8;
-  transform: scale(0.99);
+  transform: scale(0.95);
 }
 
 html {

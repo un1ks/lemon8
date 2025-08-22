@@ -1,0 +1,76 @@
+body {
+    &.light {
+        --body-color: rgb(241, 241, 241);
+
+        --menu-bg: rgb(255, 255, 255);
+        --menu-secondary: rgb(255, 255, 255);
+        --menu-border: rgb(240, 240, 240);
+        --menu-text: rgb(101, 101, 101);
+        --menu-text-hover: black;
+
+        --container: rgb(250, 250, 250);
+        --container-special: linear-gradient(rgb(42, 42, 42), rgb(38, 38, 38));
+        --container-special-text: white;
+        --container-border: rgb(205, 205, 205);
+
+        --text-primary: black;
+        --text-secondary: rgb(101, 101, 101);
+
+        --secondary-btn: rgb(225, 225, 225);
+        --secondary-btn-hover: rgb(72, 72, 72);
+        --secondary-btn-text: rgb(72, 72, 72);
+
+        --slide-btn: white;
+        --slide-icon: black;
+
+        --shop-filter-btn: rgb(216, 216, 216);
+        --shop-menu: rgb(250, 250, 250);
+        --shop-container: rgb(252, 252, 252);
+
+
+        --news-container: rgba(255, 255, 255, 0);
+
+        --footer-bg: rgb(31, 31, 31);
+        --footer-primary-text: rgb(183, 183, 183);
+        --footer-secondary-text: gray;
+        --footer-logo: invert(80%)
+    }
+
+    &.dark {
+        --body-color: rgb(21, 21, 21);
+
+        --menu-bg: rgb(14, 14, 14);
+        --menu-border: rgba(255, 255, 255, 0.117);
+        --menu-text: rgb(160, 160, 160);
+        --menu-text-hover: rgb(241, 241, 241);
+
+        --container: rgb(34, 34, 34);
+        --container-special: linear-gradient(rgb(44, 44, 44), rgb(36, 36, 36));
+        --container-special-text: white;
+        --container-border: rgb(38, 38, 38);
+
+        --text-primary: rgb(229, 229, 229);
+        --text-secondary: rgb(147, 147, 147);
+
+        --secondary-btn: rgb(50, 50, 50);
+        --secondary-btn-hover: rgb(59, 59, 59);
+        --secondary-btn-text: rgb(217, 217, 217);
+
+        --slide-btn: rgb(19, 19, 19);
+        --slide-icon: white;
+
+        --shop-filter-btn: rgb(23, 23, 23);
+
+
+        --shop-filter-btn: rgb(40, 40, 40);
+        --shop-menu: rgb(32, 32, 32);
+        --shop-container: rgb(33, 33, 33);
+
+        --news-container: rgb(30, 30, 30);
+
+        --footer-bg: rgb(31, 31, 31);
+        --footer-primary-text: rgb(129, 129, 129);
+        --footer-secondary-text: rgb(73, 73, 73);
+        --footer-logo: invert(80%)
+    }
+}

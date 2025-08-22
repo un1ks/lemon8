@@ -1,4 +1,3 @@
-
 const slug = (s) => (s || "").toLowerCase().replace(/\s+/g, "");
 const setQuery = (mutate) => {
   const p = new URLSearchParams(window.location.search);
@@ -26,8 +25,29 @@ const emptyMsg         = document.querySelector(".news-empty");
 
 
 let visibleAllNews = 8;
-let currentGameFilter = null; 
+let currentGameFilter = null;
 let currentSearchTerm = "";
+
+
+function updateGameSelectUI(value) {
+  if (!gameSelect) return;
+  gameSelect.value = value || "";
+
+  const root    = gameSelect.closest(".custom__select");
+  const custom  = root?.querySelector(".custom");
+  const trigger = custom?.querySelector(".trigger");
+  const options = custom?.querySelectorAll(".option");
+  if (!custom || !trigger || !options) return;
+
+  let labelText = "All Games";
+  options.forEach(opt => {
+    const isActive = (opt.getAttribute("data-value") || "") === (value || "");
+    opt.classList.toggle("active", isActive);
+    if (isActive) labelText = opt.textContent.trim();
+  });
+  trigger.textContent = labelText;
+}
+
 
 function createNewsItem(item, onClick) {
   const clone = newsItemTemplate.content.cloneNode(true);
@@ -74,8 +94,6 @@ function renderAllNewsInModal(list = newsArray) {
 }
 
 
-//
-
 
 function openModal(item = null, updateURL = true, filterGame = null) {
   modal.style.display = "flex";
@@ -96,10 +114,12 @@ function openModal(item = null, updateURL = true, filterGame = null) {
   if (!item) {
     loadingOverlay.classList.remove("hidden");
     setTimeout(() => {
-      visibleAllNews = 6; 
+      visibleAllNews = 6;
       currentGameFilter = filterGame || null;
-      if (gameSelect) gameSelect.value = filterGame || "";
+
+      updateGameSelectUI(filterGame || ""); 
       currentSearchTerm = searchInput?.value || "";
+
       renderAllNewsInModal(newsArray);
 
       if (updateURL) {
@@ -113,6 +133,7 @@ function openModal(item = null, updateURL = true, filterGame = null) {
     }, 400);
     return;
   }
+
 
   loadingOverlay.classList.remove("hidden");
   setTimeout(() => {
@@ -153,7 +174,6 @@ function loadMoreNews() {
   }, 400);
 }
 
-//
 
 function handleQueryParams() {
   const params = getQuery();
@@ -179,10 +199,6 @@ function handleQueryParams() {
 window.addEventListener("popstate", handleQueryParams);
 
 
-
-//
-
-
 function renderFilterButtons() {
   if (!filterButtons) return;
   const gameNames = [...new Set(newsArray.map(n => n.gameName))];
@@ -190,7 +206,7 @@ function renderFilterButtons() {
   gameNames.forEach(game => {
     const btn = document.createElement("button");
     btn.dataset.filter = game;
-    btn.innerHTML = game;
+    btn.innerHTML = game; 
     filterButtons.appendChild(btn);
   });
   filterButtons.querySelectorAll("button").forEach(btn => {
@@ -204,11 +220,9 @@ function renderFilterButtons() {
   });
 }
 
-//
 
 closeModalBtn.addEventListener("click", () => closeModal());
 
-//
 
 document.querySelectorAll(".openAllNewsBtn").forEach(btn => {
   btn.addEventListener("click", () => openModal(null));
@@ -217,10 +231,12 @@ document.querySelectorAll(".openAllNewsBtn").forEach(btn => {
 loadMoreBtn?.addEventListener("click", loadMoreNews);
 
 window.addEventListener("DOMContentLoaded", () => {
+  
   renderFilterButtons();
   renderNewsList(newsArray);
   handleQueryParams();
 
+  
   document.querySelectorAll(".news-list[data-game]").forEach(container => {
     const game  = container.dataset.game;
     const limit = parseInt(container.dataset.limit, 10) || newsArray.length;
@@ -233,15 +249,37 @@ window.addEventListener("DOMContentLoaded", () => {
     items.forEach(item => container.appendChild(createNewsItem(item, openModal)));
   });
 
+  
   modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
 
+  
   searchInput?.addEventListener("input", () => {
     currentSearchTerm = searchInput.value;
     renderAllNewsInModal(newsArray);
   });
   gameSelect?.addEventListener("change", () => {
     currentGameFilter = gameSelect.value || null;
+    updateGameSelectUI(gameSelect.value || "");
     renderAllNewsInModal(newsArray);
+  });
+
+  
+  document.querySelectorAll('.custom__select .custom .option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      const value = opt.getAttribute('data-value') || "";
+      currentGameFilter = value || null;
+      updateGameSelectUI(value);
+      renderAllNewsInModal(newsArray);
+
+      const isListOpen = modal.style.display === 'flex' && document.querySelector('.modal-list')?.style.display === 'block';
+      if (isListOpen) {
+        setQuery(p => {
+          p.set('modal', 'news');
+          if (value) p.set('game', slug(value)); else p.delete('game');
+          p.delete('news'); p.delete('id');
+        });
+      }
+    });
   });
 
   document.querySelectorAll(".open-game-news").forEach(btn => {
