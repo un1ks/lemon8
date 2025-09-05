@@ -25,14 +25,6 @@ const mainSlider = new Swiper('.le__slider .slider', {
   },
 });
 
-const mainSliderBg = new Swiper('.le__slider .background', {
-  spaceBetween: 0,
-  effect: 'fade',
-  fadeEffect: { crossFade: true },
-  loop: true,
-  loopedSlides: totalSlides,
-});
-
 mainControl.on('click', () => {
   const realIndex = mainControl.clickedIndex;
   if (typeof realIndex !== 'undefined') {
@@ -43,7 +35,6 @@ mainControl.on('click', () => {
 mainSlider.on('slideChange', () => {
   const realIndex = mainSlider.realIndex;
 
-  mainSliderBg.slideToLoop(realIndex);
   mainControl.slideTo(realIndex);
 
   requestAnimationFrame(() => {
@@ -83,67 +74,17 @@ document.querySelectorAll('.featured ul li').forEach(container => {
 });
 
 
-
-//
-
-
-function playOnlyActive(swiper) {
-  swiper.slides.forEach(slide => {
-    slide.querySelectorAll('video').forEach(v => {
-      v.pause();
-    });
-  });
-
-  const active = swiper.slides[swiper.activeIndex];
-  const vid = active && active.querySelector('video');
-  if (!vid) return;
-
-  const start = () => {
-    const p = vid.play();
-    if (p && p.catch) p.catch(() => { });
-  };
-
-  if (vid.readyState >= 2) start();
-  else vid.addEventListener('canplay', start, { once: true });
-}
-
-
-const comingControl = new Swiper('.development .control', {
-  slidesPerView: "auto",
-  spaceBetween: 8,
-  direction: "vertical",
-  watchSlidesProgress: true,
-});
-
 const comingGame = new Swiper('.development .games', {
   slidesPerView: 1,
   spaceBetween: 0,
   watchSlidesProgress: true,
-  allowTouchMove: false,
   effect: 'fade',
   fadeEffect: {
     crossFade: true,
   },
 
-  thumbs: {
-    swiper: comingControl,
+  pagination: {
+    el: ".development .pagination",
   },
-
-
-  on: {
-    init() {
-      playOnlyActive(this);
-    },
-    slideChangeTransitionEnd() {
-      playOnlyActive(this);
-    }
-  }
-});
-
-
-const comingGallery = new Swiper('.gallery .gal', {
-  slidesPerView: 1.4,
-  spaceBetween: 18,
-  freeMode: true,
-  watchSlidesProgress: true,
+  
 });

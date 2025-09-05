@@ -4,9 +4,11 @@
     position: relative;
 
     .heading {
-        background-color: var(--menu-bg);
+        
         display: flex;
         align-items: center;
+   
+        display: none;
 
         a {
             width: 2rem;
@@ -62,11 +64,12 @@
     }
 
     .shop-menu {
-        background-color: var(--menu-bg);
-        border-top: 1px solid var(--body-color);
+        background-color: var(--menu-bg-color);
+       
         position: sticky;
         top: 0;
         z-index: 10;
+
         margin: 0 0 2rem 0;
 
         .-wrapper {

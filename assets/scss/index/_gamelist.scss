@@ -6,79 +6,189 @@
 
 
     .gamelist {
-        width: min(85rem, 90%);
         margin: 0 auto;
-        padding: 4rem 0;
+        padding: 3.5rem 0 4rem 0;
         position: relative;
         z-index: 1;
 
         .list {
             display: flex;
-            width: 100%;
-            flex-direction: column;
 
-            .heading {
-                margin: 0 0 1.5rem 0;
-            }
+            flex-direction: column;
+            width: min(85rem, 90%);
+            margin: 0 auto;
 
             h2 {
                 font-size: 1.25rem;
                 margin: 0;
-
                 font-weight: 700;
                 color: rgb(92, 92, 92);
             }
 
             &.development {
+
                 position: relative;
+                width: min(85rem, 90%);
+                display: none;
+                margin: 4.5rem auto 0 auto;
+
 
                 .heading {
-                    margin: 0 0 1.5rem 0;
+                    margin: 0 0 2rem 0;
+                }
+
+                .games-control {
+                    position: relative;
+                    margin: 0 auto;
+                    position: absolute;
+                    width: min(85rem, 90%);
+                    left: 0;
+
+                    padding-left: 1rem;
+                    right: 0;
+
+                    bottom: 3rem;
+                    z-index: 2;
+                    pointer-events: none;
+                    display: flex;
+                    align-items: center;
+
                 }
 
                 .control {
-                    position: absolute;
-                    bottom: 0;
-                    height: 26rem;
-                    display: flex;
+
                     width: fit-content;
+
+                    border-radius: 0.5rem;
+
+
+                    pointer-events: all;
+                    display: flex;
+
+                    padding: 1rem;
+
                     align-items: center;
-                    background-color: rgba(38, 38, 38, 0.6);
-                    padding: 0 1rem;
-                    left: 0;
-                    overflow: hidden;
-                    border: 1px solid transparent;
-                    z-index: 2;
-                    border-radius: 0.5rem 0 0 0.5rem;
+                    position: relative;
+
+                    .pagination {
+                        display: flex;
+                        align-items: center;
+
+                        span {
+                            width: 1rem;
+                            border-radius: 1rem;
+                            background-color: rgba(255, 255, 255, 0.3);
+                            opacity: 1;
+                            position: relative;
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 1rem;
+                                background-color: white;
+                                opacity: 0;
+                            }
+
+                            &.swiper-pagination-bullet-active {
+                                width: 2.5rem;
+
+                                &::before {
+                                    opacity: 1;
+                                    animation: width 10s linear;
+                                }
+                            }
+                        }
+                    }
+
+                    .arrow {
+                        position: absolute;
+                        width: 2rem;
+                        height: 2rem;
+                        border-radius: 100%;
+                        display: flex;
+                        align-items: center;
+                        cursor: pointer;
+                        justify-content: center;
+                        transition: .2s;
+
+                        &:hover {
+                            background-color: white;
+
+                            svg {
+                                transform: scale(0.8);
+
+                                path {
+                                    fill: black;
+                                }
+                            }
+                        }
+
+                        svg {
+                            width: 1.5rem;
+                            height: 1.5rem;
+                            opacity: 0.8;
+
+                            transition: .2s;
+
+                            path {
+                                transition: .2s;
+                                fill: white;
+                            }
+                        }
+
+                        &.prev {
+                            left: -1.325rem;
+                        }
+
+                        &.next {
+                            right: -1.325rem;
+                        }
+                    }
+
+
 
                     ul {
                         height: fit-content;
+                        width: fit-content;
+
+                        gap: 1rem;
+                        align-items: center;
 
                         li {
-                            padding: 0.2rem;
+
+
                             color: rgba(255, 255, 255, 0.5);
                             border-radius: 0.5rem;
                             display: flex;
                             width: fit-content;
                             align-items: center;
                             justify-content: center;
-                            border: 2px solid transparent;
+                            border: 0 solid transparent;
                             height: fit-content !important;
                             transition: .2s;
                             cursor: pointer;
 
+                            transform: scale(1);
 
                             &.swiper-slide-thumb-active {
                                 border-color: rgb(224, 198, 29);
+                                transform: scale(1);
 
                                 &:hover {
                                     border-color: rgb(224, 198, 29);
                                 }
 
+                                .icon {
+
+                                    opacity: 1;
+                                    background-color: rgb(224, 198, 29);
+                                }
                             }
 
                             &:hover {
-                                border-color: gray;
+                                border-color: rgba(255, 255, 255, 0.5);
                             }
 
 
@@ -88,15 +198,18 @@
                             }
 
                             .icon {
-                                width: 3rem;
-                                height: 3rem;
+                                width: 0.5rem;
+                                height: 0.5rem;
                                 overflow: hidden;
+                                background-color: white;
                                 display: flex;
-                                border-radius: 0.25rem;
+                                border-radius: 0.5rem;
+                                opacity: 0.4;
 
                                 img {
                                     width: 100%;
                                     height: 100%;
+                                    display: none;
                                     object-fit: cover;
                                 }
                             }
@@ -113,67 +226,185 @@
 
                 .games {
                     width: 100%;
-                    overflow: hidden;
-                    background-color: black;
-                    border-radius: 0.5rem;
 
-                    ul {
+
+                    &.paused {
+                        .swiper-slide {
+                            &.swiper-slide-active {
+                                &::before {
+                                    animation-play-state: paused;
+                                }
+                            }
+                        }
+                    }
+
+                    .swiper-wrapper {
                         width: 100%;
 
-                        li {
+                        .swiper-slide {
                             width: 100%;
                             position: relative;
                             display: flex;
                             align-items: center;
                             color: black;
-                            background: linear-gradient(10deg, rgb(227, 227, 227), rgba(203, 203, 203, 0));
-                            border-radius: 0.5rem;
 
                             overflow: hidden;
-                            box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
 
-                            &.swiper-slide-active {
-                                .gallery {
-                                    .gal {
-                                        pointer-events: all !important;
+                            .gallery {
+                                width: 20.5rem;
+                                display: none;
 
-                                        .swiper-wrapper {
-                                            pointer-events:  all !important;
-                                            .swiper-slide {
-                                                pointer-events: all !important;
+
+                                ul {
+                                    width: 100%;
+                                    display: flex;
+                                    gap: 1rem;
+
+                                    li {
+                                        width: 100%;
+                                        aspect-ratio: 1.6;
+                                        border-radius: 0.5rem;
+                                        overflow: hidden;
+                                        position: relative;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+
+                                        span {
+                                            width: 3.5rem;
+                                            height: 3.5rem;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            border-radius: 100%;
+                                            position: absolute;
+                                            background-color: rgba(16, 16, 16, 0.8);
+
+
+                                            svg {
+                                                width: 1.5rem;
+                                                height: 1.5rem;
+
+                                                path {
+                                                    fill: rgb(206, 206, 206);
+                                                }
                                             }
+                                        }
+
+                                        a {
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            width: 100%;
+                                            height: 100%;
+                                        }
+
+                                        &::before {
+                                            content: '';
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+                                        }
+
+                                        img,
+                                        video {
+                                            width: 100%;
+                                            height: 100%;
+                                            object-fit: cover;
+                                            border-radius: 0.5rem;
                                         }
                                     }
                                 }
                             }
+
+                            &::before {
+                                content: '';
+                                width: 100%;
+                                position: absolute;
+                                bottom: 0.05rem;
+                                height: 2px;
+                                border-radius: 1rem;
+                                background-color: rgb(224, 198, 29);
+                                z-index: 2;
+                                display: none;
+                            }
+
+                            &.swiper-slide-active {
+
+                                &::before {
+                                    animation: width 10s;
+                                }
+                            }
+
                             .background {
                                 position: absolute;
                                 top: 0;
                                 width: 100%;
-                                left: 0;
-                                height: 100%;
+                                right: 0;
+                                height: 28rem;
                                 overflow: hidden;
+
                                 background-color: black;
+
+                                div {
+                                    width: 100%;
+                                    height: 100%;
+
+                                    &::before {
+                                        content: '';
+                                        position: absolute;
+                                        left: 0;
+                                        bottom: 0;
+                                        width: 60%;
+                                        z-index: 1;
+                                        height: 100%;
+                                        background: linear-gradient(-90deg, transparent, var(--coming-bg-shadow));
+                                    }
+
+                                    &::after {
+                                        content: '';
+                                        position: absolute;
+                                        right: 0;
+                                        opacity: 0.25;
+                                        bottom: 0;
+                                        width: 30%;
+                                        z-index: 1;
+                                        height: 100%;
+                                        background: linear-gradient(-90deg, var(--coming-bg-shadow), transparent);
+                                    }
+                                }
 
                                 &::before {
                                     content: '';
                                     position: absolute;
                                     left: 0;
                                     bottom: 0;
-
-                                    width: 100%;
+                                    width: 45%;
                                     z-index: 1;
-                                    height: 150%;
-                                    background: linear-gradient(transparent, rgba(38, 38, 38, 0.8));
-
+                                    height: 100%;
+                                    background: linear-gradient(-90deg, transparent, var(--coming-bg-shadow));
                                 }
 
+                                &::after {
+                                    content: '';
+                                    position: absolute;
+                                    left: 0;
+                                    bottom: 0;
+                                    width: 100%;
+                                    z-index: 1;
+                                    height: 50%;
+                                    background: linear-gradient(transparent, var(--coming-bg-shadow));
+                                }
 
-                                video, img {
+                                video,
+                                img {
                                     width: 100%;
                                     height: 100%;
                                     object-fit: cover;
-                                    opacity: 0.7;
+
                                 }
 
                             }
@@ -182,137 +413,16 @@
                                 width: 100%;
                                 height: 100%;
                                 display: flex;
+                                justify-content: space-between;
                                 align-items: center;
                                 position: relative;
                                 z-index: 2;
-                                padding: 0 0 0 12rem;
-                                height: 26rem;
+                                padding: 4rem;
                                 margin: 0 auto;
-                                justify-content: space-between;
-
-                                .gallery {
-                                    padding: 2rem 5rem 2rem 0.2rem;
-
-                                    width: 46rem;
-                                   
-                                    overflow: hidden;
-                          
-                                    .gal {
-                                        width: 100%;
-                                        height: 100%;
-                                  
-                                        .swiper-wrapper {
-                                            width: 100%;
-                                            height: 100%;
-
-                                            div {
-                                                
-                                                width: 100%;
-                                                aspect-ratio: 1.6;
-                                                background-color: black;
-                                                border-radius: 0.5rem;
-                                                overflow: hidden;
-                                                box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0);
-                                                position: relative;
-                                                display: flex;
-                                                align-items: center;
-                                                justify-content: center;
-
-                                                button {
-                                                    width: fit-content;
-                                                    height: 2.75rem;
-                                                    border: none;
-                                                
-                                                    border-radius: 10rem;
-                                                    cursor: pointer;
-                                                    text-decoration: none;
-                                                    color: rgb(15, 15, 15);
-                                                    display: flex;
-                                                    justify-content: center;
-                                                    align-items: center;
-                                                    gap: 0.6rem;
-                                                    font-weight: 600;
-                                                    transition: .1s;
-                                                    font-size: 1.15rem;
-                                                    position: absolute;
-                                                    width: 2.75rem;
-                                                    border-radius: 100%;
-                                                    background-color: rgba(0, 0, 0, 0.457);
-
-                                                    &:hover {
-                                                        background-color: rgb(225, 225, 225);
-
-                                                        &::before {
-                                                            opacity: 1;
-                                                        }
-
-                                                        svg {
-                                                            opacity: 1;
-
-                                                            path {
-                                                                fill: black;
-                                                            }
-                                                        }
-                                                    }
-
-                                                    svg {
-                                                        width: 1.25rem;
-                                                        height: 1.25rem;
-                                                        transition: .1s;
-                                                        opacity: 0.8;
-
-                                                        path {
-                                                            transition: .1s;
-                                                            fill: rgb(255, 255, 255);
-                                                        }
-                                                    }
-
-                                                    &::before {
-                                                        content: '';
-                                                        position: absolute;
-                                                        width: calc(100% + 0.2rem);
-                                                        height: calc(100% + 0.2rem);
-                                                        border: 2px solid rgba(255, 255, 255, 0.7);
-                                                        border-radius: 10rem;
-                                                        opacity: 0;
-                                                        transition: .1s;
-                                                    }
-
-                                                }
-
-                                                &::before {
-                                                    content: '';
-                                                    position: absolute;
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    left: 0;
-                                                    right: 0;
-                                                    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
-                                                }
-
-                                                img {
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    opacity: 1;
-                                                    object-fit: cover;
-                                                }
-
-                                                video {
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                }
-                                            }
-                                        }
-
-
-                                    }
-                                }
-
 
                                 .btn {
                                     display: flex;
-                                    gap: 1rem;
+                                    gap: 0.75rem;
                                     align-items: center;
 
                                     a {
@@ -344,9 +454,9 @@
                                         }
 
                                         &.dark {
-                                            padding: 0 3.5rem;
-                                            background-color: rgba(255, 255, 255, 0.8);
-                                            backdrop-filter: blur(1rem);
+                                            padding: 0 3rem;
+                                            background-color: rgba(255, 255, 255, 0.9);
+
                                             box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.15);
 
                                             &:hover {
@@ -365,9 +475,9 @@
                                         }
 
                                         &.play {
-
                                             width: 3.5rem;
-                                            border-radius: 100%;
+
+                                            color: rgba(255, 255, 255, 0.5);
                                             background-color: rgba(0, 0, 0, 0.457);
 
                                             &:hover {
@@ -387,13 +497,14 @@
                                             }
 
                                             svg {
-                                                width: 1.5rem;
-                                                height: 1.5rem;
+                                                width: 2rem;
+                                                height: 2rem;
                                                 transition: .1s;
+                                                opacity: 0.9;
 
                                                 path {
                                                     transition: .1s;
-                                                    fill: rgb(255, 255, 255);
+                                                    fill: rgb(219, 219, 219);
                                                 }
                                             }
                                         }
@@ -413,38 +524,44 @@
 
                                 .wrapper {
                                     display: flex;
+                                    padding-bottom: 3.5rem;
 
-
-                                    border-radius: 0.5rem 0.5rem 0 0;
-                                    position: relative;
-                                    z-index: 1;
-                                    border-bottom: none;
                                     flex-direction: column;
 
                                     .game {
                                         display: flex;
+
                                         align-items: center;
                                         gap: 1.5rem;
-                                    }
 
+                                        .title {
+                                            h1 {
+                                                margin: 0;
+                                                color: white;
+                                                font-size: 2.5rem;
+                                                text-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+                                            }
+                                        }
+                                    }
                                 }
 
                                 .name {
                                     display: flex;
-                                    flex-direction: column;
                                     gap: 0.25rem;
-                                    justify-content: center;
+
+                                    flex-direction: column;
 
                                     .tags {
                                         display: flex;
                                         align-items: center;
-                                        gap: 0.5rem;
+                                        gap: 0.25rem;
 
                                         div {
                                             display: flex;
                                             align-items: center;
                                             gap: 0.5rem;
                                             opacity: 0.8;
+                                            margin: 0 0 0 0.325rem;
 
                                             img {
                                                 width: 1rem;
@@ -455,27 +572,29 @@
 
                                         span {
                                             color: rgb(237, 237, 237);
-                                            background-color: rgba(26, 26, 26, 0.2);
+                                            background-color: rgba(44, 44, 44, 0.838);
                                             border-radius: 10rem;
                                             border: 1px solid rgba(255, 255, 255, 0.3);
                                             padding: 0.25rem 0.6rem;
                                             font-size: 0.8rem;
-                                            font-weight: 500;
-
+                                            font-weight: 600;
                                         }
                                     }
 
-                                    span {
-                                        font-weight: bold;
-                                        color: white;
+                                    h1 {
+                                        margin: 0;
+
+                                        color: rgb(249, 249, 249);
+                                        font-weight: 700;
+
                                         font-size: 2.25rem;
                                         text-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.5);
                                     }
                                 }
 
                                 .app-icon {
-                                    width: 5rem;
-                                    height: 5rem;
+                                    width: 4.5rem;
+                                    height: 4.5rem;
                                     border-radius: 0.5rem;
                                     overflow: hidden;
                                     display: flex;
@@ -495,34 +614,18 @@
             }
 
             &.featured {
-                margin: 0 0 2.5rem 0;
 
                 ul {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(calc(100% / 4), 1fr));
-                    gap: 1rem;
+                    display: flex;
+                    gap: 1.5rem;
                     width: 100%;
+                    flex-wrap: wrap;
 
                     li {
-
                         position: relative;
                         display: flex;
                         transition: .4s;
-
-                        &:hover {
-                            .thumb {
-                                transform: scale(1.015);
-
-                                img {
-                                    opacity: 0;
-                                }
-
-                                video {
-                                    opacity: 1;
-                                }
-                            }
-                        }
-
+                        width: calc(25% - 1.13rem);
 
                         a {
                             text-decoration: none;
@@ -537,20 +640,24 @@
                             align-items: flex-end;
                             justify-content: space-between;
                             width: 100%;
-                            padding: 2rem 2rem 1.8rem 2rem;
+                            padding: 1.75rem;
+                            background-color: rgba(27, 27, 27, 0);
 
+                            border-radius: 0 0 0.5rem 0.5rem;
                             z-index: 1;
 
                             .wrapper {
                                 width: 100%;
-
+                                display: flex;
+                                align-items: center;
+                                gap: 1rem;
 
                                 .app-icon {
-                                    width: 4rem;
-                                    height: 4rem;
+                                    width: 3rem;
+                                    height: 3rem;
                                     border-radius: 0.5rem;
                                     overflow: hidden;
-                                    margin: 0 0 1rem 0;
+
 
                                     img {
                                         width: 100%;
@@ -562,13 +669,14 @@
                                 .name {
                                     color: white;
                                     display: flex;
-                                    align-items: center;
-                                    justify-content: space-between;
+
+                                    flex-direction: column;
+                                    gap: 0.425rem;
 
                                     p {
                                         margin: 0;
-                                        font-size: 1.5rem;
-                                        font-weight: bold;
+                                        font-size: 1.25rem;
+                                        font-weight: 600;
                                     }
                                 }
                             }
@@ -576,52 +684,51 @@
                             .type {
                                 display: flex;
                                 align-items: center;
-                                gap: 1rem;
+                                gap: 0.5rem;
 
                                 div {
                                     display: flex;
                                     align-items: center;
-                                    gap: 0.8rem;
+                                    gap: 0.5rem;
                                     opacity: 0.5;
 
                                     img {
-                                        width: 1rem;
+                                        width: 0.825rem;
 
-                                        height: 1rem;
+                                        height: 0.825rem;
                                         object-fit: contain;
                                     }
                                 }
 
                                 span {
-                                    padding: 0.3rem 0.8rem;
-                                    font-size: 0.9rem;
+                                    padding: 0.15rem 0.525rem;
+                                    font-size: 0.725rem;
                                     font-weight: 600;
-                                    color: rgb(187, 187, 187);
-                                    background-color: rgb(26, 26, 26);
+                                    color: rgb(182, 182, 182);
+                                    background-color: rgba(26, 26, 26, 0.8);
                                     border-radius: 10rem;
-                                    border: 1px solid rgba(162, 162, 162, 0.5);
+                                    border: 1px solid rgba(255, 255, 255, 0.132);
                                 }
                             }
                         }
 
                         .thumb {
-                            background-color: black;
+
                             position: relative;
                             display: flex;
                             justify-content: center;
                             align-items: center;
                             width: 100%;
-                            aspect-ratio: 1.6;
-                            border: 1px solid rgb(175, 175, 175);
+                            aspect-ratio: 0.75;
                             overflow: hidden;
                             box-shadow: 0 0.3rem 0.2rem rgba(0, 0, 0, 0.1);
-                            border-radius: 0.5rem;
+                            border-radius: 0.5rem 0.5rem;
                             transition: .1s;
 
                             &::before {
                                 content: '';
                                 position: absolute;
-                                background: linear-gradient(-150deg, rgba(40, 40, 40, 0), transparent, rgb(40, 40, 40));
+                                background: linear-gradient(-155deg, rgba(40, 40, 40, 0), transparent, rgb(32, 32, 32));
                                 top: 0;
                                 left: 0;
                                 z-index: 1;
@@ -632,7 +739,7 @@
                             &::after {
                                 content: '';
                                 position: absolute;
-                                background: linear-gradient(rgba(40, 40, 40, 0), transparent, rgb(40, 40, 40));
+                                background: linear-gradient(-155deg, rgba(40, 40, 40, 0), transparent, rgb(32, 32, 32));
                                 top: 0;
                                 left: 0;
                                 z-index: 1;
@@ -674,7 +781,6 @@
             justify-content: space-between;
             margin: 0 0 2rem 0;
 
-
             h1 {
                 margin: 0 0 0 0;
                 font-size: 2rem;
@@ -685,7 +791,7 @@
 
             .filters {
                 display: flex;
-                gap: 0.5rem;
+                gap: 1.75rem;
                 align-items: center;
                 border-radius: 10rem;
 
@@ -693,29 +799,19 @@
                 button {
                     border: none;
                     border-radius: 10rem;
-                    background-color: rgb(199, 199, 199);
+                    background-color: rgba(215, 215, 215, 0);
                     border: 1px solid rgba(0, 0, 0, 0);
 
-                    color: rgb(48, 48, 48);
-                    font-weight: 600;
-                    padding: 0 1rem;
+                    color: rgb(54, 54, 54);
+                    font-weight: 700;
+                    padding: 0;
                     font-size: 1rem;
-                    height: 2.25rem;
+                    height: 1.825rem;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     gap: 0.5rem;
                     position: relative;
-
-                    &:hover {
-
-                        color: black;
-                        border-color: rgba(0, 0, 0, 0.2);
-
-                        &::before {
-                            opacity: 1;
-                        }
-                    }
 
                     &::before {
                         content: '';
@@ -728,9 +824,10 @@
                     }
 
                     &.active {
-                        background-color: rgb(224, 198, 29);
-                        color: black;
-                        border-color: rgba(0, 0, 0, 0.2);
+                        background-color: rgb(40, 40, 40);
+                        color: white;
+                        padding: 0 0.75rem;
+                        font-weight: 600;
                     }
 
                     svg {
@@ -744,6 +841,7 @@
 
                     img {
 
+                        display: none;
                         width: 0.9rem;
                         filter: invert(100%);
                         height: 1rem;

@@ -208,25 +208,27 @@
 }
 .le__footer .footer {
   width: min(85rem, 90%);
-  padding: 3rem 0;
+  padding: 2.5rem 0;
   margin: 0 auto;
-  text-align: center;
   font-size: 0.85rem;
 }
-.le__footer .footer .logos {
-  margin: 0 0 1.5rem 0;
-}
 .le__footer .footer .logos img {
-  max-width: 6rem;
+  max-width: 5rem;
   filter: var(--footer-logo);
 }
 .le__footer .footer .links {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .le__footer .footer .links ul {
   display: flex;
   justify-content: center;
   gap: 2rem;
+}
+.le__footer .footer .links ul:nth-child(2) {
+  gap: 1.25rem;
 }
 .le__footer .footer .links ul li a {
   font-weight: 600;
@@ -234,12 +236,174 @@
   color: var(--footer-primary-text);
   transition: 0.2s;
 }
+.le__footer .footer .links ul li a svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: cover;
+}
+.le__footer .footer .links ul li a svg path {
+  fill: var(--footer-primary-text);
+}
 .le__footer .footer .links ul li a:hover {
   color: var(--footer-secondary-text);
+}
+.le__footer .footer .copyright {
+  margin: 0 0 1.5rem 0;
 }
 .le__footer .footer .copyright p {
   margin: 0;
   color: var(--footer-secondary-text);
+}
+
+.le__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 10rem;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+.le__modal .modal {
+  width: min(32rem, 95%);
+  border-radius: 0.5rem;
+  background-color: var(--container);
+}
+.le__modal .modal .heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2rem 0 2rem;
+}
+.le__modal .modal .heading h1 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+}
+.le__modal .modal .heading .close {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--secondary-btn);
+  justify-content: center;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.le__modal .modal .heading .close:hover {
+  background-color: var(--btn-color);
+}
+.le__modal .modal .heading .close:hover svg path {
+  fill: var(--btn-font-color);
+}
+.le__modal .modal .heading .close svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+.le__modal .modal .heading .close svg path {
+  transition: 0.2s;
+  fill: var(--text-secondary);
+}
+.le__modal .modal .list {
+  padding: 1rem 2rem 2rem 2rem;
+}
+.le__modal .modal .list ul li:last-child a {
+  padding-bottom: 0;
+}
+.le__modal .modal .list ul li:not(:last-child) {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+}
+.le__modal .modal .list ul li a {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+}
+.le__modal .modal .list ul li a:hover .btn {
+  background-color: var(--btn-color-hover);
+}
+.le__modal .modal .list ul li a .btn {
+  color: var(--btn-font-color);
+  font-weight: 600;
+  background-color: var(--btn-color);
+  padding: 0.5rem 1rem;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  transition: 0.2s;
+}
+.le__modal .modal .list ul li a .btn svg {
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.5;
+}
+.le__modal .modal .list ul li a .btn svg path {
+  fill: var(--btn-font-color);
+}
+.le__modal .modal .list ul li a .game {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.le__modal .modal .list ul li a .game h3 {
+  font-weight: 500;
+  margin: 0;
+  color: var(--text-primary);
+}
+.le__modal .modal .list ul li a .game span {
+  display: none;
+  color: var(--text-secondary);
+}
+.le__modal .modal .list ul li a .game .icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+.le__modal .modal .list ul li a .game .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.le__modal .modal .list p {
+  color: var(--text-secondary);
+  margin: 0 0 1rem 0;
+}
+.le__modal .modal .list .input {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 0 1rem 0;
+}
+.le__modal .modal .list .input svg {
+  position: absolute;
+  pointer-events: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  left: 1rem;
+}
+.le__modal .modal .list .input svg path {
+  fill: var(--text-secondary);
+}
+.le__modal .modal .list .input input {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 3rem;
+  border: none;
+  background-color: var(--secondary-btn);
+  border-radius: 0.25rem;
+  color: var(--text-primary);
+}
+.le__modal .modal .list .input input::placeholder {
+  color: var(--text-secondary);
 }
 
 .le__index {
@@ -248,7 +412,7 @@
 
 .le__slider {
   position: relative;
-  height: 32rem;
+  height: 30rem;
 }
 .le__slider .main {
   height: 100%;
@@ -355,28 +519,29 @@
 .le__slider .arrow.next {
   right: 0;
 }
-.le__slider .control {
+.le__slider .slider-control {
   position: absolute;
-  bottom: 2rem;
-  border-radius: 0.5rem;
-  backdrop-filter: blur(10rem);
+  bottom: 0;
   margin: 0 auto;
+  background-color: rgba(24, 24, 24, 0.2);
   left: 0;
   right: 0;
+  z-index: 2;
+}
+.le__slider .control {
   display: flex;
   z-index: 2;
   width: min(85rem, 90%);
-  background-color: rgba(24, 24, 24, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 auto;
   align-items: center;
   overflow: hidden;
-  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
 }
 .le__slider .control.paused .swiper-slide.swiper-slide-active::after {
   animation-play-state: paused;
 }
 .le__slider .control .opt {
   display: flex;
+  justify-content: center;
   align-items: center;
   cursor: pointer;
   gap: 1rem;
@@ -446,7 +611,7 @@
   object-fit: cover;
 }
 .le__slider .control .opt p {
-  width: calc(100% - 3rem);
+  max-width: calc(100% - 3rem);
   color: rgba(255, 255, 255, 0.6);
   margin: 0;
   white-space: nowrap;
@@ -494,20 +659,49 @@
   top: 0;
   left: 0;
   display: flex;
-  opacity: 0;
   justify-content: center;
   transition: 0.5s;
   pointer-events: none;
 }
-.le__slider .bg.blurred {
-  top: -50%;
-  height: 250%;
-  width: 400%;
-  left: -200%;
-  filter: blur(8rem);
-  opacity: 0;
-  mask: linear-gradient(black, transparent);
-  transition: 0.5s;
+.le__slider .bg div {
+  width: 100%;
+  height: 100%;
+}
+.le__slider .bg div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(-90deg, transparent, var(--slider-bg-shadow));
+}
+.le__slider .bg div::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(-90deg, var(--slider-bg-shadow), transparent);
+}
+.le__slider .bg::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(-90deg, transparent, var(--slider-bg-shadow));
+}
+.le__slider .bg::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(transparent, var(--slider-bg-shadow));
 }
 .le__slider .wrapper {
   position: relative;
@@ -533,7 +727,7 @@
 .le__slider .wrapper .container .content {
   width: 50%;
   padding: 1.5rem 0 0 0;
-  height: calc(100% - 4rem);
+  height: calc(100% - 2rem);
   position: relative;
   z-index: 1;
   display: flex;
@@ -554,13 +748,14 @@
   width: fit-content;
   color: black;
   border-radius: 5rem;
-  background-color: rgb(232, 232, 232);
+  background-color: rgba(232, 232, 232, 0.8);
   text-decoration: none;
   border-radius: 2rem;
   font-weight: 600;
   font-size: 1.125rem;
   transition: 0.1s;
   position: relative;
+  gap: 0.5rem;
 }
 .le__slider .wrapper .container a::before {
   content: "";
@@ -572,8 +767,15 @@
   opacity: 0;
   transition: 0.1s;
 }
+.le__slider .wrapper .container a svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  opacity: 0.8;
+}
+.le__slider .wrapper .container a svg path {
+  fill: black;
+}
 .le__slider .wrapper .container a:hover {
-  background-color: rgb(224, 198, 29);
   color: black;
 }
 .le__slider .wrapper .container a:hover::before {
@@ -594,19 +796,16 @@
   background: linear-gradient(rgba(255, 255, 255, 0), transparent);
 }
 .le__gamelist .gamelist {
-  width: min(85rem, 90%);
   margin: 0 auto;
-  padding: 4rem 0;
+  padding: 3.5rem 0 4rem 0;
   position: relative;
   z-index: 1;
 }
 .le__gamelist .gamelist .list {
   display: flex;
-  width: 100%;
   flex-direction: column;
-}
-.le__gamelist .gamelist .list .heading {
-  margin: 0 0 1.5rem 0;
+  width: min(85rem, 90%);
+  margin: 0 auto;
 }
 .le__gamelist .gamelist .list h2 {
   font-size: 1.25rem;
@@ -616,64 +815,149 @@
 }
 .le__gamelist .gamelist .list.development {
   position: relative;
+  width: min(85rem, 90%);
+  display: none;
+  margin: 4.5rem auto 0 auto;
 }
 .le__gamelist .gamelist .list.development .heading {
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 2rem 0;
+}
+.le__gamelist .gamelist .list.development .games-control {
+  position: relative;
+  margin: 0 auto;
+  position: absolute;
+  width: min(85rem, 90%);
+  left: 0;
+  padding-left: 1rem;
+  right: 0;
+  bottom: 3rem;
+  z-index: 2;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
 }
 .le__gamelist .gamelist .list.development .control {
-  position: absolute;
-  bottom: 0;
-  height: 26rem;
-  display: flex;
   width: fit-content;
+  border-radius: 0.5rem;
+  pointer-events: all;
+  display: flex;
+  padding: 1rem;
   align-items: center;
-  background-color: rgba(38, 38, 38, 0.6);
-  padding: 0 1rem;
-  left: 0;
-  overflow: hidden;
-  border: 1px solid transparent;
-  z-index: 2;
-  border-radius: 0.5rem 0 0 0.5rem;
+  position: relative;
+}
+.le__gamelist .gamelist .list.development .control .pagination {
+  display: flex;
+  align-items: center;
+}
+.le__gamelist .gamelist .list.development .control .pagination span {
+  width: 1rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+  position: relative;
+}
+.le__gamelist .gamelist .list.development .control .pagination span::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  background-color: white;
+  opacity: 0;
+}
+.le__gamelist .gamelist .list.development .control .pagination span.swiper-pagination-bullet-active {
+  width: 2.5rem;
+}
+.le__gamelist .gamelist .list.development .control .pagination span.swiper-pagination-bullet-active::before {
+  opacity: 1;
+  animation: width 10s linear;
+}
+.le__gamelist .gamelist .list.development .control .arrow {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  transition: 0.2s;
+}
+.le__gamelist .gamelist .list.development .control .arrow:hover {
+  background-color: white;
+}
+.le__gamelist .gamelist .list.development .control .arrow:hover svg {
+  transform: scale(0.8);
+}
+.le__gamelist .gamelist .list.development .control .arrow:hover svg path {
+  fill: black;
+}
+.le__gamelist .gamelist .list.development .control .arrow svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+.le__gamelist .gamelist .list.development .control .arrow svg path {
+  transition: 0.2s;
+  fill: white;
+}
+.le__gamelist .gamelist .list.development .control .arrow.prev {
+  left: -1.325rem;
+}
+.le__gamelist .gamelist .list.development .control .arrow.next {
+  right: -1.325rem;
 }
 .le__gamelist .gamelist .list.development .control ul {
   height: fit-content;
+  width: fit-content;
+  gap: 1rem;
+  align-items: center;
 }
 .le__gamelist .gamelist .list.development .control ul li {
-  padding: 0.2rem;
   color: rgba(255, 255, 255, 0.5);
   border-radius: 0.5rem;
   display: flex;
   width: fit-content;
   align-items: center;
   justify-content: center;
-  border: 2px solid transparent;
+  border: 0 solid transparent;
   height: fit-content !important;
   transition: 0.2s;
   cursor: pointer;
+  transform: scale(1);
 }
 .le__gamelist .gamelist .list.development .control ul li.swiper-slide-thumb-active {
   border-color: rgb(224, 198, 29);
+  transform: scale(1);
 }
 .le__gamelist .gamelist .list.development .control ul li.swiper-slide-thumb-active:hover {
   border-color: rgb(224, 198, 29);
 }
+.le__gamelist .gamelist .list.development .control ul li.swiper-slide-thumb-active .icon {
+  opacity: 1;
+  background-color: rgb(224, 198, 29);
+}
 .le__gamelist .gamelist .list.development .control ul li:hover {
-  border-color: gray;
+  border-color: rgba(255, 255, 255, 0.5);
 }
 .le__gamelist .gamelist .list.development .control ul li span {
   font-size: 0.825rem;
   display: none;
 }
 .le__gamelist .gamelist .list.development .control ul li .icon {
-  width: 3rem;
-  height: 3rem;
+  width: 0.5rem;
+  height: 0.5rem;
   overflow: hidden;
+  background-color: white;
   display: flex;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  opacity: 0.4;
 }
 .le__gamelist .gamelist .list.development .control ul li .icon img {
   width: 100%;
   height: 100%;
+  display: none;
   object-fit: cover;
 }
 .le__gamelist .gamelist .list.development .control ul li p {
@@ -684,173 +968,171 @@
 }
 .le__gamelist .gamelist .list.development .games {
   width: 100%;
-  overflow: hidden;
-  background-color: black;
-  border-radius: 0.5rem;
 }
-.le__gamelist .gamelist .list.development .games ul {
+.le__gamelist .gamelist .list.development .games.paused .swiper-slide.swiper-slide-active::before {
+  animation-play-state: paused;
+}
+.le__gamelist .gamelist .list.development .games .swiper-wrapper {
   width: 100%;
 }
-.le__gamelist .gamelist .list.development .games ul li {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide {
   width: 100%;
   position: relative;
   display: flex;
   align-items: center;
   color: black;
-  background: linear-gradient(10deg, rgb(227, 227, 227), rgba(203, 203, 203, 0));
+  overflow: hidden;
+}
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .gallery {
+  width: 20.5rem;
+  display: none;
+}
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .gallery ul {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .gallery ul li {
+  width: 100%;
+  aspect-ratio: 1.6;
   border-radius: 0.5rem;
   overflow: hidden;
-  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.le__gamelist .gamelist .list.development .games ul li.swiper-slide-active .gallery .gal {
-  pointer-events: all !important;
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .gallery ul li span {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  position: absolute;
+  background-color: rgba(16, 16, 16, 0.8);
 }
-.le__gamelist .gamelist .list.development .games ul li.swiper-slide-active .gallery .gal .swiper-wrapper {
-  pointer-events: all !important;
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .gallery ul li span svg {
+  width: 1.5rem;
+  height: 1.5rem;
 }
-.le__gamelist .gamelist .list.development .games ul li.swiper-slide-active .gallery .gal .swiper-wrapper .swiper-slide {
-  pointer-events: all !important;
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .gallery ul li span svg path {
+  fill: rgb(206, 206, 206);
 }
-.le__gamelist .gamelist .list.development .games ul li .background {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .gallery ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .gallery ul li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+}
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .gallery ul li img,
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .gallery ul li video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  bottom: 0.05rem;
+  height: 2px;
+  border-radius: 1rem;
+  background-color: rgb(224, 198, 29);
+  z-index: 2;
+  display: none;
+}
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide.swiper-slide-active::before {
+  animation: width 10s;
+}
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .background {
   position: absolute;
   top: 0;
   width: 100%;
-  left: 0;
-  height: 100%;
+  right: 0;
+  height: 28rem;
   overflow: hidden;
   background-color: black;
 }
-.le__gamelist .gamelist .list.development .games ul li .background::before {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .background div {
+  width: 100%;
+  height: 100%;
+}
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .background div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  z-index: 1;
+  height: 100%;
+  background: linear-gradient(-90deg, transparent, var(--coming-bg-shadow));
+}
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .background div::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  opacity: 0.25;
+  bottom: 0;
+  width: 30%;
+  z-index: 1;
+  height: 100%;
+  background: linear-gradient(-90deg, var(--coming-bg-shadow), transparent);
+}
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .background::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 45%;
+  z-index: 1;
+  height: 100%;
+  background: linear-gradient(-90deg, transparent, var(--coming-bg-shadow));
+}
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .background::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
   z-index: 1;
-  height: 150%;
-  background: linear-gradient(transparent, rgba(38, 38, 38, 0.8));
+  height: 50%;
+  background: linear-gradient(transparent, var(--coming-bg-shadow));
 }
-.le__gamelist .gamelist .list.development .games ul li .background video, .le__gamelist .gamelist .list.development .games ul li .background img {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .background video,
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .background img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.7;
 }
-.le__gamelist .gamelist .list.development .games ul li .info {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info {
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   z-index: 2;
-  padding: 0 0 0 12rem;
-  height: 26rem;
+  padding: 4rem;
   margin: 0 auto;
-  justify-content: space-between;
 }
-.le__gamelist .gamelist .list.development .games ul li .info .gallery {
-  padding: 2rem 5rem 2rem 0.2rem;
-  width: 46rem;
-  overflow: hidden;
-}
-.le__gamelist .gamelist .list.development .games ul li .info .gallery .gal {
-  width: 100%;
-  height: 100%;
-}
-.le__gamelist .gamelist .list.development .games ul li .info .gallery .gal .swiper-wrapper {
-  width: 100%;
-  height: 100%;
-}
-.le__gamelist .gamelist .list.development .games ul li .info .gallery .gal .swiper-wrapper div {
-  width: 100%;
-  aspect-ratio: 1.6;
-  background-color: black;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0);
-  position: relative;
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .btn {
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.le__gamelist .gamelist .list.development .games ul li .info .gallery .gal .swiper-wrapper div button {
-  width: fit-content;
-  height: 2.75rem;
-  border: none;
-  border-radius: 10rem;
-  cursor: pointer;
-  text-decoration: none;
-  color: rgb(15, 15, 15);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.6rem;
-  font-weight: 600;
-  transition: 0.1s;
-  font-size: 1.15rem;
-  position: absolute;
-  width: 2.75rem;
-  border-radius: 100%;
-  background-color: rgba(0, 0, 0, 0.457);
-}
-.le__gamelist .gamelist .list.development .games ul li .info .gallery .gal .swiper-wrapper div button:hover {
-  background-color: rgb(225, 225, 225);
-}
-.le__gamelist .gamelist .list.development .games ul li .info .gallery .gal .swiper-wrapper div button:hover::before {
-  opacity: 1;
-}
-.le__gamelist .gamelist .list.development .games ul li .info .gallery .gal .swiper-wrapper div button:hover svg {
-  opacity: 1;
-}
-.le__gamelist .gamelist .list.development .games ul li .info .gallery .gal .swiper-wrapper div button:hover svg path {
-  fill: black;
-}
-.le__gamelist .gamelist .list.development .games ul li .info .gallery .gal .swiper-wrapper div button svg {
-  width: 1.25rem;
-  height: 1.25rem;
-  transition: 0.1s;
-  opacity: 0.8;
-}
-.le__gamelist .gamelist .list.development .games ul li .info .gallery .gal .swiper-wrapper div button svg path {
-  transition: 0.1s;
-  fill: rgb(255, 255, 255);
-}
-.le__gamelist .gamelist .list.development .games ul li .info .gallery .gal .swiper-wrapper div button::before {
-  content: "";
-  position: absolute;
-  width: calc(100% + 0.2rem);
-  height: calc(100% + 0.2rem);
-  border: 2px solid rgba(255, 255, 255, 0.7);
-  border-radius: 10rem;
-  opacity: 0;
-  transition: 0.1s;
-}
-.le__gamelist .gamelist .list.development .games ul li .info .gallery .gal .swiper-wrapper div::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  right: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
-}
-.le__gamelist .gamelist .list.development .games ul li .info .gallery .gal .swiper-wrapper div img {
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  object-fit: cover;
-}
-.le__gamelist .gamelist .list.development .games ul li .info .gallery .gal .swiper-wrapper div video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.le__gamelist .gamelist .list.development .games ul li .info .btn {
-  display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   align-items: center;
 }
-.le__gamelist .gamelist .list.development .games ul li .info .btn a {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .btn a {
   width: fit-content;
   height: 3.5rem;
   margin: 2rem 0 0 0;
@@ -867,7 +1149,7 @@
   font-size: 1.15rem;
   position: relative;
 }
-.le__gamelist .gamelist .list.development .games ul li .info .btn a::before {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .btn a::before {
   content: "";
   position: absolute;
   width: calc(100% + 0.2rem);
@@ -877,137 +1159,130 @@
   opacity: 0;
   transition: 0.1s;
 }
-.le__gamelist .gamelist .list.development .games ul li .info .btn a.dark {
-  padding: 0 3.5rem;
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(1rem);
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .btn a.dark {
+  padding: 0 3rem;
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.15);
 }
-.le__gamelist .gamelist .list.development .games ul li .info .btn a.dark:hover {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .btn a.dark:hover {
   background-color: rgb(224, 198, 29);
 }
-.le__gamelist .gamelist .list.development .games ul li .info .btn a.dark:hover::before {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .btn a.dark:hover::before {
   opacity: 1;
 }
-.le__gamelist .gamelist .list.development .games ul li .info .btn a.dark svg path {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .btn a.dark svg path {
   fill: rgb(0, 0, 0);
 }
-.le__gamelist .gamelist .list.development .games ul li .info .btn a.play {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .btn a.play {
   width: 3.5rem;
-  border-radius: 100%;
+  color: rgba(255, 255, 255, 0.5);
   background-color: rgba(0, 0, 0, 0.457);
 }
-.le__gamelist .gamelist .list.development .games ul li .info .btn a.play:hover {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .btn a.play:hover {
   background-color: rgb(225, 225, 225);
 }
-.le__gamelist .gamelist .list.development .games ul li .info .btn a.play:hover::before {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .btn a.play:hover::before {
   opacity: 1;
 }
-.le__gamelist .gamelist .list.development .games ul li .info .btn a.play:hover svg {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .btn a.play:hover svg {
   opacity: 1;
 }
-.le__gamelist .gamelist .list.development .games ul li .info .btn a.play:hover svg path {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .btn a.play:hover svg path {
   fill: black;
 }
-.le__gamelist .gamelist .list.development .games ul li .info .btn a.play svg {
-  width: 1.5rem;
-  height: 1.5rem;
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .btn a.play svg {
+  width: 2rem;
+  height: 2rem;
   transition: 0.1s;
+  opacity: 0.9;
 }
-.le__gamelist .gamelist .list.development .games ul li .info .btn a.play svg path {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .btn a.play svg path {
   transition: 0.1s;
-  fill: rgb(255, 255, 255);
+  fill: rgb(219, 219, 219);
 }
-.le__gamelist .gamelist .list.development .games ul li .info .btn a svg {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .btn a svg {
   width: 1.15rem;
   height: 1.15rem;
   opacity: 0.6;
 }
-.le__gamelist .gamelist .list.development .games ul li .info .wrapper {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .wrapper {
   display: flex;
-  border-radius: 0.5rem 0.5rem 0 0;
-  position: relative;
-  z-index: 1;
-  border-bottom: none;
+  padding-bottom: 3.5rem;
   flex-direction: column;
 }
-.le__gamelist .gamelist .list.development .games ul li .info .wrapper .game {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .wrapper .game {
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
-.le__gamelist .gamelist .list.development .games ul li .info .name {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  justify-content: center;
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .wrapper .game .title h1 {
+  margin: 0;
+  color: white;
+  font-size: 2.5rem;
+  text-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
 }
-.le__gamelist .gamelist .list.development .games ul li .info .name .tags {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .name {
+  display: flex;
+  gap: 0.25rem;
+  flex-direction: column;
+}
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .name .tags {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
-.le__gamelist .gamelist .list.development .games ul li .info .name .tags div {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .name .tags div {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   opacity: 0.8;
+  margin: 0 0 0 0.325rem;
 }
-.le__gamelist .gamelist .list.development .games ul li .info .name .tags div img {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .name .tags div img {
   width: 1rem;
   height: 1rem;
   object-fit: contain;
 }
-.le__gamelist .gamelist .list.development .games ul li .info .name .tags span {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .name .tags span {
   color: rgb(237, 237, 237);
-  background-color: rgba(26, 26, 26, 0.2);
+  background-color: rgba(44, 44, 44, 0.838);
   border-radius: 10rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 0.25rem 0.6rem;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
 }
-.le__gamelist .gamelist .list.development .games ul li .info .name span {
-  font-weight: bold;
-  color: white;
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .name h1 {
+  margin: 0;
+  color: rgb(249, 249, 249);
+  font-weight: 700;
   font-size: 2.25rem;
   text-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.5);
 }
-.le__gamelist .gamelist .list.development .games ul li .info .app-icon {
-  width: 5rem;
-  height: 5rem;
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .app-icon {
+  width: 4.5rem;
+  height: 4.5rem;
   border-radius: 0.5rem;
   overflow: hidden;
   display: flex;
   box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
 }
-.le__gamelist .gamelist .list.development .games ul li .info .app-icon img {
+.le__gamelist .gamelist .list.development .games .swiper-wrapper .swiper-slide .info .app-icon img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.le__gamelist .gamelist .list.featured {
-  margin: 0 0 2.5rem 0;
-}
 .le__gamelist .gamelist .list.featured ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
-  gap: 1rem;
+  display: flex;
+  gap: 1.5rem;
   width: 100%;
+  flex-wrap: wrap;
 }
 .le__gamelist .gamelist .list.featured ul li {
   position: relative;
   display: flex;
   transition: 0.4s;
-}
-.le__gamelist .gamelist .list.featured ul li:hover .thumb {
-  transform: scale(1.015);
-}
-.le__gamelist .gamelist .list.featured ul li:hover .thumb img {
-  opacity: 0;
-}
-.le__gamelist .gamelist .list.featured ul li:hover .thumb video {
-  opacity: 1;
+  width: calc(25% - 1.13rem);
 }
 .le__gamelist .gamelist .list.featured ul li a {
   text-decoration: none;
@@ -1021,18 +1296,22 @@
   align-items: flex-end;
   justify-content: space-between;
   width: 100%;
-  padding: 2rem 2rem 1.8rem 2rem;
+  padding: 1.75rem;
+  background-color: rgba(27, 27, 27, 0);
+  border-radius: 0 0 0.5rem 0.5rem;
   z-index: 1;
 }
 .le__gamelist .gamelist .list.featured ul li .info .wrapper {
   width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 .le__gamelist .gamelist .list.featured ul li .info .wrapper .app-icon {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 0.5rem;
   overflow: hidden;
-  margin: 0 0 1rem 0;
 }
 .le__gamelist .gamelist .list.featured ul li .info .wrapper .app-icon img {
   width: 100%;
@@ -1042,57 +1321,55 @@
 .le__gamelist .gamelist .list.featured ul li .info .wrapper .name {
   color: white;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.425rem;
 }
 .le__gamelist .gamelist .list.featured ul li .info .wrapper .name p {
   margin: 0;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 .le__gamelist .gamelist .list.featured ul li .info .type {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 .le__gamelist .gamelist .list.featured ul li .info .type div {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.5rem;
   opacity: 0.5;
 }
 .le__gamelist .gamelist .list.featured ul li .info .type div img {
-  width: 1rem;
-  height: 1rem;
+  width: 0.825rem;
+  height: 0.825rem;
   object-fit: contain;
 }
 .le__gamelist .gamelist .list.featured ul li .info .type span {
-  padding: 0.3rem 0.8rem;
-  font-size: 0.9rem;
+  padding: 0.15rem 0.525rem;
+  font-size: 0.725rem;
   font-weight: 600;
-  color: rgb(187, 187, 187);
-  background-color: rgb(26, 26, 26);
+  color: rgb(182, 182, 182);
+  background-color: rgba(26, 26, 26, 0.8);
   border-radius: 10rem;
-  border: 1px solid rgba(162, 162, 162, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.132);
 }
 .le__gamelist .gamelist .list.featured ul li .thumb {
-  background-color: black;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  aspect-ratio: 1.6;
-  border: 1px solid rgb(175, 175, 175);
+  aspect-ratio: 0.75;
   overflow: hidden;
   box-shadow: 0 0.3rem 0.2rem rgba(0, 0, 0, 0.1);
-  border-radius: 0.5rem;
+  border-radius: 0.5rem 0.5rem;
   transition: 0.1s;
 }
 .le__gamelist .gamelist .list.featured ul li .thumb::before {
   content: "";
   position: absolute;
-  background: linear-gradient(-150deg, rgba(40, 40, 40, 0), transparent, rgb(40, 40, 40));
+  background: linear-gradient(-155deg, rgba(40, 40, 40, 0), transparent, rgb(32, 32, 32));
   top: 0;
   left: 0;
   z-index: 1;
@@ -1102,7 +1379,7 @@
 .le__gamelist .gamelist .list.featured ul li .thumb::after {
   content: "";
   position: absolute;
-  background: linear-gradient(rgba(40, 40, 40, 0), transparent, rgb(40, 40, 40));
+  background: linear-gradient(-155deg, rgba(40, 40, 40, 0), transparent, rgb(32, 32, 32));
   top: 0;
   left: 0;
   z-index: 1;
@@ -1142,32 +1419,25 @@
 }
 .le__gamelist .gamelist .heading .filters {
   display: flex;
-  gap: 0.5rem;
+  gap: 1.75rem;
   align-items: center;
   border-radius: 10rem;
 }
 .le__gamelist .gamelist .heading .filters button {
   border: none;
   border-radius: 10rem;
-  background-color: rgb(199, 199, 199);
+  background-color: rgba(215, 215, 215, 0);
   border: 1px solid rgba(0, 0, 0, 0);
-  color: rgb(48, 48, 48);
-  font-weight: 600;
-  padding: 0 1rem;
+  color: rgb(54, 54, 54);
+  font-weight: 700;
+  padding: 0;
   font-size: 1rem;
-  height: 2.25rem;
+  height: 1.825rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   position: relative;
-}
-.le__gamelist .gamelist .heading .filters button:hover {
-  color: black;
-  border-color: rgba(0, 0, 0, 0.2);
-}
-.le__gamelist .gamelist .heading .filters button:hover::before {
-  opacity: 1;
 }
 .le__gamelist .gamelist .heading .filters button::before {
   content: "";
@@ -1179,9 +1449,10 @@
   opacity: 0;
 }
 .le__gamelist .gamelist .heading .filters button.active {
-  background-color: rgb(224, 198, 29);
-  color: black;
-  border-color: rgba(0, 0, 0, 0.2);
+  background-color: rgb(40, 40, 40);
+  color: white;
+  padding: 0 0.75rem;
+  font-weight: 600;
 }
 .le__gamelist .gamelist .heading .filters button svg {
   width: 1.2rem;
@@ -1191,6 +1462,7 @@
   fill: black;
 }
 .le__gamelist .gamelist .heading .filters button img {
+  display: none;
   width: 0.9rem;
   filter: invert(100%);
   height: 1rem;
@@ -1231,23 +1503,22 @@
   flex-wrap: wrap;
 }
 .le__news .news .list .news-list .news-item {
-  width: calc(25% - 0.75rem);
+  width: calc(33% - 0.75rem);
   display: flex;
-  flex-direction: column;
   text-decoration: none;
   overflow: hidden;
   cursor: pointer;
   border-radius: 0.5rem;
   position: relative;
-  box-shadow: 0 0.3rem 0.2rem rgba(0, 0, 0, 0.1);
+  flex-direction: column;
 }
 .le__news .news .list .news-list .news-item:hover .thumb img {
   transform: scale(1.05);
 }
 .le__news .news .list .news-list .news-item .thumb {
-  aspect-ratio: 1.2;
+  aspect-ratio: 1.6;
   width: 100%;
-  border-radius: 0.5rem 0.5rem 1rem 1rem;
+  border-radius: 0.5rem;
   overflow: hidden;
 }
 .le__news .news .list .news-list .news-item .thumb div {
@@ -1261,26 +1532,25 @@
   object-fit: cover;
 }
 .le__news .news .list .news-list .news-item .info {
-  padding: 1.5rem;
+  padding: 1.5rem 0;
   display: flex;
-  flex-direction: column;
   gap: 0.5rem;
-  position: absolute;
+  flex-direction: column;
+  justify-content: center;
   border-radius: 0 0 0.5rem 0.5rem;
   bottom: 0;
   width: 100%;
-  background: linear-gradient(rgba(40, 40, 40, 0.95), rgb(40, 40, 40));
 }
 .le__news .news .list .news-list .news-item .info p {
   margin: 0;
-  font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgb(8, 8, 8);
+  font-size: 2rem;
 }
 .le__news .news .list .news-list .news-item .info p span {
   text-transform: capitalize;
   margin: 0 0.25rem 0 0;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgb(84, 84, 84);
 }
 .le__news .news .list .news-list .news-item .info .title {
   color: black;
@@ -1293,6 +1563,9 @@
   color: rgba(255, 255, 255, 0.5);
   font-weight: 500;
   font-size: 0.85rem;
+}
+.le__news .news .list .news-list .news-item .info .game .news-date {
+  display: none;
 }
 .le__news .news .list .news-list .news-item .info .game div {
   display: flex;
@@ -1322,7 +1595,7 @@
   font-weight: 700;
 }
 .le__news .news .heading .filters {
-  display: flex;
+  display: none;
   gap: 0.5rem;
   align-items: center;
   border-radius: 10rem;
@@ -1385,7 +1658,7 @@
 }
 
 body.light {
-  --body-color: rgb(241, 241, 241);
+  --body-color: rgb(231, 231, 231);
   --menu-bg: rgb(255, 255, 255);
   --menu-secondary: rgb(255, 255, 255);
   --menu-border: rgb(240, 240, 240);
@@ -1445,6 +1718,50 @@ body.dark {
 .le__gamepage .gamepage .header {
   position: relative;
 }
+.le__gamepage .gamepage .header.shop-header .wrapper {
+  height: 16rem;
+  justify-content: flex-end;
+  padding-bottom: 1.8rem;
+}
+.le__gamepage .gamepage .header.shop-header .container .game .icon {
+  width: 4rem;
+  height: 4rem;
+}
+.le__gamepage .gamepage .header.shop-header .container .game .name {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.le__gamepage .gamepage .header.shop-header .container .game .name a {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 100%;
+  transition: 0.2s;
+}
+.le__gamepage .gamepage .header.shop-header .container .game .name a:hover {
+  background-color: var(--btn-color);
+}
+.le__gamepage .gamepage .header.shop-header .container .game .name a:hover svg {
+  opacity: 1;
+}
+.le__gamepage .gamepage .header.shop-header .container .game .name a:hover svg path {
+  fill: var(--btn-font-color);
+}
+.le__gamepage .gamepage .header.shop-header .container .game .name a svg {
+  width: 1.25rem;
+  opacity: 0.6;
+  height: 1.25rem;
+  transition: 0.2s;
+  border-radius: 100%;
+}
+.le__gamepage .gamepage .header.shop-header .container .game .name a svg path {
+  transition: 0.2s;
+  fill: var(--text-primary);
+}
 .le__gamepage .gamepage .header .wrapper {
   height: 22rem;
   display: flex;
@@ -1461,7 +1778,7 @@ body.dark {
 .le__gamepage .gamepage .header .container .game .icon {
   width: 5rem;
   height: 5rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   overflow: hidden;
   margin: 0 0 2rem 0;
 }
@@ -1652,7 +1969,7 @@ body.dark {
 }
 .le__gamepage .gamepage .menu {
   width: 100%;
-  background-color: var(--menu-bg);
+  background-color: var(--menu-bg-color);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -1831,13 +2148,14 @@ body.dark {
   border-color: var(--btn-color);
   color: var(--text-primary);
 }
-.le__gamepage .gamepage .home .content .right .container.system .table h2, .le__gamepage .gamepage .home .content .right .container.system .table h3 {
+.le__gamepage .gamepage .home .content .right .container.system .table h2,
+.le__gamepage .gamepage .home .content .right .container.system .table h3 {
   color: var(--text-primary);
   display: none;
 }
 .le__gamepage .gamepage .home .content .right .container.system .table .wrapper {
   display: flex;
-  gap: 1rem;
+  gap: 5rem;
 }
 .le__gamepage .gamepage .home .content .right .container.system .table .wrapper div {
   width: 50%;
@@ -1846,19 +2164,17 @@ body.dark {
 }
 .le__gamepage .gamepage .home .content .right .container.system .table .wrapper div strong {
   color: var(--text-primary);
-  padding: 1rem 1rem;
+  padding: 1rem 0;
   border-radius: 0.25rem;
-  background-color: var(--news-container);
+  font-size: 1.125rem;
 }
 .le__gamepage .gamepage .home .content .right .container.system .table .wrapper div ul {
   display: flex;
   flex-direction: column;
+  gap: 0.75rem;
 }
 .le__gamepage .gamepage .home .content .right .container.system .table .wrapper div ul li {
-  padding: 1rem;
-}
-.le__gamepage .gamepage .home .content .right .container.system .table .wrapper div ul li:not(:last-child) {
-  border-bottom: 1px solid rgba(128, 128, 128, 0.138);
+  padding: 0.75rem 0 0 0;
 }
 .le__gamepage .gamepage .home .content .right .container.system .table .wrapper div ul p {
   opacity: 0.9;
@@ -1931,10 +2247,10 @@ body.dark {
 .le__gamepage .gamepage .home .content .right .container.news .list .news-list .news-item .info .game {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   color: var(--text-secondary);
   font-weight: 500;
   font-size: 0.85rem;
+  opacity: 0.8;
 }
 .le__gamepage .gamepage .home .content .right .container.news .list .news-list .news-item .info .game div {
   display: flex;
@@ -1946,6 +2262,7 @@ body.dark {
 }
 .le__gamepage .gamepage .home .content .right .container.news .list .news-list .news-item .info .game img {
   width: 1.5rem;
+  display: none;
   height: 1.5rem;
   object-fit: cover;
   border-radius: 0.2rem;
@@ -2081,7 +2398,8 @@ body.dark {
   gap: 0.75rem;
   color: var(--text-primary);
 }
-.le__gamepage .gamepage .home .content .left .links ul li a div, .le__gamepage .gamepage .home .content .left .links ul li a span {
+.le__gamepage .gamepage .home .content .left .links ul li a div,
+.le__gamepage .gamepage .home .content .left .links ul li a span {
   display: flex;
   align-items: center;
 }
@@ -2141,9 +2459,9 @@ body.dark {
   position: relative;
 }
 .shop .heading {
-  background-color: var(--menu-bg);
   display: flex;
   align-items: center;
+  display: none;
 }
 .shop .heading a {
   width: 2rem;
@@ -2188,8 +2506,7 @@ body.dark {
   margin: 0;
 }
 .shop .shop-menu {
-  background-color: var(--menu-bg);
-  border-top: 1px solid var(--body-color);
+  background-color: var(--menu-bg-color);
   position: sticky;
   top: 0;
   z-index: 10;
