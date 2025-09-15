@@ -1,4 +1,3 @@
-const totalSlides = document.querySelectorAll('.le__slider .slider .swiper-slide:not(.swiper-slide-duplicate)').length;
 const mainSliderEl = document.querySelector('.le__slider .slider');
 
 const mainControl = new Swiper('.le__slider .control', {
@@ -11,9 +10,8 @@ const mainControl = new Swiper('.le__slider .control', {
 const mainSlider = new Swiper('.le__slider .slider', {
   slidesPerView: 1,
   spaceBetween: 0,
-  loop: true,
   watchSlidesProgress: true,
-  loopedSlides: totalSlides,
+  loop: true,
   autoplay: {
     delay: 5000,
     disableOnInteraction: false,
@@ -22,6 +20,10 @@ const mainSlider = new Swiper('.le__slider .slider', {
   navigation: {
     nextEl: ".le__slider .next",
     prevEl: ".le__slider .prev",
+  },
+
+  pagination: {
+    el: ".le__slider .pagination",
   },
 });
 
@@ -61,30 +63,24 @@ mainSliderEl.addEventListener('mouseleave', () => {
 
 
 
-document.querySelectorAll('.featured ul li').forEach(container => {
-  const video = container.querySelector('video');
+//
 
-  container.addEventListener('mouseenter', () => {
-    video.play();
+
+
+document.querySelectorAll('.gamelist .featured ul li a').forEach(wrapper => {
+  const video = wrapper.querySelector('video');
+  const videoSrc = wrapper.dataset.src;
+
+  wrapper.addEventListener('mouseenter', () => {
+    if (!video.src) {
+      video.src = videoSrc;
+      video.play();
+    }
   });
 
-  container.addEventListener('mouseleave', () => {
+  wrapper.addEventListener('mouseleave', () => {
     video.pause();
+    video.removeAttribute('src');
+    video.load();
   });
-});
-
-
-const comingGame = new Swiper('.development .games', {
-  slidesPerView: 1,
-  spaceBetween: 0,
-  watchSlidesProgress: true,
-  effect: 'fade',
-  fadeEffect: {
-    crossFade: true,
-  },
-
-  pagination: {
-    el: ".development .pagination",
-  },
-  
 });

@@ -90,6 +90,10 @@
         transition: .1s;
         outline: none;
 
+        @include media_md {
+            display: none;
+        }
+
         div {
             outline: none;
             width: 3rem;
@@ -134,16 +138,42 @@
 
     }
 
+    .pagination {
+        position: absolute;
+        bottom: 0 !important;
+        z-index: 2;
+        width: 100%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        height: 3rem;
+        background-color: rgba(24, 24, 24, 0.2);
+
+        @include media_md {
+            display: flex;
+        }
+
+        span {
+            width: 2rem;
+            height: 0.4rem;
+            border-radius: 10rem;
+            background-color: white;
+        }
+    }
+
     .slider-control {
         position: absolute;
         bottom: 0;
 
         margin: 0 auto;
         background-color: rgba(24, 24, 24, 0.2);
-       
         left: 0;
         right: 0;
         z-index: 2;
+
+        @include media_md {
+            display: none;
+        }
     }
 
     .control {
@@ -332,9 +362,13 @@
                 left: 0;
                 bottom: 0;
                 width: 60%;
-
                 height: 100%;
                 background: linear-gradient(-90deg, transparent, var(--slider-bg-shadow));
+            
+                @include media_md {
+                    width: 100%;
+                    background: linear-gradient(-130deg, transparent, var(--slider-bg-shadow));
+                }
             }
 
             &::after {
@@ -343,9 +377,12 @@
                 right: 0;
                 bottom: 0;
                 width: 30%;
-
                 height: 100%;
                 background: linear-gradient(-90deg, var(--slider-bg-shadow), transparent);
+            
+                @include media_md {
+                    display: none;
+                }
             }
         }
 
@@ -355,7 +392,6 @@
             left: 0;
             bottom: 0;
             width: 60%;
-
             height: 100%;
             background: linear-gradient(-90deg, transparent, var(--slider-bg-shadow));
         }
@@ -387,12 +423,20 @@
             transition: .2s;
             width: min(85rem, 90%);
 
+            @include media_md {
+                width: min(85rem, 80%);
+            }
 
             h1 {
                 color: white;
                 font-size: 2.5rem;
                 text-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.5);
                 line-height: 2.5rem;
+
+                @include media_md {
+                    font-size: 2.25rem;
+                    line-height: 2.25rem;
+                }
             }
 
             .content {
@@ -405,7 +449,11 @@
                 flex-direction: column;
                 justify-content: center;
 
-
+                @include media_md {
+                    width: 100%;
+                    justify-content: flex-end;
+                    height: calc(100% - 3rem);
+                }
             }
 
             .logo {
@@ -433,6 +481,10 @@
                 transition: .1s;
                 position: relative;
                 gap: 0.5rem;
+
+                @include media_m {
+                    width: 100%;
+                }
 
                 &::before {
                     content: '';
@@ -473,6 +525,22 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+
+                &.pc {
+                    display: block;
+
+                    @include media_md {
+                        display: none;
+                    }
+                }
+
+                &.mobile {
+                    display: none;
+
+                    @include media_md {
+                        display: block;
+                    }
+                }
             }
         }
     }

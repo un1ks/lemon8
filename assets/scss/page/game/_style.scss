@@ -23,6 +23,7 @@
                             display: flex;
                             align-items: center;
                             gap: 1rem;
+
                             a {
                                 width: 3rem;
                                 height: 3rem;
@@ -65,7 +66,6 @@
                 }
             }
 
-
             .wrapper {
                 height: 22rem;
                 display: flex;
@@ -73,8 +73,11 @@
                 justify-content: center;
                 position: relative;
 
+                @include media_md {
+                    justify-content: flex-end;
+                    padding: 1.5rem 0.5rem;
+                }
             }
-
 
             .container {
                 width: min(85rem, 90%);
@@ -89,6 +92,11 @@
                         border-radius: 0.5rem;
                         overflow: hidden;
                         margin: 0 0 2rem 0;
+
+                        @include media_md {
+                            width: 3.5rem;
+                            height: 3.5rem;
+                        }
 
                         img {
                             width: 100%;
@@ -217,12 +225,20 @@
                             font-size: 3rem;
                             text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 
+                            @include media_md {
+                                font-size: 2.5rem;
+                            }
+
                             .tags {
                                 position: relative;
                                 bottom: 0.7rem;
                                 display: inline-flex;
                                 align-items: center;
                                 gap: 0.5rem;
+
+                                @include media_md {
+                                    bottom: 0.5rem;
+                                }
 
                                 .devices {
                                     gap: 0.5rem;
@@ -282,7 +298,6 @@
                     top: 0;
                     left: 0;
                     background: linear-gradient(transparent, transparent, rgba(31, 31, 31, 0.8));
-
                 }
 
                 .img {
@@ -295,6 +310,25 @@
                     height: 100%;
                 }
 
+                div {
+                    width: 100%;
+                    height: 100%;
+
+                    &.mobile {
+                        display: none;
+
+                        @include media_md {
+                            display: block;
+                        }
+                    }
+
+                    &.pc {
+                        @include media_md {
+                            display: none;
+                        }
+                    }
+                }
+
                 &::after {
                     content: '';
                     position: absolute;
@@ -304,6 +338,9 @@
                     left: 0;
                     background: linear-gradient(90deg, var(--bg-shadow), var(--bg-shadow-90), transparent, transparent);
 
+                    @include media_md {
+                        background: linear-gradient(20deg, var(--bg-shadow), var(--bg-shadow-90), transparent, transparent);
+                    }
                 }
 
                 img {
@@ -323,17 +360,22 @@
         .menu {
             width: 100%;
 
-            background-color: var(--menu-bg-color);
+            background-color: var(--container);
 
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 11;
 
             ul {
                 display: flex;
                 width: min(85rem, 90%);
                 margin: 0 auto;
                 gap: 3rem;
+
+            
+                @include media_md {
+                     width: min(85rem, 85%);
+                }
 
                 li {
                     &.active {
@@ -380,12 +422,17 @@
         .home {
             padding: 2rem 0 5rem 0;
 
+            @include media_md {
+                padding: 1.5rem 0;
+            }
+
             .media {
                 position: relative;
                 display: flex;
 
                 align-items: center;
                 width: 100%;
+
 
                 .arrow {
                     position: absolute;
@@ -400,6 +447,10 @@
                     z-index: 1;
                     box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
                     cursor: pointer;
+
+                    @include media_md {
+                        display: none;
+                    }
 
                     &:hover {
                         svg {
@@ -436,6 +487,10 @@
                 .slider {
                     width: 100%;
                     overflow: hidden;
+
+                    @include media_md {
+                        padding: 0 5%;
+                    }
 
                     ul {
                         width: 100%;
@@ -474,22 +529,44 @@
                 display: flex;
                 justify-content: space-between;
 
+                @include media_md {
+                    flex-wrap: wrap;
+                    width: 100%;
+                    gap: 1.5rem;
+                }
+
                 .right {
                     width: calc(100% - 346px);
                     display: flex;
                     flex-direction: column;
                     gap: 1.5rem;
 
+                    @include media_md {
+                        width: 100%;
+                    }
+
                     .container {
                         padding: 2rem;
                         border-radius: 0.5rem;
                         background-color: var(--container);
+
+                        width: 100%;
+                        margin: 0 auto;
+
+                        @include media_md {
+                            padding: 1.5rem;
+                            width: 90%;
+                        }
 
                         .heading {
                             margin: 0 0 2rem 0;
                             display: flex;
                             align-items: center;
                             justify-content: space-between;
+
+                            @include media_md {
+                                margin: 0 0 1.5rem 0;
+                            }
 
                             button {
                                 background-color: transparent;
@@ -515,6 +592,10 @@
                             h2 {
                                 margin: 0;
                                 color: var(--text-primary);
+
+                                @include media_md {
+                                    font-size: 1.25rem;
+                                }
                             }
                         }
 
@@ -560,10 +641,19 @@
                                     display: flex;
                                     gap: 5rem;
 
+                                    @include media_md {
+                                        flex-wrap: wrap;
+                                        gap: 2rem;
+                                    }
+
                                     div {
                                         width: 50%;
                                         display: flex;
                                         flex-direction: column;
+
+                                        @include media_md {
+                                            width: 100%;
+                                        }
 
                                         strong {
                                             color: var(--text-primary);
@@ -601,25 +691,50 @@
                         }
 
                         &.news {
+                            @include media_md {
+                                padding: 0;
+                            }
 
+                            .heading {
+                                @include media_md {
+                                    padding: 1.5rem 1.5rem 0 1.5rem;
+                                }
+                            }
+                 
                             .list {
                                 .news-list {
                                     display: flex;
                                     gap: 1.5rem;
-                                    flex-wrap: wrap;
+                                    
+
+                                    @include media_md {
+                                        padding: 0 1.5rem 1.5rem 1.5rem;
+                                        overflow-x: scroll;
+                                        width: 100%;
+                                        gap: 1rem;
+                                    }
+
+                                    &::-webkit-scrollbar {
+                                        height: 0;
+                                        width: 0;
+                                    }
 
                                     .news-item {
                                         width: calc(33.33% - 1rem);
                                         display: flex;
                                         text-decoration: none;
                                         overflow: hidden;
-
                                         border-radius: 0.5rem;
                                         cursor: pointer;
                                         gap: 1.25rem;
                                         flex-direction: column;
                                         position: relative;
                                         box-shadow: 0 0.3rem 0.2rem rgba(0, 0, 0, 0);
+
+                                        @include media_md {
+                                            width: 20rem;
+                                            overflow: visible;
+                                        }
 
                                         &:hover {
                                             .thumb {
@@ -636,6 +751,7 @@
                                             overflow: hidden;
                                             border-radius: 0.425rem;
 
+                                      
                                             div {
                                                 width: 100%;
                                                 height: 100%;
@@ -659,6 +775,10 @@
                                             border-radius: 0 0 0.5rem 0.5rem;
                                             bottom: 0;
                                             width: 100%;
+
+                                            @include media_md {
+                                                width: 15rem;
+                                            }
 
                                             p {
                                                 margin: 0;
@@ -715,6 +835,7 @@
                         }
 
                         &.about {
+
                             .desc {
                                 position: relative;
                             }
@@ -775,6 +896,8 @@
                             }
 
                             .topic {
+                                max-height: 20rem;
+                                overflow: hidden;
 
                                 p,
                                 h1,
@@ -820,8 +943,18 @@
                     top: 5.5rem;
                     gap: 1.5rem;
                     height: fit-content;
+             
+
+                    @include media_md {
+                        width: calc(100% - 2rem);
+                        margin: 0 auto;
+                        z-index: 10;
+                    }
 
                     .install {
+                        @include media_md {
+                            width: 100%;
+                        }
                         button {
                             width: 100%;
                             height: 3.75rem;
@@ -831,6 +964,12 @@
                             font-size: 1.425rem;
                             font-weight: 600;
                             color: var(--btn-font-color);
+
+                            @include media_md {
+                                font-size: 1.1rem;
+                                height: 2.75rem;
+                                border-radius: 0.5rem;
+                            }
                         }
                     }
 
@@ -844,6 +983,22 @@
                         flex-direction: column;
                         gap: 1.5rem;
 
+                        @include media_md {
+                            position: fixed;
+                            bottom: 0rem;
+                            margin: 0 auto;
+                            padding: 1rem;
+                            left: 0;
+                            right: 0;
+                            width: 100%;
+                            flex-direction: row-reverse;
+                            gap: 0.5rem;
+                            background-color: black;
+                            border-radius: 0.5rem 0.5rem 0 0 ;
+                            z-index: 1;
+                            border: 1px solid var(--secondary-btn);
+                        }
+
 
 
                         ul {
@@ -852,13 +1007,25 @@
                             flex-direction: column;
                             gap: 1rem;
 
-                            li {
+                            @include media_md {
+                                flex-direction: row;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 0rem;
+                            }
 
+                            li {
                                 width: 100%;
 
                                 &:not(:last-child) {
                                     padding-bottom: 1rem;
                                     border-bottom: 1px solid rgba(128, 128, 128, 0.122);
+
+                                    @include media_md {
+                                        padding: 0;
+                                        border: none;
+                                        border-right: 1px solid rgba(255, 255, 255, 0.15);
+                                    }
                                 }
 
 
@@ -871,11 +1038,33 @@
                                     text-decoration: none;
                                     font-weight: 600;
 
+                                    @include media_md {
+                                        
+                                        width: 2.75rem;
+                                        
+                                        border-radius: 0.5rem;
+                                        align-items: center;
+                                        justify-content: center;
+                                    }
+
                                     div:nth-child(1) {
                                         display: flex;
                                         align-items: center;
                                         gap: 0.75rem;
                                         color: var(--text-primary);
+                                    }
+
+                                    div:nth-child(2){
+                                        @include media_md {
+                                            display: none;
+                                        }
+                                    }
+                                    p {
+                                        margin: 0;
+
+                                        @include media_md {
+                                            display: none;
+                                        }
                                     }
 
                                     div,

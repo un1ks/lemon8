@@ -5,10 +5,18 @@
         width: min(85rem, 90%);
         padding: 2.5rem 0;
         margin: 0 auto;
-       
         font-size: 0.85rem;
 
+        @include media_md {
+            width: 100%;
+            padding: 0;
+        }
+
         .logos {
+
+            @include media_md {
+                padding: 0 1.5rem 2rem 1.5rem;
+            }
          
             img {
                 max-width: 5rem;
@@ -22,13 +30,58 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+
+            @include media_md {
+                flex-direction: column;
+            }
           
+            .social {
+                justify-content: flex-start;
+                
+                @include media_md {
+                    width: 100%;
+                    padding: 0 1.5rem;
+                }
+            }
+
+            .terms {
+                @include media_md {
+                    padding: 1.25rem 0 0 0;
+                }
+                svg {
+                    opacity: 0.25;
+                    display: none;
+
+                    @include media_md {
+                        display: flex;
+                    }
+                }
+
+                @include media_md {
+                    width: 100%;
+                    gap: 0;
+                    flex-direction: column;
+                }
+
+                li {
+                   
+
+                    a {
+                        @include media_md {
+                            padding: 1rem 1.5rem;
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
 
             ul {
                 display: flex;
-                justify-content: center;
+             
                 gap: 2rem;
-
+                
                 &:nth-child(2) {
                     gap: 1.25rem;
                 }
@@ -39,6 +92,9 @@
                         text-decoration: none;
                         color: var(--footer-primary-text);
                         transition: .2s;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
 
                         svg {
                             width: 1.25rem;
@@ -60,6 +116,10 @@
 
         .copyright {
             margin: 0 0 1.5rem 0;
+
+            @include media_md {
+                padding: 1.5rem 1.5rem 0 1.5rem;
+            }
             p {
                 margin: 0;
                 color: var(--footer-secondary-text);

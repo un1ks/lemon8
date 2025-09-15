@@ -3,9 +3,20 @@ const totalMediaSlides = document.querySelectorAll('.le__gamepage .media .slider
 const mediaSlider = new Swiper('.le__gamepage .media .slider', {
   slidesPerView: 1.5,
   spaceBetween: 24,
- 
   watchSlidesProgress: true,
- 
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1.1,
+      spaceBetween: 16,
+    },
+
+    769: {
+      slidesPerView: 1.5,
+      spaceBetween: 24,
+    },
+  
+  },
 
   navigation: {
     nextEl: ".le__gamepage .media .next",

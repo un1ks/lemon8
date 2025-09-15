@@ -37,14 +37,14 @@ body {
     }
 
     &.dark {
-        --body-color: rgb(21, 21, 21);
+        --body-color: rgb(17, 18, 19);
 
         --menu-bg: rgb(14, 14, 14);
         --menu-border: rgba(255, 255, 255, 0.117);
         --menu-text: rgb(160, 160, 160);
         --menu-text-hover: rgb(241, 241, 241);
 
-        --container: rgb(34, 34, 34);
+        --container: rgb(27, 28, 30);
         --container-special: linear-gradient(rgb(44, 44, 44), rgb(36, 36, 36));
         --container-special-text: white;
         --container-border: rgb(38, 38, 38);
@@ -52,23 +52,23 @@ body {
         --text-primary: rgb(229, 229, 229);
         --text-secondary: rgb(147, 147, 147);
 
-        --secondary-btn: rgb(50, 50, 50);
-        --secondary-btn-hover: rgb(59, 59, 59);
+        --secondary-btn: rgb(43, 45, 48);
+       
+        --secondary-btn-hover: rgb(53, 56, 59);
         --secondary-btn-text: rgb(217, 217, 217);
 
         --slide-btn: rgb(19, 19, 19);
         --slide-icon: white;
 
-        --shop-filter-btn: rgb(23, 23, 23);
+   
 
-
-        --shop-filter-btn: rgb(40, 40, 40);
+        --shop-filter-btn: rgb(43, 45, 48);
         --shop-menu: rgb(32, 32, 32);
-        --shop-container: rgb(33, 33, 33);
+        --shop-container: rgb(27, 28, 30);
 
         --news-container: rgb(30, 30, 30);
 
-        --footer-bg: rgb(31, 31, 31);
+        --footer-bg: rgb(27, 28, 30);
         --footer-primary-text: rgb(129, 129, 129);
         --footer-secondary-text: rgb(73, 73, 73);
         --footer-logo: invert(80%)
