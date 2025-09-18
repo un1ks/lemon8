@@ -7,7 +7,7 @@
   top: 0;
   height: 4rem;
   padding: 0 2rem;
-  background-color: rgb(14, 14, 14);
+  background-color: rgb(13, 13, 13);
   z-index: 100;
 }
 @media (max-width: 769px) {
@@ -4046,6 +4046,1872 @@ body.dark {
   border-radius: 0.5rem;
 }
 
+.le__event {
+  background-color: black;
+  font-family: "VITRO";
+}
+.le__event h1,
+.le__event h2,
+.le__event h3,
+.le__event h4,
+.le__event h5 {
+  font-weight: 900;
+}
+.le__event button,
+.le__event input {
+  font-family: "VITRO";
+}
+.le__event .menu {
+  display: flex;
+  padding: 0 1.5rem;
+  height: 4.5rem;
+  top: 0;
+  z-index: 11;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  justify-content: space-between;
+  position: relative;
+}
+.le__event .menu.scrolled {
+  position: sticky;
+}
+.le__event .menu.scrolled .bg {
+  opacity: 1;
+}
+.le__event .menu .bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+}
+.le__event .menu .bg div {
+  display: flex;
+  height: calc(100% - 1.5rem);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.le__event .menu .bg::after {
+  content: "";
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 14px, rgba(0, 0, 0, 0.8) 0);
+}
+.le__event .menu .user {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  position: relative;
+  z-index: 1;
+}
+.le__event .menu .user button.login {
+  font-weight: 900;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+}
+.le__event .menu .user button.login::before {
+  content: "";
+  width: 100%;
+  height: 0.5rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 4px, rgb(206, 60, 2) 0);
+}
+.le__event .menu .user button.login::after {
+  content: "";
+  width: 100%;
+  height: 0.5rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 4px, rgb(206, 60, 2) 0);
+}
+.le__event .menu .user button.login span {
+  padding: 0rem 1rem;
+  display: flex;
+  align-items: center;
+  background-color: rgb(206, 60, 2);
+}
+.le__event .menu .user button.language {
+  font-weight: 900;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  position: relative;
+}
+.le__event .menu .user button.language::before {
+  content: "";
+  width: 100%;
+  height: 0.5rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 4px, rgba(49, 53, 60, 0.5) 0);
+}
+.le__event .menu .user button.language::after {
+  content: "";
+  width: 100%;
+  height: 0.5rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 4px, rgba(49, 53, 60, 0.5) 0);
+}
+.le__event .menu .user button.language span {
+  padding: 0.1rem 0.75rem;
+  display: flex;
+  align-items: center;
+  background-color: rgba(49, 53, 60, 0.5);
+}
+.le__event .menu .user button.language span svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  opacity: 0.5;
+}
+.le__event .menu .user button.language span svg path {
+  fill: white;
+}
+.le__event .menu .links {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+  z-index: 1;
+}
+.le__event .menu .links .logo a img {
+  width: 4rem;
+}
+.le__event .menu .links li a {
+  color: rgb(166, 166, 166);
+  font-weight: 900;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.le__event .pre-register {
+  padding: 5rem 0;
+}
+.le__event .pre-register .forms {
+  width: min(65rem, 90%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.le__event .pre-register .forms .web {
+  position: relative;
+}
+.le__event .pre-register .forms .web .content {
+  padding: 0.75rem 2rem;
+  background-color: rgb(37, 38, 42);
+  text-align: center;
+  display: flex;
+  gap: 2rem;
+  height: calc(100% - 4rem);
+  align-items: center;
+}
+.le__event .pre-register .forms .web .content .list {
+  height: 100%;
+}
+.le__event .pre-register .forms .web .content .list ul {
+  display: flex;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+}
+.le__event .pre-register .forms .web .content .list ul li {
+  width: 12rem;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.le__event .pre-register .forms .web .content .list ul li .item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgb(25, 26, 29);
+  width: 100%;
+  justify-content: center;
+}
+.le__event .pre-register .forms .web .content .list ul li::before {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 8px, rgb(25, 26, 29) 0);
+}
+.le__event .pre-register .forms .web .content .list ul li::after {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 8px, rgb(25, 26, 29) 0);
+}
+.le__event .pre-register .forms .web .content .list ul li button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-weight: 900;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+}
+.le__event .pre-register .forms .web .content .list ul li button::before {
+  content: "";
+  width: 100%;
+  height: 0.5rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 4px, rgb(59, 64, 70) 0);
+}
+.le__event .pre-register .forms .web .content .list ul li button::after {
+  content: "";
+  width: 100%;
+  height: 0.5rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 4px, rgb(59, 64, 70) 0);
+}
+.le__event .pre-register .forms .web .content .list ul li button span {
+  padding: 0rem 0.6rem;
+  display: flex;
+  align-items: center;
+  background-color: rgb(59, 64, 70);
+}
+.le__event .pre-register .forms .web .content .list ul li button svg {
+  width: 1rem;
+  height: 1rem;
+}
+.le__event .pre-register .forms .web .content .list ul li button svg path {
+  fill: rgb(220, 220, 220);
+}
+.le__event .pre-register .forms .web .content .list ul li .icon img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: contain;
+}
+.le__event .pre-register .forms .web .content .title {
+  display: none;
+}
+.le__event .pre-register .forms .web .content .title h2 {
+  margin: 0 0 1.5rem 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+.le__event .pre-register .forms .web .content form {
+  padding: 0.5rem 0;
+  width: 100%;
+}
+.le__event .pre-register .forms .web .content form .checkbox-list {
+  margin: 0 0 2rem 0;
+}
+.le__event .pre-register .forms .web .content form .checkbox-list .checkbox {
+  position: relative;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.825rem;
+}
+.le__event .pre-register .forms .web .content form .checkbox-list .checkbox.all {
+  padding: 0 0 0.75rem 0;
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.le__event .pre-register .forms .web .content form .checkbox-list .checkbox.all label {
+  color: rgba(255, 255, 255, 0.7);
+}
+.le__event .pre-register .forms .web .content form .checkbox-list .checkbox input {
+  left: 0;
+  position: absolute;
+  opacity: 0;
+}
+.le__event .pre-register .forms .web .content form .checkbox-list .checkbox label {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+.le__event .pre-register .forms .web .content form .checkbox-list .checkbox label span {
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, transparent 3px, rgb(21, 23, 26) 0);
+}
+.le__event .pre-register .forms .web .content form .checkbox-list .checkbox label p {
+  margin: 0;
+  width: calc(100% - 2rem);
+  text-align: left;
+}
+.le__event .pre-register .forms .web .content form .checkbox-list .checkbox label p strong {
+  font-weight: 500;
+}
+.le__event .pre-register .forms .web .content form .checkbox-list .checkbox label p strong.required {
+  color: rgb(156, 2, 2);
+}
+.le__event .pre-register .forms .web .content form .input {
+  margin: 0 0 1.5rem 0;
+}
+.le__event .pre-register .forms .web .content form .input div {
+  position: relative;
+  height: 3rem;
+}
+.le__event .pre-register .forms .web .content form .input div span {
+  padding: 0.5rem 0;
+  display: flex;
+  background-color: rgb(25, 26, 29);
+}
+.le__event .pre-register .forms .web .content form .input div::before {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 8px, rgb(25, 26, 29) 0);
+}
+.le__event .pre-register .forms .web .content form .input div::after {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 8px, rgb(25, 26, 29) 0);
+}
+.le__event .pre-register .forms .web .content form .input div input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  top: 0;
+  z-index: 1;
+  background-color: transparent;
+  border: none;
+  color: white;
+  left: 0;
+  padding: 0 1.25rem;
+}
+.le__event .pre-register .forms .web .content form .btn button {
+  width: 100%;
+  border: none;
+  font-weight: 900;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+}
+.le__event .pre-register .forms .web .content form .btn button span {
+  background-color: rgb(206, 60, 2);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.le__event .pre-register .forms .web .content form .btn button::before {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 8px, rgb(206, 60, 2) 0);
+}
+.le__event .pre-register .forms .web .content form .btn button::after {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 8px, rgb(206, 60, 2) 0);
+}
+.le__event .pre-register .forms .web::before {
+  content: "";
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 14px, rgb(37, 38, 42) 0);
+}
+.le__event .pre-register .forms .web::after {
+  content: "";
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 14px, rgb(37, 38, 42) 0);
+}
+.le__event .pre-register .heading {
+  text-align: center;
+  margin: 0 0 4.5rem 0;
+}
+.le__event .pre-register .heading .logo {
+  margin: 0 0 2rem 0;
+}
+.le__event .pre-register .heading .logo img {
+  width: 12rem;
+}
+.le__event .pre-register .heading p {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  font-family: "VITRO";
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+.le__event .pre-register .heading p::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(59, 64, 70);
+  width: calc(100% + 3rem);
+  height: calc(100% + 1rem);
+  transform: skew(-20deg);
+  opacity: 0.5;
+}
+.le__event .pre-register .heading p span {
+  position: relative;
+}
+.le__event .pre-register .heading h1 {
+  color: white;
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0 0 1rem 0;
+}
+
+.le__event .milestones {
+  background-color: rgb(14, 15, 16);
+  padding: 6rem 0;
+}
+.le__event .milestones .heading {
+  width: min(75rem, 90%);
+  margin: 0 auto 3rem auto;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.le__event .milestones .heading p {
+  margin: 0 0 0.5rem 0;
+  color: rgb(206, 60, 2);
+  font-weight: 900;
+  font-size: 1.25rem;
+}
+.le__event .milestones .heading h1 {
+  margin: 0;
+  color: white;
+  font-size: 3rem;
+}
+.le__event .milestones .total {
+  position: relative;
+  width: fit-content;
+}
+.le__event .milestones .total .wrapper {
+  background-color: rgb(3, 3, 3);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1.5rem;
+}
+.le__event .milestones .total .wrapper h2 {
+  margin: 0;
+  color: white;
+  font-size: 2rem;
+}
+.le__event .milestones .total .wrapper p {
+  font-weight: normal;
+  color: gray;
+  margin: 0;
+  font-size: 0.825rem;
+}
+.le__event .milestones .total::before {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0.05rem;
+  background: linear-gradient(-45deg, transparent 8px, rgb(3, 3, 3) 0);
+}
+.le__event .milestones .total::after {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  position: relative;
+  bottom: 0.05rem;
+  background: linear-gradient(-45deg, transparent 8px, rgb(3, 3, 3) 0);
+}
+.le__event .milestones .list {
+  width: min(75rem, 90%);
+  margin: 0 auto 0 auto;
+}
+.le__event .milestones .list ul {
+  display: flex;
+  width: 100%;
+}
+.le__event .milestones .list ul li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.le__event .milestones .list ul li.active .item .bg div {
+  background-color: rgb(206, 60, 2) !important;
+}
+.le__event .milestones .list ul li.active .item .bg::before {
+  background: linear-gradient(-45deg, transparent 14px, rgb(206, 60, 2) 0);
+}
+.le__event .milestones .list ul li.active .item .bg::after {
+  background: linear-gradient(-45deg, transparent 14px, rgb(206, 60, 2) 0);
+}
+.le__event .milestones .list ul li.active .item .mile h2 {
+  color: black;
+}
+.le__event .milestones .list ul li:nth-child(1) {
+  width: fit-content;
+}
+.le__event .milestones .list ul li:nth-child(1) .progress {
+  display: none;
+}
+.le__event .milestones .list ul li .progress {
+  display: flex;
+  background-color: rgb(37, 38, 42);
+  height: 0.15rem;
+  width: calc(100% - 12rem);
+  position: relative;
+}
+.le__event .milestones .list ul li .progress .bar {
+  position: absolute;
+  height: 100%;
+  background-color: rgb(206, 60, 2);
+}
+.le__event .milestones .list ul li .item {
+  position: relative;
+  width: 12rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.1rem;
+}
+.le__event .milestones .list ul li .item h2 {
+  margin: 0;
+}
+.le__event .milestones .list ul li .item .mile {
+  position: relative;
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0.75rem 0.5rem;
+  font-size: 0.825rem;
+}
+.le__event .milestones .list ul li .item .icon {
+  position: relative;
+  z-index: 1;
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+}
+.le__event .milestones .list ul li .item .icon p {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.825rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+.le__event .milestones .list ul li .item .icon div {
+  background-color: rgb(19, 19, 21);
+  width: 100%;
+  height: 100%;
+  padding: 2rem 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.le__event .milestones .list ul li .item .icon::before {
+  content: "";
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0.02rem;
+  background: linear-gradient(-45deg, transparent 13px, rgb(19, 19, 21) 0);
+}
+.le__event .milestones .list ul li .item .icon::after {
+  content: "";
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 14px, rgb(19, 19, 21) 0);
+}
+.le__event .milestones .list ul li .item .icon img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: contain;
+}
+.le__event .milestones .list ul li .item .icon button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-weight: 900;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+}
+.le__event .milestones .list ul li .item .icon button::before {
+  content: "";
+  width: 100%;
+  height: 0.5rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 4px, rgb(59, 64, 70) 0);
+}
+.le__event .milestones .list ul li .item .icon button::after {
+  content: "";
+  width: 100%;
+  height: 0.5rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 4px, rgb(59, 64, 70) 0);
+}
+.le__event .milestones .list ul li .item .icon button span {
+  padding: 0rem 0.5rem;
+  display: flex;
+  align-items: center;
+  background-color: rgb(59, 64, 70);
+}
+.le__event .milestones .list ul li .item .icon button svg {
+  width: 1rem;
+  height: 1rem;
+}
+.le__event .milestones .list ul li .item .icon button svg path {
+  fill: rgb(220, 220, 220);
+}
+.le__event .milestones .list ul li .item .bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.le__event .milestones .list ul li .item .bg div {
+  display: flex;
+  height: calc(100% - 3rem);
+  background-color: rgb(37, 38, 42);
+}
+.le__event .milestones .list ul li .item .bg::before {
+  content: "";
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 14px, rgb(37, 38, 42) 0);
+}
+.le__event .milestones .list ul li .item .bg::after {
+  content: "";
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 14px, rgb(37, 38, 42) 0);
+}
+
+.le__event .missions {
+  padding: 6rem 0;
+}
+.le__event .missions .container {
+  width: min(75rem, 90%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.le__event .missions .heading {
+  width: min(40rem, 90%);
+  margin: 0 0 2rem 0;
+}
+.le__event .missions .heading h1 {
+  color: white;
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+.le__event .missions .heading p {
+  color: rgb(206, 60, 2);
+  text-transform: uppercase;
+  margin: 0 0 0.5rem 0;
+  font-weight: 900;
+  font-size: 1.25rem;
+}
+.le__event .missions .store-list {
+  width: min(43rem, 90%);
+  position: relative;
+  margin: 1.5rem 0 0 0;
+}
+.le__event .missions .store-list .title {
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.le__event .missions .store-list .title .balance {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.le__event .missions .store-list .title .balance p {
+  margin: 0;
+}
+.le__event .missions .store-list .title .balance span {
+  color: gray;
+}
+.le__event .missions .store-list .title .balance div {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.le__event .missions .store-list .title .balance div p {
+  font-weight: 900;
+  color: rgb(206, 60, 2);
+}
+.le__event .missions .store-list .title .balance div span {
+  display: flex;
+  width: 1.15rem;
+  height: 1.15rem;
+  font-weight: 900;
+  font-size: 0.725rem;
+  border-radius: 0.15rem;
+  background-color: rgb(206, 60, 2);
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+.le__event .missions .store-list .title h2,
+.le__event .missions .store-list .title p {
+  margin: 0;
+}
+.le__event .missions .store-list .title h2 {
+  text-transform: uppercase;
+  color: rgb(235, 235, 235);
+  margin: 0 0 0.25rem 0;
+}
+.le__event .missions .store-list .title p {
+  color: gray;
+}
+.le__event .missions .store-list .bg-2 {
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  right: 0rem;
+  bottom: 0rem;
+}
+.le__event .missions .store-list .bg-2 div {
+  height: calc(100% - 2rem);
+  background-color: rgb(40, 42, 46);
+  display: flex;
+}
+.le__event .missions .store-list .bg-2::before {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 10px, rgb(40, 42, 46) 0);
+}
+.le__event .missions .store-list .bg-2::after {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 10px, rgb(40, 42, 46) 0);
+}
+.le__event .missions .store-list .bg {
+  position: absolute;
+  top: 0.05rem;
+  left: 0.05rem;
+  right: 0.05rem;
+  bottom: 0.05rem;
+  z-index: 1;
+}
+.le__event .missions .store-list .bg div {
+  height: calc(100% - 2rem);
+  background-color: rgb(13, 14, 16);
+  display: flex;
+}
+.le__event .missions .store-list .bg::before {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 10px, rgb(13, 14, 16) 0);
+}
+.le__event .missions .store-list .bg::after {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 10px, rgb(13, 14, 16) 0);
+}
+.le__event .missions .store-list .wrapper {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 2rem 2rem 2rem;
+}
+.le__event .missions .store-list .pagination {
+  display: flex;
+  flex-direction: row !important;
+  margin: 1.5rem 0 0 0;
+  justify-content: center;
+}
+.le__event .missions .store-list .pagination span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 0.1rem;
+  background-color: rgb(53, 56, 62);
+  color: rgb(171, 171, 171);
+  font-size: 0.825rem;
+  font-weight: 900;
+  opacity: 1;
+}
+.le__event .missions .store-list .pagination span.swiper-pagination-bullet-active {
+  background-color: rgb(206, 60, 2);
+  color: black;
+}
+.le__event .missions .store-list .-container {
+  flex-direction: row !important;
+}
+.le__event .missions .store-list .list {
+  overflow: hidden;
+}
+.le__event .missions .store-list .list .item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.1rem;
+  margin-top: 14px !important;
+}
+.le__event .missions .store-list .list .item h2 {
+  margin: 0;
+}
+.le__event .missions .store-list .list .item .btn {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+}
+.le__event .missions .store-list .list .item .btn button {
+  width: 100%;
+  border: none;
+  font-weight: 900;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+}
+.le__event .missions .store-list .list .item .btn button div {
+  background-color: rgb(206, 60, 2);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 1rem;
+}
+.le__event .missions .store-list .list .item .btn button div span {
+  width: 1.15rem;
+  height: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  color: rgb(206, 60, 2);
+  background-color: black;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+.le__event .missions .store-list .list .item .btn button::before {
+  content: "";
+  width: 100%;
+  height: 0.75rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: rgb(206, 60, 2);
+}
+.le__event .missions .store-list .list .item .btn button::after {
+  content: "";
+  width: 100%;
+  height: 0.75rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 8px, rgb(206, 60, 2) 0);
+}
+.le__event .missions .store-list .list .item .limit {
+  position: absolute;
+  bottom: 3.75rem;
+  z-index: 3;
+  color: gray;
+  font-size: 0.825rem;
+}
+.le__event .missions .store-list .list .item .limit span {
+  color: white;
+}
+.le__event .missions .store-list .list .item .icon {
+  position: relative;
+  z-index: 2;
+  height: 14rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+}
+.le__event .missions .store-list .list .item .icon div {
+  background-color: rgb(19, 19, 21);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.le__event .missions .store-list .list .item .icon p {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.825rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+.le__event .missions .store-list .list .item .icon::before {
+  content: "";
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 14px, rgb(19, 19, 21) 0);
+}
+.le__event .missions .store-list .list .item .icon img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: contain;
+}
+.le__event .missions .store-list .list .item .icon button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-weight: 900;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+}
+.le__event .missions .store-list .list .item .icon button::before {
+  content: "";
+  width: 100%;
+  height: 0.5rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 4px, rgb(59, 64, 70) 0);
+}
+.le__event .missions .store-list .list .item .icon button::after {
+  content: "";
+  width: 100%;
+  height: 0.5rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 4px, rgb(59, 64, 70) 0);
+}
+.le__event .missions .store-list .list .item .icon button span {
+  padding: 0rem 0.5rem;
+  display: flex;
+  align-items: center;
+  background-color: rgb(59, 64, 70);
+}
+.le__event .missions .store-list .list .item .icon button svg {
+  width: 1rem;
+  height: 1rem;
+}
+.le__event .missions .store-list .list .item .icon button svg path {
+  fill: rgb(220, 220, 220);
+}
+.le__event .missions .store-list .list .item .bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.le__event .missions .store-list .list .item .bg div {
+  display: flex;
+  height: calc(100% - 3rem);
+  background-color: rgb(37, 38, 42);
+}
+.le__event .missions .store-list .list .item .bg::before {
+  content: "";
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 14px, rgb(37, 38, 42) 0);
+}
+.le__event .missions .store-list .list .item .bg::after {
+  content: "";
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 14px, rgb(37, 38, 42) 0);
+}
+.le__event .missions .tab-content {
+  display: none;
+}
+.le__event .missions .tab-content.active {
+  display: block;
+}
+.le__event .missions .mission-list {
+  width: min(43rem, 90%);
+  position: relative;
+  margin: 1.5rem 0 0 0;
+}
+.le__event .missions .mission-list .title {
+  margin: 0 0 1.5rem 0;
+}
+.le__event .missions .mission-list .title h2,
+.le__event .missions .mission-list .title p {
+  margin: 0;
+}
+.le__event .missions .mission-list .title h2 {
+  text-transform: uppercase;
+  color: rgb(235, 235, 235);
+  margin: 0 0 0.25rem 0;
+}
+.le__event .missions .mission-list .title p {
+  color: gray;
+}
+.le__event .missions .mission-list .bg-2 {
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  right: 0rem;
+  bottom: 0rem;
+}
+.le__event .missions .mission-list .bg-2 div {
+  height: calc(100% - 2rem);
+  background-color: rgb(40, 42, 46);
+  display: flex;
+}
+.le__event .missions .mission-list .bg-2::before {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 10px, rgb(40, 42, 46) 0);
+}
+.le__event .missions .mission-list .bg-2::after {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 10px, rgb(40, 42, 46) 0);
+}
+.le__event .missions .mission-list .bg {
+  position: absolute;
+  top: 0.05rem;
+  left: 0.05rem;
+  right: 0.05rem;
+  bottom: 0.05rem;
+  z-index: 1;
+}
+.le__event .missions .mission-list .bg div {
+  height: calc(100% - 2rem);
+  background-color: rgb(13, 14, 16);
+  display: flex;
+}
+.le__event .missions .mission-list .bg::before {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 10px, rgb(13, 14, 16) 0);
+}
+.le__event .missions .mission-list .bg::after {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 10px, rgb(13, 14, 16) 0);
+}
+.le__event .missions .mission-list .wrapper {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 2rem 0.5rem 2rem;
+}
+.le__event .missions .mission-list .list {
+  height: 29rem;
+  overflow: hidden;
+}
+.le__event .missions .mission-list .pagination {
+  display: flex;
+  flex-direction: row !important;
+  margin: 1.5rem 0 0 0;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.le__event .missions .mission-list .pagination span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 0.1rem;
+  background-color: rgb(53, 56, 62);
+  color: rgb(171, 171, 171);
+  font-size: 0.825rem;
+  font-weight: 900;
+  opacity: 1;
+}
+.le__event .missions .mission-list .pagination span.swiper-pagination-bullet-active {
+  background-color: rgb(206, 60, 2);
+  color: black;
+}
+.le__event .missions .mission-list .-container {
+  position: relative;
+}
+.le__event .missions .mission-list .-container .mission {
+  position: relative;
+}
+.le__event .missions .mission-list .-container .mission::before {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0.05rem;
+  background: linear-gradient(-45deg, transparent 10px, rgb(29, 31, 35) 0);
+}
+.le__event .missions .mission-list .-container .mission::after {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  position: relative;
+  bottom: 0.05rem;
+  background: linear-gradient(-45deg, transparent 10px, rgb(29, 31, 35) 0);
+}
+.le__event .missions .mission-list .-container .mission .-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.25rem 1.25rem 0.25rem 1.5rem;
+  background-color: rgb(29, 31, 35);
+}
+.le__event .missions .mission-list .-container .mission .-wrapper .text {
+  color: white;
+}
+.le__event .missions .mission-list .-container .mission .-wrapper .text span {
+  color: gray;
+}
+.le__event .missions .mission-list .-container .mission .-wrapper .action {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
+}
+.le__event .missions .mission-list .-container .mission .-wrapper .action .reward {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.le__event .missions .mission-list .-container .mission .-wrapper .action .reward p {
+  margin: 0;
+  color: gray;
+  font-size: 0.825rem;
+}
+.le__event .missions .mission-list .-container .mission .-wrapper .action .reward div {
+  color: rgb(206, 60, 2);
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.le__event .missions .mission-list .-container .mission .-wrapper .action .reward div span {
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 0.8rem;
+  border-radius: 0.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  background-color: rgb(206, 60, 2);
+}
+.le__event .missions .mission-list .-container .mission .-wrapper .action .button {
+  display: flex;
+  align-items: center;
+}
+.le__event .missions .mission-list .-container .mission .-wrapper .action .button button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: rgb(149, 149, 149);
+}
+.le__event .missions .mission-list .-container .mission .-wrapper .action .button button span {
+  display: flex;
+  background-color: rgb(20, 22, 24);
+  font-weight: 900;
+  padding: 0.15rem 2rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  justify-content: center;
+}
+.le__event .missions .mission-list .-container .mission .-wrapper .action .button button::before {
+  content: "";
+  width: 100%;
+  height: 0.5rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0.05rem;
+  background: linear-gradient(-45deg, transparent 4px, rgb(20, 22, 24) 0);
+}
+.le__event .missions .mission-list .-container .mission .-wrapper .action .button button::after {
+  content: "";
+  width: 100%;
+  height: 0.5rem;
+  display: flex;
+  position: relative;
+  bottom: 0.05rem;
+  background: linear-gradient(-45deg, transparent 4px, rgb(20, 22, 24) 0);
+}
+.le__event .missions .switch {
+  width: min(43rem, 90%);
+  position: relative;
+  z-index: 2;
+}
+.le__event .missions .switch .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.le__event .missions .switch .bg div {
+  height: calc(100% - 2rem);
+  background-color: rgb(206, 60, 2);
+}
+.le__event .missions .switch .bg::before {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 8px, rgb(206, 60, 2) 0);
+}
+.le__event .missions .switch .bg::after {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 8px, rgb(206, 60, 2) 0);
+}
+.le__event .missions .switch .wrapper {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  padding: 0.1rem;
+}
+.le__event .missions .switch .wrapper .balance {
+  align-items: center;
+  display: none;
+  min-width: 14rem;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.le__event .missions .switch .wrapper .balance p,
+.le__event .missions .switch .wrapper .balance h3 {
+  margin: 0;
+}
+.le__event .missions .switch .wrapper .balance p {
+  color: white;
+}
+.le__event .missions .switch .wrapper .balance h3 {
+  color: rgb(206, 60, 2);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.le__event .missions .switch .wrapper .balance h3 span {
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 0.8rem;
+  border-radius: 0.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  background-color: rgb(206, 60, 2);
+}
+.le__event .missions .switch .wrapper .btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.le__event .missions .switch .wrapper button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.5);
+  transition: 0.2s;
+}
+.le__event .missions .switch .wrapper button:hover {
+  color: white;
+}
+.le__event .missions .switch .wrapper button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  opacity: 0.5;
+}
+.le__event .missions .switch .wrapper button svg path {
+  fill: white;
+}
+.le__event .missions .switch .wrapper button.active {
+  color: black;
+}
+.le__event .missions .switch .wrapper button.active span {
+  background-color: rgb(206, 60, 2);
+}
+.le__event .missions .switch .wrapper button.active::before {
+  background: linear-gradient(-45deg, transparent 8px, rgb(206, 60, 2) 0);
+}
+.le__event .missions .switch .wrapper button.active::after {
+  background: linear-gradient(-45deg, transparent 8px, rgb(206, 60, 2) 0);
+}
+.le__event .missions .switch .wrapper button span {
+  display: flex;
+  background-color: rgb(22, 23, 25);
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 0 3rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.le__event .missions .switch .wrapper button::before {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 8px, rgb(22, 23, 25) 0);
+}
+.le__event .missions .switch .wrapper button::after {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 8px, rgb(22, 23, 25) 0);
+}
+
+.le__event .invitation {
+  padding: 6rem 0 6rem 0;
+  background-color: rgb(14, 15, 16);
+}
+.le__event .invitation .container {
+  width: min(75rem, 90%);
+  margin: 0 auto;
+}
+.le__event .invitation .container .heading {
+  margin: 0 0 2rem 0;
+  text-transform: uppercase;
+}
+.le__event .invitation .container .heading p {
+  margin: 0 0 0.5rem 0;
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: rgb(206, 60, 2);
+}
+.le__event .invitation .container .heading h1 {
+  margin: 0;
+  color: white;
+  font-size: 3rem;
+}
+.le__event .invitation .container .rewards .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 1.5rem 0;
+}
+.le__event .invitation .container .rewards .title h2 {
+  margin: 0;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+.le__event .invitation .container .rewards .title .progress {
+  font-size: 1;
+  color: gray;
+}
+.le__event .invitation .container .rewards .title .progress span {
+  color: rgb(206, 60, 2);
+}
+.le__event .invitation .container .rewards .list ul {
+  display: flex;
+  width: 100%;
+}
+.le__event .invitation .container .rewards .list ul li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.le__event .invitation .container .rewards .list ul li.active .item .bg div {
+  background-color: rgb(206, 60, 2) !important;
+}
+.le__event .invitation .container .rewards .list ul li.active .item .bg::before {
+  background: linear-gradient(-45deg, transparent 14px, rgb(206, 60, 2) 0);
+}
+.le__event .invitation .container .rewards .list ul li.active .item .bg::after {
+  background: linear-gradient(-45deg, transparent 14px, rgb(206, 60, 2) 0);
+}
+.le__event .invitation .container .rewards .list ul li.active .item .mile h2 {
+  color: black;
+}
+.le__event .invitation .container .rewards .list ul li:nth-child(1) {
+  width: fit-content;
+}
+.le__event .invitation .container .rewards .list ul li:nth-child(1) .progress {
+  display: none;
+}
+.le__event .invitation .container .rewards .list ul li .progress {
+  display: flex;
+  background-color: rgb(37, 38, 42);
+  height: 0.15rem;
+  width: calc(100% - 15rem);
+  position: relative;
+}
+.le__event .invitation .container .rewards .list ul li .progress .bar {
+  position: absolute;
+  height: 100%;
+  background-color: rgb(206, 60, 2);
+}
+.le__event .invitation .container .rewards .list ul li .item {
+  position: relative;
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.1rem;
+}
+.le__event .invitation .container .rewards .list ul li .item h2 {
+  margin: 0;
+}
+.le__event .invitation .container .rewards .list ul li .item .mile {
+  position: relative;
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0.75rem 0.5rem;
+  font-size: 0.825rem;
+}
+.le__event .invitation .container .rewards .list ul li .item .icon {
+  position: relative;
+  z-index: 1;
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+}
+.le__event .invitation .container .rewards .list ul li .item .icon p {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.825rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+.le__event .invitation .container .rewards .list ul li .item .icon div {
+  background-color: rgb(19, 19, 21);
+  width: 100%;
+  height: 100%;
+  padding: 2rem 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.le__event .invitation .container .rewards .list ul li .item .icon::before {
+  content: "";
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0.02rem;
+  background: linear-gradient(-45deg, transparent 13px, rgb(19, 19, 21) 0);
+}
+.le__event .invitation .container .rewards .list ul li .item .icon::after {
+  content: "";
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 14px, rgb(19, 19, 21) 0);
+}
+.le__event .invitation .container .rewards .list ul li .item .icon img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: contain;
+}
+.le__event .invitation .container .rewards .list ul li .item .icon button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-weight: 900;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+}
+.le__event .invitation .container .rewards .list ul li .item .icon button::before {
+  content: "";
+  width: 100%;
+  height: 0.5rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 4px, rgb(59, 64, 70) 0);
+}
+.le__event .invitation .container .rewards .list ul li .item .icon button::after {
+  content: "";
+  width: 100%;
+  height: 0.5rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 4px, rgb(59, 64, 70) 0);
+}
+.le__event .invitation .container .rewards .list ul li .item .icon button span {
+  padding: 0rem 0.5rem;
+  display: flex;
+  align-items: center;
+  background-color: rgb(59, 64, 70);
+}
+.le__event .invitation .container .rewards .list ul li .item .icon button svg {
+  width: 1rem;
+  height: 1rem;
+}
+.le__event .invitation .container .rewards .list ul li .item .icon button svg path {
+  fill: rgb(220, 220, 220);
+}
+.le__event .invitation .container .rewards .list ul li .item .bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.le__event .invitation .container .rewards .list ul li .item .bg div {
+  display: flex;
+  height: calc(100% - 3rem);
+  background-color: rgb(37, 38, 42);
+}
+.le__event .invitation .container .rewards .list ul li .item .bg::before {
+  content: "";
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 14px, rgb(37, 38, 42) 0);
+}
+.le__event .invitation .container .rewards .list ul li .item .bg::after {
+  content: "";
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 14px, rgb(37, 38, 42) 0);
+}
+.le__event .invitation .container .generate {
+  width: 100%;
+  position: relative;
+  padding: 2rem;
+  margin: 0 0 3rem 0;
+}
+.le__event .invitation .container .generate .title {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 1rem 0;
+}
+.le__event .invitation .container .generate .title p {
+  color: white;
+  margin: 0;
+}
+.le__event .invitation .container .generate .s-btn {
+  display: flex;
+  position: relative;
+  padding: 0.5rem;
+}
+.le__event .invitation .container .generate .s-btn button {
+  min-width: 18rem;
+  border: none;
+  font-weight: 900;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+.le__event .invitation .container .generate .s-btn button div {
+  background-color: rgb(56, 63, 70);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.76);
+}
+.le__event .invitation .container .generate .s-btn button div span {
+  width: 1.15rem;
+  height: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  color: rgb(206, 60, 2);
+  background-color: black;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+.le__event .invitation .container .generate .s-btn button::before {
+  content: "";
+  width: 100%;
+  height: 0.75rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 8px, rgb(56, 63, 70) 0);
+}
+.le__event .invitation .container .generate .s-btn button::after {
+  content: "";
+  width: 100%;
+  height: 0.75rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 8px, rgb(56, 63, 70) 0);
+}
+.le__event .invitation .container .generate .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.le__event .invitation .container .generate .bg div {
+  height: calc(100% - 2rem);
+  background-color: rgb(27, 29, 32);
+  display: flex;
+}
+.le__event .invitation .container .generate .bg::before {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 10px, rgb(27, 29, 32) 0);
+}
+.le__event .invitation .container .generate .bg::after {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 10px, rgb(27, 29, 32) 0);
+}
+.le__event .invitation .container .generate .form {
+  width: 100%;
+  display: flex;
+  position: relative;
+  gap: 0.5rem;
+  z-index: 1;
+}
+.le__event .invitation .container .generate .form .bg {
+  filter: brightness(70%);
+}
+.le__event .invitation .container .generate .form form {
+  width: 100%;
+  display: flex;
+  position: relative;
+  padding: 0.5rem;
+}
+.le__event .invitation .container .generate .form form .input {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+.le__event .invitation .container .generate .form form .input div {
+  height: 100%;
+}
+.le__event .invitation .container .generate .form form .input input {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 0 1.5rem;
+}
+.le__event .invitation .container .generate .form form .input input::placeholder {
+  color: rgba(255, 255, 255, 0.628);
+}
+.le__event .invitation .container .generate .form form button {
+  min-width: 18rem;
+  border: none;
+  font-weight: 900;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+.le__event .invitation .container .generate .form form button div {
+  background-color: rgb(206, 60, 2);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 1rem;
+}
+.le__event .invitation .container .generate .form form button div span {
+  width: 1.15rem;
+  height: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  color: rgb(206, 60, 2);
+  background-color: black;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+.le__event .invitation .container .generate .form form button::before {
+  content: "";
+  width: 100%;
+  height: 0.75rem;
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  background: linear-gradient(-45deg, transparent 8px, rgb(206, 60, 2) 0);
+}
+.le__event .invitation .container .generate .form form button::after {
+  content: "";
+  width: 100%;
+  height: 0.75rem;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  background: linear-gradient(-45deg, transparent 8px, rgb(206, 60, 2) 0);
+}
+
 .news-modal {
   display: none;
   position: fixed;
@@ -4504,6 +6370,27 @@ body.dark {
 }
 
 @font-face {
+  font-family: "VITRO";
+  src: url("../../assets/font/VITRO-INSPIRE-TTF.woff2") format("woff2"), url("../../assets/font/VITRO-INSPIRE-TTF.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "VITRO";
+  src: url("../../assets/font/VITRO-CORE-TTF.woff2") format("woff2"), url("../../assets/font/VITRO-CORE-TTF.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "VITRO";
+  src: url("../../assets/font/VITRO-PRIDE-TTF.woff2") format("woff2"), url("../../assets/font/VITRO-PRIDE-TTF.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
   font-family: "GT Maru";
   src: url("../../assets/font/GTMaru-Bold.woff2") format("woff2"), url("../../assets/font/GTMaru-Bold.woff") format("woff");
   font-weight: bold;
@@ -4603,9 +6490,6 @@ textarea {
 
 button {
   cursor: pointer;
-}
-button:active {
-  transform: scale(0.98);
 }
 button:disabled {
   cursor: not-allowed;

@@ -1,17 +1,26 @@
 @font-face {
-    font-family: 'Saira ExtraCondensed';
-    src: url('SairaExtraCondensed-SemiBold.woff2') format('woff2'),
-        url('SairaExtraCondensed-SemiBold.woff') format('woff');
-    font-weight: 600;
+    font-family: 'VITRO';
+    src: url('VITRO-INSPIRE-TTF.woff2') format('woff2'),
+        url('VITRO-INSPIRE-TTF.woff') format('woff');
+    font-weight: 900;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Saira ExtraCondensed';
-    src: url('SairaExtraCondensed-Black.woff2') format('woff2'),
-        url('SairaExtraCondensed-Black.woff') format('woff');
-    font-weight: 900;
+    font-family: 'VITRO';
+    src: url('VITRO-CORE-TTF.woff2') format('woff2'),
+        url('VITRO-CORE-TTF.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'VITRO';
+    src: url('VITRO-PRIDE-TTF.woff2') format('woff2'),
+        url('VITRO-PRIDE-TTF.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }

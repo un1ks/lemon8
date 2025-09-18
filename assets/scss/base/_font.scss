@@ -3,6 +3,38 @@
 //
 
 
+
+@font-face {
+    font-family: 'VITRO';
+    src: url('../../assets/font/VITRO-INSPIRE-TTF.woff2') format('woff2'),
+        url('../../assets/font/VITRO-INSPIRE-TTF.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'VITRO';
+    src: url('../../assets/font/VITRO-CORE-TTF.woff2') format('woff2'),
+        url('../../assets/font/VITRO-CORE-TTF.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'VITRO';
+    src: url('../../assets/font/VITRO-PRIDE-TTF.woff2') format('woff2'),
+        url('../../assets/font/VITRO-PRIDE-TTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+//
+
 @font-face {
     font-family: 'GT Maru';
     src: url('../../assets/font/GTMaru-Bold.woff2') format('woff2'),
